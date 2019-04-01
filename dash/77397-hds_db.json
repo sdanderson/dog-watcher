@@ -1,0 +1,128 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:prod} by {db}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Prod DB Connections by Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:prod} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Prod DB Connections by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:prod,db:insight_dm} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Prod db:insight_dm Connections by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:prod,db:insight_ods} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Prod db:insight_ods Connections by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:prod,db:ahc_ods} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Prod db:ahc_ods Connections by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:staging} by {db}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Staging DB Connections by Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.mysql.db_conns{env:staging} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Staging DB Connections by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:iq.hds.analysis_completed.duration.max{kind:app,env:prod} by {host}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Max of iq.hds.analysis_completed.duration.max over kind:app,env:prod by host"
+      }
+    ],
+    "template_variables": null,
+    "description": null,
+    "title": "HDS DB",
+    "created": "2015-10-29T19:22:40.481746+00:00",
+    "new_id": "awj-4tu-wuf",
+    "id": 77397,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-01-19T15:59:44.144646+00:00"
+  },
+  "url": "/dash/77397/hds-db",
+  "resource": "/api/v1/dash/77397"
+}

@@ -1,0 +1,191 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:rhc,location:aws,env:stage} by {host}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "RHC analysis distribution"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:rhc,location:aws,env:stage} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P50 RHC analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:rhc,env:stage,location:aws} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P99 RHC analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:rhc,success:true,env:stage,location:aws} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P75 of RHC analyses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:rhc,env:stage,location:aws}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:rhc,env:stage,location:aws})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "P99 RHC analysis duration (moving average)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:rhc,env:stage,location:aws}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:rhc,env:stage,location:aws})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Median RHC analysis duration (moving average)"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{success:true,kind:rhc,location:aws,env:stage}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "RHC analysis successful count"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:rhc,success:false,env:stage,location:aws}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "RHC analysis failed count"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:rhc,success:true,env:stage,location:aws} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P99 RHC analysis duration"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:rhc,success:true,env:stage,location:aws} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P75 RHC analysis duration"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{kind:rhc,success:true,env:stage,location:aws} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Median RHC analysis duration"
+      }
+    ],
+    "template_variables": null,
+    "description": "Operational metrics for RHC analyses (cloned)",
+    "title": "RHC count/duration metrics (AWS Stage)",
+    "created": "2017-09-25T21:13:42.367871+00:00",
+    "new_id": "gar-dif-mbv",
+    "id": 364414,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2017-10-13T21:34:26.094237+00:00"
+  },
+  "url": "/dash/364414/rhc-countduration-metrics-aws-stage",
+  "resource": "/api/v1/dash/364414"
+}

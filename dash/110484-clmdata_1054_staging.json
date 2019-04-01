@@ -1,0 +1,163 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.REDSHIFT.ACTIVE.sonatype_bi_vpc_staging{name:data-pipeline-master-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Active Redshift Conns"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.jvm.gc.Copy.time{name:data-pipeline-master-staging}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.dd.jumpman.staging.jvm.gc.MarkSweepCompact.time{name:data-pipeline-master-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "JVM GC Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.SqsQueueDepthMetricPoller.pipeline_processing_notify_staging_ApproximateNumberOfMessages{name:data-pipeline-master-staging}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.SqsQueueDepthMetricPoller.pipeline_processing_notify_staging_ApproximateNumberOfMessagesNotVisible{name:data-pipeline-master-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "SQS Notify Queue Depths"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.SqsQueueDepthMetricPoller.pipeline_processing_deadletter_staging_ApproximateNumberOfMessages{name:data-pipeline-master-staging}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.SqsQueueDepthMetricPoller.pipeline_processing_deadletter_staging_ApproximateNumberOfMessagesNotVisible{name:data-pipeline-master-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "SQS Dead Letter Queue Depths"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ArtifactExpansion.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CentralLogLoadingTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CentralLogProcessingTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ComponentExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ComponentRhcProxyPopularityIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ComponentRhcProxyPopularityTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ComponentToCveProductInferenceTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ComputeDownloadTotalsTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CveDataExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CveDataIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CveFetchTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CveRepoAssociationTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.CveToComponentInferenceTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ExportOneTableToRedshiftTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ExportPostCveComponentsTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ExportPostUserAgentsTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ExportTablesToRedshiftTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.FindRsyncLogsToProcess.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.FindSvExportToProcess.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.IdentityIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.InferVulnerabilities.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.LicenseComponentExportToRedshiftTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.LicenseExportToRedshiftTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.LicenseExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.LicenseIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.LicenseMetadataExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NominatedArtifactTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NPMPackageDownloadTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NPMRegistryScraperTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NPMRegistryScraperWorkerTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NugetPackageDownloadTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.NugetSearchFeedScraperTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.PomLicenseRelationshipPropagationTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.PomLicenseRevisionPropagationTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.PopularityDataTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.PopularityHistoryTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RedShiftHashLoader.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RedShiftHashManifest.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RedShiftHashManifestFinder.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RedShiftKnownBadHashLoader.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RedshiftLicenseLoader.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ResolvedIssuesTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcComponentDownloadTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcPopularityTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcRepoDispatchTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcRepoProcessingTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcRepoProcessor.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcScanSchedulerTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RhcScanTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.RsyncLogFileTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.SvImport.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.SvImportJira.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.SvImportVulnerabilitiesTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.ViiExportForEtlTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.VulnerabilityExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.VulnerabilityIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.VulnerabilityMetadataExportToS3Task.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.VulnerabilityMetadataIndexTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.VulnerabilityMoveToPostgresTask.ErrorCount{name:data-pipeline-master-staging},avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.WebHitsComponentAssociationTask.ErrorCount{name:data-pipeline-master-staging}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Trailing 60 Minutes Task Error Counts"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ContentHashProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ParentPomProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.SvHasher.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ClmLicenseNpmProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ClmLicenseNugetProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ClmLicensePomProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.ComponentHashProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.LicenseMatchBinaryProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.LicenseMatchSourceProbe.ErrorCount{name:data-pipeline-master-staging}, metrics.dd.jumpman.staging.com.sonatype.pipeline.websvc.metrics.ProcessorErrorsByTimeWindowPoller.tasks.probes.NugetNuspecRecorderProbe.ErrorCount{name:data-pipeline-master-staging}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Trailing 60 Minutes Task Probe Error Counts"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.database_connections{clusteridentifier:sonatype-bi-vpc-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg Redshift Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.percentage_disk_space_used{clusteridentifier:sonatype-bi-vpc-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Redshift Disk Space Used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.dd.jumpman.staging.DATA_AGE.VULN_IMPLICATED_ARTIFACT{name:data-pipeline-master-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Production Data Age"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.health_status{clusteridentifier:sonatype-bi-vpc-staging}",
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.redshift.maintenance_mode{clusteridentifier:sonatype-bi-vpc-staging}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Redshift Cluster Status"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jorlina@sonatype.com",
+    "title": "CLMDATA-1054 (Staging)",
+    "created": "2016-03-23T19:43:22.803506+00:00",
+    "new_id": "en7-na2-r3y",
+    "id": 110484,
+    "created_by": {
+      "disabled": false,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "jorlina@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/cc7aa67153bf16c97dede5281013ada4?s=48&d=retro"
+    },
+    "modified": "2016-03-23T20:51:51.794028+00:00"
+  },
+  "url": "/dash/110484/clmdata-1054-staging",
+  "resource": "/api/v1/dash/110484"
+}

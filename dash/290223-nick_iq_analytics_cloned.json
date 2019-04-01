@@ -1,0 +1,279 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {brain_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {brain_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {brain_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {client}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Clients Used"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {client_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {client_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client_os:linux} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Linux Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client_os:linux} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Linux Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client_os:windows} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Windows Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client:nexus} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Nexus RM Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client:sonatype_clm_ide_eclipse} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Eclipse Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client:nexus_iq_idea} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IDEA Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {kind}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Scans by Type"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{kind:firewall} by {cause}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Firewall Scans by Cause"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {client_other}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Other (IDE version)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.scan{*} by {kind}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Scans occurring"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{*} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "RHC Scans by Version"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by mpiggott@sonatype.com (cloned)",
+    "title": "Nick IQ Analytics (cloned)",
+    "created": "2017-05-17T02:51:20.946493+00:00",
+    "new_id": "e27-4wm-98n",
+    "id": 290223,
+    "created_by": {
+      "disabled": false,
+      "handle": "ncook@sonatype.com",
+      "name": "Nick Cook",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ncook@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/8b919b61e46b949d833b7fe1000c37b3?s=48&d=retro"
+    },
+    "modified": "2017-05-17T02:53:10.931784+00:00"
+  },
+  "url": "/dash/290223/nick-iq-analytics-cloned",
+  "resource": "/api/v1/dash/290223"
+}

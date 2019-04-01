@@ -1,0 +1,278 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{env:staging} by {host}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses for All Hosts"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.load.1{name:staging_web_worker.0_aka_clmweb02a} by {host}, max:system.load.1{name:staging_web_worker.1_aka_clmweb02b} by {host}",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max System Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.util{name:staging_web_worker.0_aka_clmweb02a}, max:system.io.util{name:staging_web_worker.1_aka_clmweb02b}",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max System IO"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{aws_name_tag:hds-staging-clmweb02a}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Completed Scans - clmscan02a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:jvm.heap_memory_max{aws_name_tag:hds-staging-clmweb02a}, max:jvm.heap_memory{aws_name_tag:hds-staging-clmweb02a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "heap - clmweb02a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{aws_name_tag:hds-staging-clmscan02a} by {host}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses - clmweb02a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.user{name:staging_web_worker.0_aka_clmweb02a}, max:system.cpu.system{name:staging_web_worker.0_aka_clmweb02a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU - user and system - clmweb02a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.stolen{name:staging_web_worker.0_aka_clmweb02a}, max:system.cpu.guest{name:staging_web_worker.0_aka_clmweb02a}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "CPU - stolen and guest - clmweb02a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{name:staging_web_worker.0_aka_clmweb02a}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Wait (percentage) - clmweb02a"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{aws_name_tag:hds-staging-clmweb02b}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Completed Scans - clmscan02b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:jvm.heap_memory_max{aws_name_tag:hds-staging-clmweb02b}, max:jvm.heap_memory{aws_name_tag:hds-staging-clmweb02b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "heap - clmweb02b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{aws_name_tag:hds-staging-clmscan02b} by {host}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses - clmweb02b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.user{name:staging_web_worker.1_aka_clmweb02b}, max:system.cpu.system{name:staging_web_worker.1_aka_clmweb02b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU - user and system - clmweb02b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.stolen{name:staging_web_worker.1_aka_clmweb02b}, max:system.cpu.guest{name:staging_web_worker.1_aka_clmweb02b}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "CPU - stolen and guest - clmweb02b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{name:staging_web_worker.1_aka_clmweb02b}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Wait (percentage) - clmweb02b"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by ksprochi@sonatype.com (cloned)",
+    "title": "HDS Staging Web Workers",
+    "created": "2019-02-11T19:45:35.642606+00:00",
+    "new_id": "nrm-eek-6sw",
+    "id": 1074096,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2019-02-11T21:16:53.540715+00:00"
+  },
+  "url": "/dash/1074096/hds-staging-web-workers",
+  "resource": "/api/v1/dash/1074096"
+}

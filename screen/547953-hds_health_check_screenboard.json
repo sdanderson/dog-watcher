@@ -1,0 +1,797 @@
+{
+  "board_title": "HDS Health Check Screenboard",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2019-01-07T21:31:02.675927+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "new_id": "yj5-qrt-zvm",
+  "modified": "2019-01-09T18:15:37.534865+00:00",
+  "originalHeight": 182,
+  "height": 182,
+  "width": 165,
+  "template_variables": [
+    {
+      "default": "production",
+      "prefix": "environment",
+      "name": "var"
+    }
+  ],
+  "disableEditing": false,
+  "originalWidth": 165,
+  "widgets": [
+    {
+      "board_id": 547953,
+      "generated_title": "hds.healthcheck.duration.dependency_check_db",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Dependency Check DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.dependency_check_db{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.dependency_check_db{*} by {host}, hour_before(max:hds.healthcheck.duration.dependency_check_db{*} by {host})",
+      "time": {},
+      "y": 68,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "hds.healthcheck.duration.repository_health_check_report_store",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Repository Report Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.repository_health_check_report_store{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.repository_health_check_report_store{*} by {host}, hour_before(max:hds.healthcheck.duration.repository_health_check_report_store{*} by {host})",
+      "time": {},
+      "y": 2,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Repository Scan Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.repository_health_check_scan_store{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.repository_health_check_scan_store{*} by {host}, hour_before(max:hds.healthcheck.duration.repository_health_check_scan_store{*} by {host})",
+      "time": {},
+      "y": 18,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.healthcheck.duration.repository_health_check_report_store",
+      "title_text": "Repository Report Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.repository_health_check_report_store{$var} by {host}, outliers(max:hds.healthcheck.duration.repository_health_check_report_store{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 2,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.healthcheck.duration.repository_health_check_scan_store",
+      "title_text": "Repository Scan Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.repository_health_check_scan_store{$var} by {host}, outliers(max:hds.healthcheck.duration.repository_health_check_scan_store{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 18,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.healthcheck.duration.dependency_check_db",
+      "title_text": "Dependency Check DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.dependency_check_db{$var} by {host}, outliers(max:hds.healthcheck.duration.dependency_check_db{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 68,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "ODS DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.ods_db{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.ods_db{*} by {host}, hour_before(max:hds.healthcheck.duration.ods_db{*} by {host})",
+      "time": {},
+      "y": 84,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "ODS DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.ods_db{$var} by {host}, outliers(max:hds.healthcheck.duration.ods_db{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 84,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Application Report Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.application_report_store{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.application_report_store{*} by {host}, hour_before(max:hds.healthcheck.duration.application_report_store{*} by {host})",
+      "time": {},
+      "y": 35,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Application Report Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.application_report_store{$var} by {host}, outliers(max:hds.healthcheck.duration.application_report_store{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 35,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Application Scan Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.application_scan_store{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.application_scan_store{*} by {host}, hour_before(max:hds.healthcheck.duration.application_scan_store{*} by {host})",
+      "time": {},
+      "y": 51,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Application Scan Store health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.application_scan_store{$var} by {host}, outliers(max:hds.healthcheck.duration.application_scan_store{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 51,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Datamart DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.datamart_db{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.datamart_db{*} by {host}, hour_before(max:hds.healthcheck.duration.datamart_db{*} by {host})",
+      "time": {},
+      "y": 100,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Datamart DB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.datamart_db{$var} by {host}, outliers(max:hds.healthcheck.duration.datamart_db{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 100,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Temporary Directory health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.temporary_directory{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.temporary_directory{*} by {host}, hour_before(max:hds.healthcheck.duration.temporary_directory{*} by {host})",
+      "time": {},
+      "y": 116,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Temporary Directory health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.temporary_directory{$var} by {host}, outliers(max:hds.healthcheck.duration.temporary_directory{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 116,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Hazelcast Cluster health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.hazelcast_cluster{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.hazelcast_cluster{*} by {host}, hour_before(max:hds.healthcheck.duration.hazelcast_cluster{*} by {host})",
+      "time": {},
+      "y": 132,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "Logging health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.logging{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.logging{*} by {host}, hour_before(max:hds.healthcheck.duration.logging{*} by {host})",
+      "time": {},
+      "y": 148,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "generated_title": "Change",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "LevelDB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "order_by": "change",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "max:hds.healthcheck.duration.leveldb{$var} by {host}",
+            "increase_good": false,
+            "change_type": "absolute"
+          }
+        ]
+      },
+      "width": 37,
+      "query": "max:hds.healthcheck.duration.leveldb{*} by {host}, hour_before(max:hds.healthcheck.duration.leveldb{*} by {host})",
+      "time": {},
+      "y": 164,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Hazelcast Cluster health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.hazelcast_cluster{$var} by {host}, outliers(max:hds.healthcheck.duration.hazelcast_cluster{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 132,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Logging health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.logging{$var} by {host}, outliers(max:hds.healthcheck.duration.logging{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 148,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 547953,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "LevelDB health check duration (ms)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.healthcheck.duration.leveldb{$var} by {host}, outliers(max:hds.healthcheck.duration.leveldb{$var} by {host}, 'MAD', 3, 40)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 164,
+      "x": 39,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 547953,
+  "isShared": false
+}

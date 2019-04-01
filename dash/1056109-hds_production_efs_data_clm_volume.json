@@ -1,0 +1,127 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.efs.total_iobytes{name:hds-production-efs-data_clm-volume}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Total I/O Bytes (sum aggregation)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.efs.data_read_iobytes{name:hds-production-efs-data_clm-volume}.as_count()",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "I/O Bytes - Reads (sum aggregation)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.efs.data_write_iobytes{name:hds-production-efs-data_clm-volume}.as_count()",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "I/O Bytes - Writes (sum aggregation)"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "max:aws.efs.permitted_throughput.maximum{name:hds-production-efs-data_clm-volume}",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "MAX Permitted Throughput"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "hour_before",
+              "q": "max:aws.efs.permitted_throughput.maximum{name:hds-production-efs-data_clm-volume} by {environment}",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "MAX Permittted Throughput Delta"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "hour_before",
+              "q": "max:aws.efs.total_iobytes{name:hds-production-efs-data_clm-volume} by {environment}.as_count()",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Max of aws.efs.total_iobytes over name:hds-production-efs-data_clm-volume by ..."
+      }
+    ],
+    "template_variables": [],
+    "description": null,
+    "title": "HDS Production EFS Data Clm Volume",
+    "created": "2019-01-24T13:27:39.255714+00:00",
+    "new_id": "zps-ua7-792",
+    "id": 1056109,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2019-01-24T13:44:49.597839+00:00"
+  },
+  "url": "/dash/1056109/hds-production-efs-data-clm-volume",
+  "resource": "/api/v1/dash/1056109"
+}

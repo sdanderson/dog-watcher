@@ -1,0 +1,291 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:ahc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:ahc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:blog}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:blog"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:central}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:central"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:central_origin_primary}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:central_origin_primary"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:central_search}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:central_search"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:clm}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:clm"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:clm_3p}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:clm_3p"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:insight}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:insight"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:intacct}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:intacct"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:java_forge}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:java_forge"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:licensing}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:licensing"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:licensing_rest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:licensing_rest"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:md_office}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:md_office"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:ossrh}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:plantory_j_t_office}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:plantory_j_t_office"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:rhc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:rhc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:rhc_pro}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:rhc_pro"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:rso}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:rso"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:secure_central}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:secure_central"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:sonatype.org_wp}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:sonatype.org_wp"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:tyson_s_corner}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:tyson_s_corner"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:www}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pingdom.response_time with check:www"
+      }
+    ],
+    "template_variables": null,
+    "description": null,
+    "title": "Pingdom Response Times",
+    "created": "2015-10-21T16:12:59.774273+00:00",
+    "new_id": "nbb-wr6-tzx",
+    "id": 75470,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2015-11-25T16:00:51.320584+00:00"
+  },
+  "url": "/dash/75470/pingdom-response-times",
+  "resource": "/api/v1/dash/75470"
+}

@@ -1,0 +1,269 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {brain_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {brain_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {brain_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Brain Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {client}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Clients Used"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {client_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {client_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client_os:linux,env:production} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Linux Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client_os:windows,env:production} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Windows Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:nexus,env:production} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Nexus RM Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:sonatype_clm_ide_eclipse,env:production} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Eclipse Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:nexus_iq_idea,env:production} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IDEA Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {kind}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Scans by Type"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{kind:firewall,env:production} by {cause}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Firewall Scans by Cause"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{kind:ide,env:production} by {client_other}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Other (IDE version)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis{env:production} by {kind}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Scans occurring"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{env:production} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "RHC Scans by Version"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by mpiggott@sonatype.com",
+    "title": "IQ Analytics Timeboard",
+    "created": "2016-06-30T18:43:22.302150+00:00",
+    "new_id": "sa6-inm-u5p",
+    "id": 154948,
+    "created_by": {
+      "disabled": false,
+      "handle": "mpiggott@sonatype.com",
+      "name": "Matthew Piggott",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "mpiggott@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+    },
+    "modified": "2019-02-02T23:18:35.639458+00:00"
+  },
+  "url": "/dash/154948/iq-analytics-timeboard",
+  "resource": "/api/v1/dash/154948"
+}

@@ -1,0 +1,350 @@
+{
+  "originalWidth": "100%",
+  "new_id": "ik5-bkk-64d",
+  "height": 97,
+  "disableEditing": false,
+  "showGlobalTimeOnboarding": true,
+  "id": 408078,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.total_hds_time",
+      "title_text": "",
+      "height": 24,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.qos.total_hds_time{use-case:hds_checker} by {aws_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 2,
+      "x": 1,
+      "legend_size": "16",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.total_iq_time",
+      "title_text": "",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.total_iq_time{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 29,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.poll_start",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.poll_start{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 53,
+      "time": {},
+      "y": 49,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.scan_message_received",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.scan_message_received{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 53,
+      "time": {},
+      "y": 49,
+      "x": 56,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.report_changes_applied",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.report_changes_applied{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 53,
+      "time": {},
+      "y": 65,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.policies_evaluated",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.policies_evaluated{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 53,
+      "time": {},
+      "y": 65,
+      "x": 56,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.scan_uploaded",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.scan_uploaded{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {},
+      "y": 81,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.policies_persisted",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:hds.qos.policies_persisted{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {},
+      "y": 81,
+      "x": 34,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 408078,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.qos.notifications_sent",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.qos.notifications_sent{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {},
+      "y": 81,
+      "x": 72,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "HDS QoS",
+  "created": "2018-08-11T01:47:12.712479+00:00",
+  "original_title": "HDS QoS",
+  "modified": "2019-01-03T14:34:03.992108+00:00",
+  "originalHeight": 80
+}

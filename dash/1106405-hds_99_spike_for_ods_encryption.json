@@ -1,0 +1,132 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{env:production,ignored:false}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:iq.hds.analysis{env:production,kind:app}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "iq.hds.rhc, iq.hds.analysis"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis{env:production,kind:app}.as_count()+sum:iq.hds.rhc{env:production,ignored:false}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.analysis over env:production,kind:app"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis{env:production,kind:app}.as_count(), sum:iq.hds.rhc{env:production}.as_count(), sum:iq.hds.analysis{env:production,kind:firewall}.as_count(), sum:iq.hds.analysis{env:production,kind:ide}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.analysis over env:production,kind:app"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{env:production,ignored:false}.as_count()+sum:iq.hds.analysis{env:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.rhc over env:production,ignored:false"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count{sonatype-group:skynet,environment:production} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Sum of aws.applicationelb.request_count over sonatype-group:skynet,environmen..."
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count{sonatype-group:skynet,environment:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Sum of aws.applicationelb.request_count over sonatype-group:skynet,environmen..."
+      }
+    ],
+    "template_variables": [],
+    "description": "",
+    "title": "HDS-99 Spike for ODS Encryption",
+    "created": "2019-03-11T13:57:42.898636+00:00",
+    "new_id": "tt9-h9h-cf2",
+    "id": 1106405,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2019-03-12T21:07:20.349070+00:00"
+  },
+  "url": "/dash/1106405/hds-99-spike-for-ods-encryption",
+  "resource": "/api/v1/dash/1106405"
+}

@@ -1,0 +1,147 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.net.connections{host:lb01.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.connections{host:lb02.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.connections{host:lb03.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.connections{host:lb04.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "nginx.net.connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.net.request_per_s{host:lb01.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.request_per_s{host:lb02.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.request_per_s{host:lb03.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "avg:nginx.net.request_per_s{host:lb04.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "nginx.net.request_per_second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_sent{host:lb01.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_sent{host:lb02.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_sent{host:lb03.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_sent{host:lb04.contegix.s,device:eth2}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Bytes sent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_rcvd{host:lb01.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_rcvd{host:lb02.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_rcvd{host:lb03.contegix.s,device:eth2}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.net.bytes_rcvd{host:lb04.contegix.s,device:eth2}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Bytes Received"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.net.request_per_s{host:central-be01.contegix.s}, avg:nginx.net.request_per_s{host:central-be02.contegix.s}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "nginx requests, central-be"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.net.connections{host:central-be01.contegix.s}, avg:nginx.net.connections{host:central-be02.contegix.s}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "nginx connections, central-be"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "SLB",
+    "created": "2016-12-12T20:37:31.293056+00:00",
+    "new_id": "6dr-8dq-s6z",
+    "id": 223318,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-12-18T22:59:38.370356+00:00"
+  },
+  "url": "/dash/223318/slb",
+  "resource": "/api/v1/dash/223318"
+}

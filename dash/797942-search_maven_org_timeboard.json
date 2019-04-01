@@ -1,0 +1,318 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "palette": "green_to_orange",
+            "paletteFlip": false
+          },
+          "group": [],
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "elasticbeanstalk:environment-id:e-56igk7ctpx"
+          ],
+          "requests": [
+            {
+              "q": "avg:aws.ec2.host_ok{elasticbeanstalk:environment-id:e-56igk7ctpx} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "EC2 Instance Status"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:aws.elb.healthy_host_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_green",
+                  "value": 1,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 1,
+                  "comparator": ">"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Healthy Hosts Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_5xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}.as_count()",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB HTTP 5xx errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.request_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}.as_rate()",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "ELB requests per second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_5xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com,availability-zone:us-east-1c} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_backend_5xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com,availability-zone:us-east-1d} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Backend 5xx errors, by AZ"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.estimated_albactive_connection_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB total concurrent active connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_4xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com,availability-zone:us-east-1c} by {host}.as_count()",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_backend_4xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com,availability-zone:us-east-1d} by {host}.as_count()",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Backend 4xx errors, by AZ"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_2xx{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}.as_count()",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Backend HTTP success response codes"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "month_before",
+              "q": "avg:aws.elb.estimated_albactive_connection_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "ELB average connections compared to last month"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.request_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Total number of requests per minute"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:aws.elb.request_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com}.as_rate()",
+              "aggregator": "avg",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_red",
+                  "value": 400,
+                  "comparator": ">="
+                },
+                {
+                  "palette": "white_on_yellow",
+                  "value": 400,
+                  "comparator": "<"
+                },
+                {
+                  "palette": "white_on_green",
+                  "value": 150,
+                  "comparator": "<="
+                }
+              ]
+            }
+          ]
+        },
+        "title": "ELB Average requests per second"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:aws.elb.estimated_albactive_connection_count{host:awseb-e-5-AWSEBLoa-B4BWB9YJS6PP-703769732.us-east-1.elb.amazonaws.com} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_green",
+                  "value": 5000,
+                  "comparator": "<"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 5000,
+                  "comparator": ">="
+                }
+              ]
+            }
+          ]
+        },
+        "title": "ELB average concurrent connections"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:metrics.central.publish.lag{environment:test}/60",
+              "aggregator": "last",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Central lag time for publishing (Minutes)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.total{host:ossrh,device:/dev/mapper/VolGroup01-work}, avg:system.disk.used{host:ossrh,device:/dev/mapper/VolGroup01-work}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "EBS usage"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by tyanko@sonatype.com",
+    "title": "Search.Maven.Org Timeboard",
+    "created": "2018-04-27T15:20:40.946084+00:00",
+    "new_id": "vb7-dd7-42i",
+    "id": 797942,
+    "created_by": {
+      "disabled": false,
+      "handle": "tyanko@sonatype.com",
+      "name": "Terry Yanko",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "tyanko@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+    },
+    "modified": "2019-02-06T21:48:35.407474+00:00"
+  },
+  "url": "/dash/797942/searchmavenorg-timeboard",
+  "resource": "/api/v1/dash/797942"
+}

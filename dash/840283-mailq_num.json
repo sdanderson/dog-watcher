@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mailq.num{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "mailq.num"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "mailq.num",
+    "created": "2018-06-20T14:58:14.056720+00:00",
+    "new_id": "6a6-iyu-4qf",
+    "id": 840283,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-06-20T14:58:14.056737+00:00"
+  },
+  "url": "/dash/840283/mailqnum",
+  "resource": "/api/v1/dash/840283"
+}

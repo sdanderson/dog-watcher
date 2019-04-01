@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.icmp.packet_loss{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "system.net.icmp.packet_loss"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "vpn packet loss",
+    "created": "2017-02-18T15:59:36.342556+00:00",
+    "new_id": "t7j-9w4-t9i",
+    "id": 250202,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2017-02-18T15:59:36.301099+00:00"
+  },
+  "url": "/dash/250202/vpn-packet-loss",
+  "resource": "/api/v1/dash/250202"
+}

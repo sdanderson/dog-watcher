@@ -1,0 +1,292 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_2xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_target_3xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_target_4xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_target_5xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "ELB Target Responses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_4xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_4xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_5xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_5xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_2xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_target_2xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_3xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_target_3xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_4xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_target_4xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_5xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_target_5xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_2xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_backend_2xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_3xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_backend_3xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_5xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_backend_5xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_4xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_backend_4xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_3xx{name:ossrh}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_3xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_4xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_4xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_5xx{name:ossrh}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_5xx over name:ossrh"
+      }
+    ],
+    "template_variables": [],
+    "description": "",
+    "title": "OSSRH load balancer traffic",
+    "created": "2019-01-30T15:33:01.162112+00:00",
+    "new_id": "asx-age-7n5",
+    "id": 1061993,
+    "created_by": {
+      "disabled": false,
+      "handle": "sstecker@sonatype.com",
+      "name": "Shane Stecker",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sstecker@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/44d157449085b054a107ada81d8cd3bc?s=48&d=retro"
+    },
+    "modified": "2019-02-08T19:25:17.775966+00:00"
+  },
+  "url": "/dash/1061993/ossrh-load-balancer-traffic",
+  "resource": "/api/v1/dash/1061993"
+}

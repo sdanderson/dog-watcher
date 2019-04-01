@@ -1,0 +1,929 @@
+{
+  "board_title": "clm-db01",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-05-25T00:37:41.745237+00:00",
+  "new_id": "nu6-2y5-g6j",
+  "original_title": "clm-db01",
+  "modified": "2017-05-26T14:22:39.252042+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "clm-db01",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 42,
+      "y": 1,
+      "x": 3,
+      "font_size": "72",
+      "type": "free_text"
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Long Running Transactions - Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.long_running_tx.count{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 8,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System I/O - await",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.io.await{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 77,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System CPU (user)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 77,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Swap - Total",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.swap.total{host:clm-db01.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 42,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 77,
+      "x": 132,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Swap - In Use",
+      "height": 38,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.swap.used{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 84,
+      "x": 132,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Memory - Total",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.total{host:clm-db01.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 77,
+      "x": 89,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Memory - In Use",
+      "height": 38,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 84,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System I/O - svctime",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.io.svctm{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 93,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System I/O - Reads and Writes (KB/sec)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.io.wkb_s{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.io.rkb_s{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 109,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Row Lock Waits",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.row_lock_waits{instance:clm-db01}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 39,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network - In",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.net.bytes_rcvd{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 93,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network - Out",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.net.bytes_sent{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 109,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Max Connections Available",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.net.max_connections_available{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 16,
+      "x": 132,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Open Files",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.open_files{host:clm-db01.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 70,
+      "x": 132,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Max Connections",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:mysql.net.max_connections{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 31,
+      "x": 132,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Row Lock Times",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.row_lock_time{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 24,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Threads Connected",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.threads_connected{host:clm-db01.contegix.s}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 46,
+      "x": 132,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Aborted Connections",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:mysql.net.aborted_connects{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1,
+      "x": 132,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Threads Running",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.threads_running{host:clm-db01.contegix.s}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 21,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 46,
+      "x": 153,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Buffer Pool Read Requests",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.buffer_pool_read_requests{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Buffer Pool Reads",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.buffer_pool_reads{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 24,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Data - Writes and Reads (per second)",
+      "height": 35,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.data_writes{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "style": {
+              "palette": "purple"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:mysql.innodb.data_reads{host:clm-db01.contegix.s}",
+            "style": {
+              "palette": "orange"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 39,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Slow Query Rate (per second)",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.slow_queries{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql SELECT Statements",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.com_select{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 39,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql INSERT/UPDATE Statements",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:mysql.performance.com_insert{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:mysql.performance.com_update{host:clm-db01.contegix.s}",
+            "style": {
+              "palette": "orange"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 54,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql CPU",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.performance.cpu_time{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:mysql.performance.com_load{host:clm-db01.contegix.s}",
+            "style": {
+              "palette": "orange"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 54,
+      "x": 46,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql Long Running Transaction Time (ms)",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:mysql.long_running_tx.time_ms{host:clm-db01.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 24,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "MySql os_log_fsyncs",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:mysql.innodb.os_log_fsyncs{host:clm-db01.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 21,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 70,
+      "x": 153,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 187948,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,628 @@
+{
+  "board_title": "Support - Ticket 96306",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-06-08T14:50:29.039650+00:00",
+  "new_id": "wkj-89b-pha",
+  "original_title": "PO Firewall",
+  "modified": "2017-06-08T14:50:29.039661+00:00",
+  "disableEditing": false,
+  "height": 111,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "support-sonatype",
+    "name": "Datadog Support",
+    "is_admin": true,
+    "role": "Help is on the way",
+    "access_role": "adm",
+    "verified": true,
+    "email": "support-user-prod@datadoghq.com",
+    "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 189702,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known Components",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "status": "done",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Unknown Components",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "status": "done",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.unknown{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "conditional_formats": [
+              {
+                "palette": "white_on_gray",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "x": 0,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Formats (requests processed)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "status": "done",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 34,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 102,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "day_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), day_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 68,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "day_before",
+            "q": "sum:iq.hds.analysis_completed{*} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "query": "sum:iq.hds.analysis_completed{*} by {format}.as_count(), day_before(sum:iq.hds.analysis_completed{*} by {format}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed by Format (for Daniel)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "status": "done",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 73,
+      "x": 102,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "week_before",
+            "q": "sum:iq.hds.analysis_completed{*} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "query": "sum:iq.hds.analysis_completed{*} by {format}.as_count(), week_before(sum:iq.hds.analysis_completed{*} by {format}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 68,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "week_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), week_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Longterm Stats",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 24,
+      "y": 36,
+      "x": 0,
+      "font_size": "auto",
+      "type": "free_text"
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "x": 102,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed by Format (for Daniel)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "status": "done",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 89,
+      "x": 102,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis_completed{*} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "query": "sum:iq.hds.analysis_completed{*} by {format}.as_count(), month_before(sum:iq.hds.analysis_completed{*} by {format}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 68,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), month_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "x": 102,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known components",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 16,
+      "x": 68,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known Components by Cause",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "x": 102,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Component Change by Cause",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "week_before",
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "query": "sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count(), week_before(sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    },
+    {
+      "board_id": 189702,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Component Change by Cause",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "change_type": "absolute",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "query": "sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count(), month_before(sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 192103,
+  "title_edited": false,
+  "isShared": false
+}

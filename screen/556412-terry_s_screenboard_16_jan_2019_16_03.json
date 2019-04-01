@@ -1,0 +1,20 @@
+{
+  "read_only": false,
+  "board_title": "Terry's Screenboard 16 Jan 2019 16:03",
+  "description": null,
+  "created": "2019-01-16T21:03:24.008298+00:00",
+  "new_id": "ykt-y4r-23r",
+  "modified": "2019-01-16T21:03:24.008305+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "tyanko@sonatype.com",
+    "name": "Terry Yanko",
+    "is_admin": true,
+    "role": "",
+    "access_role": "adm",
+    "verified": true,
+    "email": "tyanko@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+  },
+  "id": 556412
+}

@@ -1,0 +1,246 @@
+{
+  "board_title": "NVS Cloud Scannner Screenboard - Work In Progress",
+  "read_only": false,
+  "author_info": {
+    "author_name": null
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "created": "2019-02-27T18:23:36.119766+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "dfernando@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "dfernando@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/9bebf2915bd721a916cd5353e3d6dd08?s=48&d=retro"
+  },
+  "new_id": "utw-src-8vc",
+  "modified": "2019-03-06T21:40:38.139432+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "isIntegration": false,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 596563,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551904680000,
+        "end": 1551908280000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.lambda.duration.p99",
+      "title_text": "NVS Lambda Duration",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.lambda.duration.p99{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}",
+            "type": "bars",
+            "metadata": {
+              "avg:aws.lambda.duration.p99{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}": {
+                "alias": "Duration P99"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.lambda.duration.p95{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "avg:aws.lambda.duration.p95{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}": {
+                "alias": "Duration P95"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.lambda.duration{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "avg:aws.lambda.duration{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}": {
+                "alias": "Duration"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 8,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 596563,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551904680000,
+        "end": 1551908280000
+      },
+      "generated_title": "",
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "NVS Dashboard",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 24,
+      "x": 1,
+      "y": 2,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "height": 20,
+      "tick_pos": "50%",
+      "board_id": 596563,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "text_align": "left",
+      "bgcolor": "blue",
+      "html": "The amount of time it takes for the AWS lambda to warm up and finish execution.\n\nThis chart shows P99, P95 and duration (average).",
+      "type": "note",
+      "isShared": false,
+      "refresh_every": 30000,
+      "auto_refresh": false,
+      "title_text": "",
+      "tick": true,
+      "add_timeframe": true,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551904680000,
+        "end": 1551908280000
+      },
+      "font_size": "14",
+      "generated_title": "Note",
+      "tick_edge": "left",
+      "y": 8,
+      "x": 49,
+      "width": 18
+    },
+    {
+      "board_id": 596563,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551904680000,
+        "end": 1551908280000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "system.cpu.user",
+      "title_text": "Hubspot Submissions",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ahc.hubspot.submission.successful{ahc}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 29,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 596563,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551904680000,
+        "end": 1551908280000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Lambda Invocations",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 52,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 596563,
+  "isShared": false
+}

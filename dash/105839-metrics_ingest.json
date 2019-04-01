@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.publish.lag{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.central.publish.lag"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Metrics Ingest",
+    "created": "2016-03-11T16:36:08.904618+00:00",
+    "new_id": "4kn-s7n-ezg",
+    "id": 105839,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-03-11T16:36:08.830121+00:00"
+  },
+  "url": "/dash/105839/metrics-ingest",
+  "resource": "/api/v1/dash/105839"
+}

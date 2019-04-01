@@ -1,0 +1,51 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.cpu.percent{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "ecs.fargate.cpu.percent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.mem.usage{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "ecs.fargate.mem.usage"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by sanderson@sonatype.com",
+    "title": "Docker Metrics",
+    "created": "2018-12-03T14:31:56.162773+00:00",
+    "new_id": "fs9-v96-kf5",
+    "id": 1007933,
+    "created_by": {
+      "disabled": false,
+      "handle": "sanderson@sonatype.com",
+      "name": "Scott Anderson",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "sanderson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/4b964a078ed12cc10769a978f4456c34?s=48&d=retro"
+    },
+    "modified": "2018-12-03T14:31:56.162787+00:00"
+  },
+  "url": "/dash/1007933/docker-metrics",
+  "resource": "/api/v1/dash/1007933"
+}

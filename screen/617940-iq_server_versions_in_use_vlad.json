@@ -1,0 +1,225 @@
+{
+  "new_id": "65h-uqf-6f9",
+  "height": 80,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "id": 617940,
+  "read_only": true,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "vladt@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "vladt@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/ed65fbe3663520973d17f55722d4de4c?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 137162,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553010780000,
+        "end": 1553014380000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Server Versions",
+      "height": 62,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production} by {brain_version,brain}.as_count(), 100, 'sum', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "error": null,
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 137162,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553010780000,
+        "end": 1553014380000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Java Versions In Use",
+      "height": 62,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production} by {brain_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "error": null,
+      "y": 0,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 137162,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553010780000,
+        "end": 1553014380000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Operating Systems",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production} by {brain_os}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "error": null,
+      "y": 0,
+      "x": 96,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 137162,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553010780000,
+        "end": 1553014380000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain Windows Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{brain_os:windows,env:production} by {brain_os_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "error": null,
+      "y": 32,
+      "x": 96,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 137162,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553010780000,
+        "end": 1553014380000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain Linux Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{brain_os:linux,env:production} by {brain_os_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "error": null,
+      "y": 16,
+      "x": 96,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "author_info": {
+    "author_name": null
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "IQ Server Versions In Use (Vlad)",
+  "created": "2019-03-19T16:52:36.540459+00:00",
+  "original_title": "Nexus IQ Brain",
+  "modified": "2019-03-19T17:08:05.633776+00:00",
+  "originalHeight": 80
+}

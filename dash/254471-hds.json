@@ -1,0 +1,123 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.scans.slow{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "scanprocessor.scans.slow"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:hds.scans.CI_CHECK.accepted{*} - avg:hds.scans.CI_CHECK.completed{*}",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Scans Waiting to be Processed"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.rhc{*}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of iq.hds.rhc over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis{kind:app}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of iq.hds.analysis over kind:app"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:hds.scans.REPOSITORY.completed{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "hds.scans.REPOSITORY.completed"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:hds.scans.REPOSITORY.submitted{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of hds.scans.REPOSITORY.submitted over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:hds.scans.REPOSITORY.accepted{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of hds.scans.REPOSITORY.accepted over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:hds.scans.REPOSITORY.isprocessing{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of hds.scans.REPOSITORY.isprocessing over *"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "HDS",
+    "created": "2017-02-28T21:25:42.977722+00:00",
+    "new_id": "7i7-gns-rux",
+    "id": 254471,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2017-08-21T15:48:30.851657+00:00"
+  },
+  "url": "/dash/254471/hds",
+  "resource": "/api/v1/dash/254471"
+}

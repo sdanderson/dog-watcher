@@ -1,0 +1,315 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_2.aggregate.aggr0.user_read_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.aggregate.aggr0.user_write_iops{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-2 aggregate IOPS"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.aggregate.aggr0.user_read_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.aggregate.aggr0.user_write_iops{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-1 aggregate IOPS"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_2.volume.vmswap.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.insight.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.legacy_central.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.leveldb.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.testing.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.vmdisks.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.vol0.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.volume.yum.total_iops{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-2 total IOPS by volume"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.volume.vmhome.total_iops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.volume.vol0.total_iops{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-1 total IOPS by volume"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:stats.fas01_1.contegix.s.sysstat.nfs_ops{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:stats.fas01_2.contegix.s.sysstat.nfs_ops{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "NFS Ops by Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.vfiler.vfiler0.tx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.vfiler.vfiler0.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.vfiler.vfiler0.tx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.vfiler.vfiler0.rx_bytes_per_sec{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Tx/Rx Bytes/sec By Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.ifnet.igrp0.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.ifnet.igrp0.tx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.ifnet.igrp0.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.ifnet.igrp0.tx_bytes_per_sec{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Tx/Rx for IGRP0 per Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.ifnet.e0M.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.ifnet.e0M.tx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.ifnet.e0P.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.ifnet.e0P.tx_bytes_per_sec{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-1 individual interfaces"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_2.ifnet.e0M.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.ifnet.e0M.tx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.ifnet.e0P.rx_bytes_per_sec{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_2.ifnet.e0P.tx_bytes_per_sec{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-2 individual interfaces"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.fas01_1.volume.vmhome.read_latency{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.volume.vmhome.write_latency{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.volume.vol0.read_latency{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:metrics.fas01_1.volume.vol0.write_latency{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "fas01-1 r/w latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:stats.fas01_2.contegix.s.sysstat.disk_util{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:stats.fas01_1.contegix.s.sysstat.disk_util{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Disk Util by Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:stats.fas01_1.contegix.s.sysstat.cache_hit{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:stats.fas01_2.contegix.s.sysstat.cache_hit{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Cache Hit % by Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:stats.fas01_1.contegix.s.sysstat.cp_time{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:stats.fas01_2.contegix.s.sysstat.cp_time{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Consistency Point Time by Filer"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:stats.fas01_1.contegix.s.sysstat.cpu{*}",
+              "type": "line"
+            },
+            {
+              "q": "avg:stats.fas01_2.contegix.s.sysstat.cpu{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "CPU by Filer"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by rbriganti@sonatype.com",
+    "title": "Netapp Perf",
+    "created": "2016-03-31T01:18:53.604546+00:00",
+    "new_id": "cey-hwr-uf8",
+    "id": 114231,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2016-03-31T03:55:12.390504+00:00"
+  },
+  "url": "/dash/114231/netapp-perf",
+  "resource": "/api/v1/dash/114231"
+}

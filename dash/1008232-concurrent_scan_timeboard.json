@@ -1,0 +1,95 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.scan_processor.clm.max.scans.active{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max Concurrent App Scans (one minute time slice)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.scan_processor.rhc.max.scans.active{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max Concurrent RHC Scans (one minute time slice)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmweb01a}.as_count()), per_minute(sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmweb01b}.as_count())",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed HDS Analyses per Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_hour(sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmweb01a}.as_count()), per_hour(sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmweb01b}.as_count())",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed HDS Analyses per Hour"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by ksprochi@sonatype.com",
+    "title": "Concurrent Scan Timeboard",
+    "created": "2018-12-03T17:37:25.190240+00:00",
+    "new_id": "y48-jmz-jpj",
+    "id": 1008232,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2019-03-28T11:33:05.735826+00:00"
+  },
+  "url": "/dash/1008232/concurrent-scan-timeboard",
+  "resource": "/api/v1/dash/1008232"
+}

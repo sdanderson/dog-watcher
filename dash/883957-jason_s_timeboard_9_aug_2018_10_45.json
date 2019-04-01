@@ -1,0 +1,26 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Jason's Timeboard 9 Aug 2018 10:45",
+    "created": "2018-08-09T14:45:50.776143+00:00",
+    "new_id": "gqs-nh7-86t",
+    "id": 883957,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-08-09T14:45:50.776156+00:00"
+  },
+  "url": "/dash/883957/jasons-timeboard-9-aug-2018-1045",
+  "resource": "/api/v1/dash/883957"
+}

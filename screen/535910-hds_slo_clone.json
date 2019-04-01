@@ -1,0 +1,516 @@
+{
+  "originalWidth": "100%",
+  "new_id": "g7v-wbv-4qg",
+  "height": 109,
+  "disableEditing": false,
+  "showGlobalTimeOnboarding": true,
+  "guid": 1134,
+  "id": 535910,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "nblair@sonatype.com",
+    "name": "Nicholas Blair",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "nblair@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/703b899fad6b0058236e5997c9ae186a?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 392266,
+      "x": 2,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App: P99",
+      "height": 10,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "300"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "120"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {},
+      "y": 19,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Successful Scan Times",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 25,
+      "x": 0,
+      "y": 42,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "isShared": false,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "5xx Responses",
+      "precision": 0,
+      "width": 15,
+      "alert_id": "3891613",
+      "y": -44,
+      "x": 36,
+      "text_size": "auto",
+      "height": 6,
+      "type": "alert_value",
+      "unit": "auto",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 32,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Repo: P99",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:rhc,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "40"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "20"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1"
+      },
+      "width": 29,
+      "time": {},
+      "y": 19,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 63,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Firewall: P99",
+      "height": 10,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:firewall,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {},
+      "y": 19,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 93,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IDE: P99",
+      "height": 10,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{success:true,env:production,kind:ide}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "0.5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0.5"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 29,
+      "time": {},
+      "y": 19,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 32,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: Repo",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:rhc}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 29,
+      "time": {},
+      "y": 6,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 2,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: App",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:app}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 28,
+      "time": {},
+      "y": 6,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Scans Processed",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 20,
+      "x": 0,
+      "y": 0,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 63,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: Firewall",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 28,
+      "time": {},
+      "y": 6,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 93,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: IDE",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:ide}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 29,
+      "time": {},
+      "y": 6,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "HDS SLO clone",
+  "created": "2018-12-18T19:27:45.706368+00:00",
+  "original_title": "HDS SLO clone",
+  "modified": "2018-12-18T19:48:02.691430+00:00",
+  "originalHeight": 109
+}

@@ -1,0 +1,260 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.vpc.peerings.active_peerings{aws_account:cdi} by {id}, 25, 'mean', 'desc')",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "value": 1,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 1,
+                  "comparator": "<"
+                }
+              ],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "VPC Peering Connections (red is missing, yellow is new)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.queue.blocked{master:https://jenkins.zion.aws.s:8443}, avg:jenkins.queue.stuck{master:https://jenkins.zion.aws.s:8443}, avg:jenkins.queue.running{master:https://jenkins.zion.aws.s:8443}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Jenkins Build States"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.gc.parnew.time{name:jenkins}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "GC Time (elapsed total)"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:jvm.thread_count{name:jenkins}",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "JVM Thread Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.heap_memory{name:jenkins}/avg:jvm.heap_memory_max{name:jenkins}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:jvm.heap_memory{name:jenkins}/avg:jvm.heap_memory_max{name:jenkins}*100": {
+                  "alias": "Percent Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM Heap Used (Percent)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.guest{name:jenkins}, avg:system.cpu.iowait{name:jenkins}, avg:system.cpu.stolen{name:jenkins}, avg:system.cpu.system{name:jenkins}",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Jenkins CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.used{name:jenkins}/avg:system.disk.total{name:jenkins}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "% Disk Used Jenkins Master"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.total{name:jenkins}, avg:system.mem.total{name:jenkins}-avg:system.mem.usable{name:jenkins}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "dashed"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:system.mem.total{name:jenkins}": {
+                  "alias": "Total"
+                },
+                "avg:system.mem.total{name:jenkins}-avg:system.mem.usable{name:jenkins}": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jenkins Memory Utilization (minus buffers/cache)"
+      },
+      {
+        "definition": {
+          "style": {
+            "palette": "green_to_orange",
+            "paletteFlip": false
+          },
+          "noMetricHosts": false,
+          "viz": "hostmap",
+          "scope": [
+            "name:jenkins-ubuntu-slave"
+          ],
+          "requests": [
+            {
+              "q": "max:aws.ec2.cpuutilization{name:jenkins-ubuntu-slave} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Max CPU Utilization Host Map"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.ec2.host_ok{name:jenkins-ubuntu-slave}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Running Ubuntu Slaves"
+      },
+      {
+        "definition": {
+          "style": {
+            "palette": "green_to_orange",
+            "paletteFlip": false
+          },
+          "noMetricHosts": false,
+          "viz": "hostmap",
+          "scope": [
+            "name:jenkins-ubuntu-slave"
+          ],
+          "requests": [
+            {
+              "q": "max:system.disk.in_use{name:jenkins-ubuntu-slave} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Disk Use Agents"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.ec2.cpuutilization{name:jenkins-ubuntu-slave} by {host}, 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Average Jenkins Slave CPU Utilization"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by tyanko@sonatype.com",
+    "title": "Jenkins Environment Overview",
+    "created": "2018-05-16T19:25:19.954667+00:00",
+    "new_id": "n8a-73e-ada",
+    "id": 813096,
+    "created_by": {
+      "disabled": false,
+      "handle": "tyanko@sonatype.com",
+      "name": "Terry Yanko",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "tyanko@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+    },
+    "modified": "2019-02-25T14:16:35.639149+00:00"
+  },
+  "url": "/dash/813096/jenkins-environment-overview",
+  "resource": "/api/v1/dash/813096"
+}

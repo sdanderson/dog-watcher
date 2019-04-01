@@ -1,0 +1,255 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:analytics.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:analytics.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:analytics.sonatype.com_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:analytics.sonatype.com_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:blog.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:blog.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:books.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:books.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:cdn.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:cdn.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:clm.sonatype.com/ahc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:clm.sonatype.com/ahc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:clm.sonatype.com/ping}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:clm.sonatype.com/ping"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:clm.sonatype.com_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:clm.sonatype.com_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:ds-3p.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:ds-3p.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:ds-3p.sonatype.com_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:ds-3p.sonatype.com_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:help.sonatype.com}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:help.sonatype.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:ideas-sso.sonatype.com_aha_sso_service}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:ideas-sso.sonatype.com_aha_sso_service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:ideas-sso.sonatype.com_ssl_cert}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:ideas-sso.sonatype.com_ssl_cert"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:issues.sonatype.org}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:issues.sonatype.org"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:issues.sonatype.org_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:issues.sonatype.org_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:licensing.sonatype.com_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:licensing.sonatype.com_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:maven.java.net}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:maven.java.net"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:maven.java.net_ssl_certificate}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:maven.java.net_ssl_certificate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nodeping.checks{enabled:active,label:md_office}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nodeping.checks with label:md_office"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "nodeping.checks",
+    "created": "2018-10-16T00:49:09.291559+00:00",
+    "new_id": "c36-5p5-w6s",
+    "id": 948234,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-10-16T13:45:31.682621+00:00"
+  },
+  "url": "/dash/948234/nodepingchecks",
+  "resource": "/api/v1/dash/948234"
+}

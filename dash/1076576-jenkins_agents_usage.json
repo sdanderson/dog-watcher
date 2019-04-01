@@ -1,0 +1,161 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.gc.parnew.time{$ami,$host} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "GC Time (elapsed total)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.thread_count{$ami,$host} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "JVM Thread Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.heap_memory{$ami,$host} by {host}/avg:jvm.heap_memory_max{$ami,$host} by {host}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:jvm.heap_memory{$ami,$host} by {host}/avg:jvm.heap_memory_max{$ami,$host} by {host}*100": {
+                  "alias": "Percent Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM Heap Used (Percent)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.guest{$ami,$host} by {host}, avg:system.cpu.iowait{$ami,$host} by {host}, avg:system.cpu.stolen{$ami,$host} by {host}, avg:system.cpu.system{$ami,$host} by {host}",
+              "style": {
+                "palette": "cool",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Jenkins CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.used{$ami,$host,$device} by {host,device}/avg:system.disk.total{$ami,$host,$device} by {host,device}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "% Disk Used Jenkins Master"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.total{$host,$ami} by {host}, avg:system.mem.total{$host,$ami} by {host}-avg:system.mem.usable{$host,$ami} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:system.mem.total{$host,$ami} by {host}": {
+                  "alias": "Total"
+                },
+                "avg:system.mem.total{$host,$ami} by {host}-avg:system.mem.usable{$host,$ami} by {host}": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jenkins Memory Utilization (minus buffers/cache)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "ami:jenkins-ubuntu-slave",
+        "prefix": null,
+        "name": "ami"
+      },
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "host"
+      },
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "device"
+      }
+    ],
+    "description": "",
+    "title": "Jenkins Agents Usage",
+    "created": "2019-02-13T16:27:23.878373+00:00",
+    "new_id": "3z3-8hx-2bk",
+    "id": 1076576,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2019-02-14T16:02:37.489036+00:00"
+  },
+  "url": "/dash/1076576/jenkins-agents-usage",
+  "resource": "/api/v1/dash/1076576"
+}

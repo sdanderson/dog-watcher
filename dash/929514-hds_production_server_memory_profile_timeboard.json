@@ -1,0 +1,299 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01a}, max:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - heap max/used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01b}, max:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01b - heap max/used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01a} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - Average heap in use"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01b - Average heap in use"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_young_generation.collection_time{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmscan01a - G1 Young Generation: collection time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_young_generation.collection_count{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmscan01b - G1 Young Generation: collection count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_young_generation.collection_time{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmscan01b - G1 Young Generation: collection time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_young_generation.collection_count{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmscan01a - G1 Young Generation: collection count"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "hour_before",
+              "q": "avg:scanprocessor.jvm.gc.g1_young_generation.time.value{aws_name_tag:hds-production-clmscan01a} by {name}",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "clmscan01a - G1 Young Generation collection time - average change from last hour"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "hour_before",
+              "q": "avg:scanprocessor.jvm.gc.g1_young_generation.time.value{aws_name_tag:hds-production-clmscan01b} by {name}",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "clmscan01b - G1 Young Generation collection time - average change from last hour"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-rhcscan01a}, max:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-rhcscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "rhcscan01a - heap max/used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-rhcscan01b}, max:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-rhcscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "rhcscan01b - heap max/used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_old_generation.collection_time{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmlscan01a - G1 Old Generation: collection time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_old_generation.collection_count{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmlscan01a - G1 Old Generation: collection count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_old_generation.collection_count{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmscan01b - G1 Old Generation: collection count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.garbage_collector_g1_old_generation.collection_time{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "clmlscan01b - G1 Old Generation: collection time"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by ksprochi@sonatype.com",
+    "title": "HDS Production Server Memory Profile Timeboard",
+    "created": "2018-09-27T12:51:36.695422+00:00",
+    "new_id": "6dv-tx5-tke",
+    "id": 929514,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2018-12-10T19:49:06.751724+00:00"
+  },
+  "url": "/dash/929514/hds-production-server-memory-profile-timeboard",
+  "resource": "/api/v1/dash/929514"
+}

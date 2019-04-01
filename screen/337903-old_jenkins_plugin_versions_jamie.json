@@ -1,0 +1,98 @@
+{
+  "board_title": "Old Jenkins Plugin Versions (Jamie)",
+  "read_only": true,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-11T20:53:59.346191+00:00",
+  "new_id": "8pi-a5f-k2y",
+  "original_title": "Old Jenkins Plugin Versions (Jamie)",
+  "modified": "2018-05-11T21:05:45.335701+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "client",
+      "name": "analysis"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "jwhitehouse@sonatype.com",
+    "name": "Jamie Whitehouse",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jwhitehouse@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 137162,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain Versions",
+      "height": 62,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production,client:sonatype_clm_ci} by {brain_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1y"
+      },
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 137162,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Client Versions",
+      "height": 62,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production,client:sonatype_clm_ci} by {client_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1y"
+      },
+      "y": 0,
+      "x": 51,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 337903,
+  "title_edited": false,
+  "isShared": false
+}

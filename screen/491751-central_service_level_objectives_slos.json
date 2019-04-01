@@ -1,0 +1,598 @@
+{
+  "new_id": "axd-d3k-ihz",
+  "height": 80,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "guid": 8492,
+  "id": 491751,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "tyanko@sonatype.com",
+    "name": "Terry Yanko",
+    "is_admin": true,
+    "role": "",
+    "access_role": "adm",
+    "verified": true,
+    "email": "tyanko@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 491751,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "metrics.central.publish.lag",
+      "title_text": "Central Publish Latency in Minutes",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:metrics.central.publish.lag{*}/60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 5,
+            "value": "y = 5"
+          },
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 3.5,
+            "value": "y = 3.5 "
+          }
+        ]
+      },
+      "width": 45,
+      "time": {},
+      "y": 5,
+      "x": 17,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "x": 1,
+      "title_align": "left",
+      "autoscale": true,
+      "title": true,
+      "generated_title": "Query Value",
+      "title_text": "Central Publish Latency (Minutes)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:metrics.central.publish.lag{*}.rollup(avg, 48)/60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "3.5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "3.5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {},
+      "y": 5,
+      "title_size": 16,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "x": 1,
+      "title_align": "left",
+      "autoscale": true,
+      "title": true,
+      "generated_title": "Query Value",
+      "title_text": "SMO Publish Latency (Minutes)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:metrics.central.newsearch.lag{*}.rollup(avg, 96)/60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "90"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "90"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {},
+      "y": 17,
+      "title_size": 16,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "system.cpu.user",
+      "title_text": "SMO Publish Latency in Minutes",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:metrics.central.newsearch.lag{*}/60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 120,
+            "value": "y = 120"
+          },
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 90,
+            "value": "y = 90"
+          }
+        ]
+      },
+      "width": 45,
+      "time": {},
+      "y": 17,
+      "x": 17,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Request latency P99",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:aws.applicationelb.target_response_time.p99{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg, 288)",
+            "type": "bars",
+            "metadata": {
+              "max:aws.applicationelb.target_response_time.p99{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg, 288)": {
+                "alias": "p99"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 0.1,
+            "value": "y = .100"
+          },
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 0.07,
+            "value": "y = 0.07"
+          }
+        ]
+      },
+      "width": 45,
+      "time": {},
+      "y": 47,
+      "x": 17,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "x": 1,
+      "title_align": "left",
+      "autoscale": true,
+      "title": true,
+      "generated_title": "aws.elb.latency.p99",
+      "title_text": "Request latency P99",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:aws.applicationelb.target_response_time.p99{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg, 288)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "0.100"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "0.80"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0.80"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": null
+      },
+      "width": 15,
+      "time": {},
+      "y": 47,
+      "title_size": 16,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Central Ingest Publish Latency",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 30,
+      "x": 1,
+      "y": 1,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Search.maven.org request latency",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 38,
+      "x": 1,
+      "y": 43,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "x": 1,
+      "title_align": "left",
+      "autoscale": true,
+      "title": true,
+      "generated_title": "aws.elb.latency.p95",
+      "title_text": "Request latency P95",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:aws.applicationelb.target_response_time.p95{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg, 288)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "0.100"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "0.80"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0.80"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": null
+      },
+      "width": 15,
+      "time": {},
+      "y": 59,
+      "title_size": 16,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.elb.latency.p95",
+      "title_text": "Request latency P95",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:aws.applicationelb.target_response_time.p95{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg)",
+            "type": "bars",
+            "metadata": {
+              "max:aws.applicationelb.target_response_time.p95{host:awseb-AWSEB-BYQ81SUO7OPX-103222497.us-east-1.elb.amazonaws.com}.rollup(avg)": {
+                "alias": "p95"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 0.03,
+            "value": "y = 0.03"
+          },
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 0.02,
+            "value": "y = 0.02"
+          }
+        ]
+      },
+      "width": 45,
+      "time": {},
+      "y": 59,
+      "x": 17,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "metrics.central.ossrh.stage.close.duration",
+      "title_text": "Central Average Staging Operation Duration in Seconds",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:metrics.central.ossrh.stage.close.duration{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 45,
+      "time": {},
+      "y": 32,
+      "x": 17,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "x": 1,
+      "title_align": "left",
+      "autoscale": true,
+      "title": true,
+      "generated_title": "Query Value",
+      "title_text": "Average staging operation completion time (seconds)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:metrics.central.ossrh.stage.close.duration{*}.rollup(avg, 600)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {},
+      "y": 32,
+      "title_size": 16,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 491751,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "OSSRH staging operations",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 38,
+      "x": 1,
+      "y": 28,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "isShared": false,
+  "author_info": {
+    "author_name": "Terry Yanko"
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "Central Service Level Objectives (SLOs)",
+  "created": "2018-11-02T20:16:41.047730+00:00",
+  "original_title": "Central Service Level Objectives (SLOs)",
+  "modified": "2019-02-13T15:15:50.466553+00:00",
+  "originalHeight": 80
+}

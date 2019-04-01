@@ -1,0 +1,105 @@
+{
+  "board_title": "Jenkins Job Duration",
+  "read_only": false,
+  "isIntegration": false,
+  "description": "",
+  "board_bgtype": "board_graph",
+  "created": "2019-02-21T21:38:56.630253+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "tneeriemer@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "tneeriemer@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/8c4bc698ac9fdbab02bcea6ca268f32f?s=48&d=retro"
+  },
+  "new_id": "fmi-38e-ter",
+  "modified": "2019-03-05T22:36:48.875725+00:00",
+  "disableEditing": false,
+  "height": 89,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "job",
+      "name": "job"
+    },
+    {
+      "default": "*",
+      "prefix": "result",
+      "name": "scope"
+    }
+  ],
+  "author_info": {
+    "author_name": null
+  },
+  "originalHeight": 89,
+  "originalWidth": "100%",
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 93575,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1549238400000,
+        "end": 1551830400000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Job Duration",
+      "height": 24,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:jenkins.job.duration{$job}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "robust_trend(max:jenkins.job.duration{$job})",
+            "aggregator": "avg",
+            "style": {
+              "width": "thin",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "robust_trend(max:jenkins.job.duration{$job})": {
+                "alias": "trend"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "min": 0
+        }
+      },
+      "width": 96,
+      "time": {},
+      "error": null,
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "disableCog": false,
+  "id": 589482,
+  "isShared": false
+}

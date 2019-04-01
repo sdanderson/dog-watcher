@@ -1,0 +1,26 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Jason's TimeBoard 24 Aug 2016 09:41",
+    "created": "2016-08-24T13:41:47.641394+00:00",
+    "new_id": "zs6-p9k-8s7",
+    "id": 174540,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-08-24T13:41:47.623864+00:00"
+  },
+  "url": "/dash/174540/jasons-timeboard-24-aug-2016-0941",
+  "resource": "/api/v1/dash/174540"
+}

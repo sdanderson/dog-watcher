@@ -1,0 +1,61 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.ec2.host_ok{use-case:jenkins_agent}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Running Jenkins Agents"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.ec2.host_ok{use-case:bamboo_agent}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Running Bamboo Agents"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by rbriganti@sonatype.com",
+    "title": "CI / CD Environment",
+    "created": "2018-11-02T14:19:19.497267+00:00",
+    "new_id": "79p-6h7-6mf",
+    "id": 969417,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2018-11-14T15:49:03.036640+00:00"
+  },
+  "url": "/dash/969417/ci--cd-environment",
+  "resource": "/api/v1/dash/969417"
+}

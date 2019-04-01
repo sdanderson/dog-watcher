@@ -1,0 +1,215 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.search_index.queue.size{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.central.search_index.queue.size"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.search.index.size{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.search.index.size over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.ossrh.stage.close.duration{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.central.ossrh.stage.close.duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.search.index.rebuild{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.search.index.rebuild over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.ingest.releases.ossrh{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.central.ingest.releases.ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.daily.size{*}",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.daily.size over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.publish.lag{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.central.publish.lag"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.daily.numofgavs{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.daily.numofgavs over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.daily.numofobjects{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.daily.numofobjects over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.search_index.queue.size{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.search_index.queue.size over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.smartproxy.pulls{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of metrics.central.smartproxy.pulls over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:central.smartproxy_feed.stale{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of central.smartproxy_feed.stale over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.newsearch.lag{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.central.newsearch.lag"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.smartproxy.lag{*}/60",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Central Proxy Lag (minutes)"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by jswank@sonatype.com",
+    "title": "Central Ingest",
+    "created": "2016-03-11T16:37:29.165777+00:00",
+    "new_id": "5je-rxz-yar",
+    "id": 105840,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2019-02-22T15:42:32.871177+00:00"
+  },
+  "url": "/dash/105840/central-ingest",
+  "resource": "/api/v1/dash/105840"
+}

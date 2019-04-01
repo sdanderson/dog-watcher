@@ -1,0 +1,333 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.lambda.errors{$prefix} by {resource}.as_count(), 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Avg of aws.lambda.errors over $prefix by resource"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.lambda.invocations{$prefix} by {functionname}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.lambda.invocations over $prefix by functionname"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:aws.lambda.errors{$prefix} by {resource}.as_count(), 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of aws.lambda.errors over $prefix by resource"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.maventime{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "source_defender.maventime over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.clonerduration{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.clonerduration over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.dependencycount{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.dependencycount over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.dependencyloadduration{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.dependencyloadduration over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.dependencyexception.sum{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.dependencyexception.sum over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.issuevulnerabilitycount{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.issuevulnerabilitycount over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.issuecount{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.issuecount over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.issuecomponentprocessingtime{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.issuecomponentprocessingtime over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.vulnerabilityloaderduration{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.vulnerabilityloaderduration over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.vulnerabilityloadercount.sum{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.vulnerabilityloadercount.sum over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.vulnerabilityprocessorduration{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.vulnerabilityprocessorduration over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:source_defender.vulnerabilityloaderduration{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of source_defender.vulnerabilityloaderduration over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.sqs.approximate_number_of_messages_visible{$prefix}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of aws.sqs.approximate_number_of_messages_visible over $prefix"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.sqs.number_of_messages_received{$prefix} by {queuename}.as_count(), 25, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Avg of aws.sqs.number_of_messages_received over $prefix by queuename"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.sqs.number_of_messages_received{$prefix}.as_count(), 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Avg of aws.sqs.number_of_messages_received over $prefix"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "depshield-prefix",
+        "name": "prefix"
+      }
+    ],
+    "description": "created by cfernau@sonatype.com",
+    "title": "DepShield",
+    "created": "2018-07-10T11:28:33.008846+00:00",
+    "new_id": "qrb-97c-qjz",
+    "id": 856684,
+    "created_by": {
+      "disabled": false,
+      "handle": "cfernau@sonatype.com",
+      "name": "Christian Fernau",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "cfernau@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/ec73156dbc24d29ba2a39bfe4db7faf9?s=48&d=retro"
+    },
+    "modified": "2018-09-27T18:23:53.547756+00:00"
+  },
+  "url": "/dash/856684/depshield",
+  "resource": "/api/v1/dash/856684"
+}

@@ -1,0 +1,84 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:jvm.thread_count{$scope} by {host}"
+            }
+          ]
+        },
+        "title": "JVM Thread counts by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:jvm.heap_memory{$scope} by {host}"
+            }
+          ]
+        },
+        "title": "JVM heap memory used by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:jvm.non_heap_memory{$scope} by {host}"
+            }
+          ]
+        },
+        "title": "JVM non heap memory used by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "diff(sum:jvm.gc.parnew.time{*})",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Sum of jvm.gc.parnew.time over *"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "diff(sum:jvm.gc.cms.count{*})",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Sum of jvm.gc.cms.count over *"
+      }
+    ],
+    "template_variables": null,
+    "description": "An overview of your JVMs metrics (cloned)",
+    "title": "JVM - Overview",
+    "created": "2015-10-20T20:27:52.383931+00:00",
+    "new_id": "mfb-8wf-dji",
+    "id": 75241,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2015-10-20T20:51:52.691244+00:00"
+  },
+  "url": "/dash/75241/jvm---overview",
+  "resource": "/api/v1/dash/75241"
+}

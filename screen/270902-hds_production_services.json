@@ -1,0 +1,1814 @@
+{
+  "board_title": "HDS Production Services",
+  "read_only": false,
+  "isIntegration": false,
+  "description": "HDS Production Services",
+  "board_bgtype": "board_graph",
+  "created": "2018-01-15T19:15:36.624495+00:00",
+  "new_id": "a7u-e8q-x8g",
+  "original_title": "HDS Production Services",
+  "modified": "2018-02-22T16:30:16.963269+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HDS Production Scan Processor Errors (filtered)",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 1,
+      "query": "tags:hds,env-prod,scanprocessor_error ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "clmweb01a",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 30,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "query": "status:success,name:clmweb01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "query": "status:success,name:clmweb01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 35,
+      "query": "tags:hds,env-prod,clmweb01a ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.requests.count{*}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 35,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "2xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.2xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.4xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.5xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Get Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.get_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Post Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.post_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Put Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.put_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Detailed Report Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.com.sonatype.ahc.resources.DetailedReportRequestResource.requestDetailedReport.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Uploaded",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.com.sonatype.ahc.resources.ScanResource.uploadScan.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scan Failures",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.com.sonatype.ahc.resources.ScanProcessor.scanFailure.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scan Resource Validate Configuration",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.com.sonatype.ahc.resources.ScanResource.validateConfiguration.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Dispatches",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01a.io.dropwizard.jetty.MutableServletContextHandler.dispatches.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "clmweb01b",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 65,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 70,
+      "query": "status:success,name:clmweb01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 85,
+      "query": "status:success,name:clmweb01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 70,
+      "query": "tags:hds,env-prod,clmweb01b ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 70,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "2xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.2xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 76,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.4xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 82,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Responses",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.5xx_responses.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 88,
+      "x": 82,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Get Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.get_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 70,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Post Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.post_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 76,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Put Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.put_requests.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 82,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Detailed Report Requests",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.com.sonatype.ahc.resources.DetailedReportRequestResource.requestDetailedReport.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 88,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Uploaded",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.com.sonatype.ahc.resources.ScanResource.uploadScan.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 70,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scan Failures",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.com.sonatype.ahc.resources.ScanProcessor.scanFailure.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 76,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scan Resource Validate Configuration",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.com.sonatype.ahc.resources.ScanResource.validateConfiguration.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 82,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "autoscale": true,
+      "title_size": 9,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Dispatches",
+      "height": 3,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:metrics.ahc.clmweb01b.io.dropwizard.jetty.MutableServletContextHandler.dispatches.count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ],
+            "type": "",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 88,
+      "x": 124,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "clmscan01a",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 100,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 105,
+      "query": "status:success,name:clmscan01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 120,
+      "query": "status:success,name:clmscan01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 105,
+      "query": "tags:hds,env-prod,clmscan01a ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "clmscan01b",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 135,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 140,
+      "query": "status:success,name:clmscan01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 155,
+      "query": "status:success,name:clmscan01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 140,
+      "query": "tags:hds,env-prod,clmscan01b",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "rhcscan01a",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 170,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 175,
+      "query": "status:success,name:rhcscan01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 190,
+      "query": "status:success,name:rhcscan01a_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 175,
+      "query": "tags:hds,env-prod,rhcscan01a",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "rhcscan01b",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 32,
+      "y": 205,
+      "x": 1,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Ping Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 210,
+      "query": "status:success,name:rhcscan01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Health Check Responses",
+      "height": 12,
+      "width": 32,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 225,
+      "query": "status:success,name:rhcscan01b_app_ping",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 27,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 210,
+      "query": "tags:hds,env-prod,rhcscan01b",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 100,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ODS Cleanup",
+      "height": 27,
+      "width": 48,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 1,
+      "query": "hds-production-ods-cleanup-topic ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 270902,
+      "x": 49,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "EFS Cleanup",
+      "height": 27,
+      "width": 50,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 1,
+      "query": "#topic: hds-production-efs-cleanup ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 270902,
+  "title_edited": false,
+  "isShared": false
+}

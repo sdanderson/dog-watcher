@@ -1,0 +1,72 @@
+{
+  "board_title": "HDS Application Scan Summary",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-10-09T16:53:48.896988+00:00",
+  "new_id": "g3b-vwy-8tv",
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "original_title": "ksprochi's Screenboard 9 Oct 2018 12:53",
+  "modified": "2018-10-09T17:08:27.631256+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 466414,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "hds.scan_processor.clm.scan.completed",
+      "title_text": "",
+      "height": 33,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "forecast(sum:hds.scan_processor.clm.scan.completed{env-prod}.rollup(sum, 3600), 'linear', 1)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "xaxis": {}
+      },
+      "width": 99,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 17,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 466414,
+  "title_edited": true,
+  "isShared": false
+}

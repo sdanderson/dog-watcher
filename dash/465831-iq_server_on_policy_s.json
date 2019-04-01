@@ -1,0 +1,26 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "template_variables": null,
+    "description": "created by ksprochi@sonatype.com",
+    "title": "IQ Server on policy.s",
+    "created": "2018-01-11T20:49:35.644832+00:00",
+    "new_id": "pqb-qiv-h9n",
+    "id": 465831,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2018-01-11T20:49:35.644858+00:00"
+  },
+  "url": "/dash/465831/iq-server-on-policys",
+  "resource": "/api/v1/dash/465831"
+}

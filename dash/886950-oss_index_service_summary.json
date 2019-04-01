@@ -1,0 +1,950 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$scope,$env} by {name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:system.load.1{$scope,$env} by {name}": {
+                  "alias": "Load"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "abs(avg:system.cpu.idle{$scope,$env} by {name}-100)",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "abs(avg:system.cpu.idle{$scope,$env} by {name}-100)": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "System: CPU"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.in_use{$scope,$env} by {name}, avg:system.fs.inodes.in_use{$scope,$env} by {name}",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "yaxis": {
+            "max": "1",
+            "min": "0"
+          }
+        },
+        "title": "System: Disk"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.attribute.uptime{$scope,$env} by {name}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jvm.attribute.uptime{$scope,$env} by {name}": {
+                  "alias": "Uptime"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: Uptime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.memory.heap.usage{$scope,$env} by {name}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jvm.memory.heap.usage{$scope,$env} by {name}*100": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "JVM: Heap Usage %"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.memory.heap.used{$scope,$env} by {name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jvm.memory.heap.used{$scope,$env} by {name}": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: Heap Used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.threads.blocked.count{$scope,$env} by {name}, avg:ossindex.jvm.threads.timed_waiting.count{$scope,$env} by {name}, avg:ossindex.jvm.threads.waiting.count{$scope,$env} by {name}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jvm.threads.timed_waiting.count{$scope,$env} by {name}": {
+                  "alias": "timed_waiting"
+                },
+                "avg:ossindex.jvm.threads.blocked.count{$scope,$env} by {name}": {
+                  "alias": "blocked"
+                },
+                "avg:ossindex.jvm.threads.waiting.count{$scope,$env} by {name}": {
+                  "alias": "waiting"
+                }
+              }
+            },
+            {
+              "q": "avg:ossindex.jvm.threads.deadlock.count{$scope,$env} by {name}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jvm.threads.deadlock.count{$scope,$env} by {name}": {
+                  "alias": "deadlock"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: Threads"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.count{$scope,$env} by {name})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.count{$scope,$env} by {name})": {
+                  "alias": "Scavenge"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.count{$scope,$env} by {name})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.count{$scope,$env} by {name})": {
+                  "alias": "MarkSweep"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: GC Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.time{$scope,$env} by {name})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.time{$scope,$env} by {name})": {
+                  "alias": "Scavenge"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.time{$scope,$env} by {name})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.time{$scope,$env} by {name})": {
+                  "alias": "MarkSweep"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: GC Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.logback.appender.warn.count{$scope,$env}), per_minute(sum:ossindex.logback.appender.error.count{$scope,$env})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(sum:ossindex.logback.appender.warn.count{$scope,$env})": {
+                  "alias": "WARN"
+                },
+                "per_minute(sum:ossindex.logback.appender.error.count{$scope,$env})": {
+                  "alias": "ERROR"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(per_minute(sum:ossindex.logback.appender.warn.count{$scope,$env})+per_minute(sum:ossindex.logback.appender.error.count{$scope,$env}))",
+              "style": {
+                "palette": "purple",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Logback: ERROR and WARN"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.dropwizard.servlet.1xx_responses.count{$scope,$env}), per_minute(sum:ossindex.dropwizard.servlet.2xx_responses.count{$scope,$env}), per_minute(sum:ossindex.dropwizard.servlet.3xx_responses.count{$scope,$env})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.dropwizard.servlet.3xx_responses.count{$scope,$env})": {
+                  "alias": "3xx"
+                },
+                "per_minute(sum:ossindex.dropwizard.servlet.2xx_responses.count{$scope,$env})": {
+                  "alias": "2xx"
+                },
+                "per_minute(sum:ossindex.dropwizard.servlet.1xx_responses.count{$scope,$env})": {
+                  "alias": "1xx"
+                }
+              }
+            },
+            {
+              "q": "per_minute(sum:ossindex.dropwizard.servlet.4xx_responses.count{$scope,$env}), per_minute(sum:ossindex.dropwizard.servlet.5xx_responses.count{$scope,$env})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.dropwizard.servlet.5xx_responses.count{$scope,$env})": {
+                  "alias": "5xx"
+                },
+                "per_minute(sum:ossindex.dropwizard.servlet.4xx_responses.count{$scope,$env})": {
+                  "alias": "4xx"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jetty: HTTP Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ossindex.jetty.qtp.dw.utilization{$scope,$env} by {name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "sum:ossindex.jetty.qtp.dw.utilization{$scope,$env} by {name}": {
+                  "alias": "main"
+                }
+              }
+            },
+            {
+              "q": "sum:ossindex.jetty.qtp.dw_admin.utilization{$scope,$env} by {name}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "sum:ossindex.jetty.qtp.dw_admin.utilization{$scope,$env} by {name}": {
+                  "alias": "admin"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "1",
+            "min": "0"
+          }
+        },
+        "title": "Jetty: QTP"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.jetty.connection_factory.8070.connections.count{$scope,$env} by {name}), per_minute(sum:ossindex.jetty.connection_factory.8071.connections.count{$scope,$env} by {name})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.jetty.connection_factory.8071.connections.count{$scope,$env} by {name})": {
+                  "alias": "admin"
+                },
+                "per_minute(sum:ossindex.jetty.connection_factory.8070.connections.count{$scope,$env} by {name})": {
+                  "alias": "main"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jetty: Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.site.ComponentView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.ComponentListView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.DocumentView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.DocumentListView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.EcosystemView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.EcosystemListView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.IntegrationView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.IntegrationListView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.SiteViewSupport.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.VulnerabilityView.rendering.count{$scope,$env})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(sum:ossindex.service.site.EcosystemListView.rendering.count{$scope,$env})": {
+                  "alias": "Ecosystem List"
+                },
+                "per_minute(sum:ossindex.service.site.IntegrationListView.rendering.count{$scope,$env})": {
+                  "alias": "Integration List"
+                },
+                "per_minute(sum:ossindex.service.site.ComponentView.rendering.count{$scope,$env})": {
+                  "alias": "Component"
+                },
+                "per_minute(sum:ossindex.service.site.DocumentListView.rendering.count{$scope,$env})": {
+                  "alias": "Document List"
+                },
+                "per_minute(sum:ossindex.service.site.VulnerabilityView.rendering.count{$scope,$env})": {
+                  "alias": "Vulnerability"
+                },
+                "per_minute(sum:ossindex.service.site.DocumentView.rendering.count{$scope,$env})": {
+                  "alias": "Document"
+                },
+                "per_minute(sum:ossindex.service.site.ComponentListView.rendering.count{$scope,$env})": {
+                  "alias": "Component List"
+                },
+                "per_minute(sum:ossindex.service.site.EcosystemView.rendering.count{$scope,$env})": {
+                  "alias": "Ecosystem"
+                },
+                "per_minute(sum:ossindex.service.site.SiteViewSupport.rendering.count{$scope,$env})": {
+                  "alias": "Other"
+                },
+                "per_minute(sum:ossindex.service.site.IntegrationView.rendering.count{$scope,$env})": {
+                  "alias": "Integration"
+                }
+              }
+            },
+            {
+              "q": "per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.ValidationErrorView.rendering.count{$scope,$env})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env})": {
+                  "alias": "Error"
+                },
+                "per_minute(sum:ossindex.service.site.ValidationErrorView.rendering.count{$scope,$env})": {
+                  "alias": "Validation Error"
+                }
+              }
+            },
+            {
+              "q": "per_minute(sum:ossindex.service.site.WelcomeView.rendering.count{$scope,$env})",
+              "style": {
+                "palette": "grey",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.site.WelcomeView.rendering.count{$scope,$env})": {
+                  "alias": "Welcome"
+                }
+              }
+            }
+          ]
+        },
+        "title": "View: Pages"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.site.ComponentView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.ComponentListView.rendering.count{$scope,$env}), per_minute(sum:ossindex.service.site.VulnerabilityView.rendering.count{$scope,$env})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(sum:ossindex.service.site.ComponentListView.rendering.count{$scope,$env})": {
+                  "alias": "Component List"
+                },
+                "per_minute(sum:ossindex.service.site.VulnerabilityView.rendering.count{$scope,$env})": {
+                  "alias": "Vulnerability"
+                },
+                "per_minute(sum:ossindex.service.site.ComponentView.rendering.count{$scope,$env})": {
+                  "alias": "Component"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(per_minute(sum:ossindex.service.site.ComponentView.rendering.count{$scope,$env})+per_minute(sum:ossindex.service.site.ComponentListView.rendering.count{$scope,$env})+per_minute(sum:ossindex.service.site.VulnerabilityView.rendering.count{$scope,$env}))",
+              "style": {
+                "palette": "purple",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "View: Component & Vulnerability"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env})": {
+                  "alias": "Error"
+                }
+              }
+            },
+            {
+              "q": "trend_line(per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env}))",
+              "style": {
+                "palette": "purple",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line",
+              "metadata": {
+                "trend_line(per_minute(sum:ossindex.service.site.ErrorView.rendering.count{$scope,$env}))": {
+                  "alias": "Error"
+                }
+              }
+            }
+          ]
+        },
+        "title": "View: Error"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ossindex.service.search.search.count{$scope,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "sum:ossindex.service.search.search.count{$scope,$env}": {
+                  "alias": "Queries"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(sum:ossindex.service.search.search.count{$scope,$env})",
+              "style": {
+                "palette": "purple",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Search: Queries"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.component.findComponents.count{$scope,$env}), per_minute(sum:ossindex.service.component.findComponent.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.component.findComponents.count{$scope,$env})": {
+                  "alias": "BATCH"
+                },
+                "per_minute(sum:ossindex.service.component.findComponent.count{$scope,$env})": {
+                  "alias": "SINGLE"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(per_minute(sum:ossindex.service.component.findComponents.count{$scope,$env})+per_minute(sum:ossindex.service.component.findComponent.count{$scope,$env}))",
+              "style": {
+                "palette": "purple",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Component: Find"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.component.coordinates.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "robust_trend(per_minute(sum:ossindex.service.component.coordinates.count{$scope,$env}))",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Component: Coordinates"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.component.type.maven.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.npm.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.nuget.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.pypi.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.bower.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.rpm.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.gem.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.composer.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.chocolatey.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.drupal.count{$scope,$env}), per_minute(sum:ossindex.service.component.type.msi.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.component.type.gem.count{$scope,$env})": {
+                  "alias": "RubyGems"
+                },
+                "per_minute(sum:ossindex.service.component.type.npm.count{$scope,$env})": {
+                  "alias": "NPM"
+                },
+                "per_minute(sum:ossindex.service.component.type.drupal.count{$scope,$env})": {
+                  "alias": "Drupal"
+                },
+                "per_minute(sum:ossindex.service.component.type.maven.count{$scope,$env})": {
+                  "alias": "Maven"
+                },
+                "per_minute(sum:ossindex.service.component.type.composer.count{$scope,$env})": {
+                  "alias": "Composer"
+                },
+                "per_minute(sum:ossindex.service.component.type.rpm.count{$scope,$env})": {
+                  "alias": "RPM"
+                },
+                "per_minute(sum:ossindex.service.component.type.nuget.count{$scope,$env})": {
+                  "alias": "NuGET"
+                },
+                "per_minute(sum:ossindex.service.component.type.msi.count{$scope,$env})": {
+                  "alias": "MSI"
+                },
+                "per_minute(sum:ossindex.service.component.type.bower.count{$scope,$env})": {
+                  "alias": "Bower"
+                },
+                "per_minute(sum:ossindex.service.component.type.pypi.count{$scope,$env})": {
+                  "alias": "PyPI"
+                },
+                "per_minute(sum:ossindex.service.component.type.chocolatey.count{$scope,$env})": {
+                  "alias": "Chocolatey"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Component: Types"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.rest.component_report.get.count{$scope,$env}), per_minute(sum:ossindex.service.rest.component_report.post.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.rest.component_report.post.count{$scope,$env})": {
+                  "alias": "BATCH"
+                },
+                "per_minute(sum:ossindex.service.rest.component_report.get.count{$scope,$env})": {
+                  "alias": "SINGLE"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(per_minute(sum:ossindex.service.rest.component_report.get.count{$scope,$env})), robust_trend(per_minute(sum:ossindex.service.rest.component_report.post.count{$scope,$env}))",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line",
+              "metadata": {
+                "robust_trend(per_minute(sum:ossindex.service.rest.component_report.get.count{$scope,$env}))": {
+                  "alias": "SINGLE"
+                },
+                "robust_trend(per_minute(sum:ossindex.service.rest.component_report.post.count{$scope,$env}))": {
+                  "alias": "BATCH"
+                }
+              }
+            }
+          ]
+        },
+        "title": "REST: Component Report"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.httpclient.LqaServiceImpl.get_requests.count{$scope,$env}), per_minute(sum:ossindex.httpclient.LqaServiceImpl.post_requests.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.httpclient.LqaServiceImpl.get_requests.count{$scope,$env})": {
+                  "alias": "GET"
+                },
+                "per_minute(sum:ossindex.httpclient.LqaServiceImpl.post_requests.count{$scope,$env})": {
+                  "alias": "POST"
+                }
+              }
+            }
+          ]
+        },
+        "title": "HttpClient: LQA Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.httpclient.LegacyPackageServiceImpl.get_requests.count{$scope,$env}), per_minute(sum:ossindex.httpclient.LegacyPackageServiceImpl.post_requests.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.httpclient.LegacyPackageServiceImpl.post_requests.count{$scope,$env})": {
+                  "alias": "POST"
+                },
+                "per_minute(sum:ossindex.httpclient.LegacyPackageServiceImpl.get_requests.count{$scope,$env})": {
+                  "alias": "GET"
+                }
+              }
+            }
+          ]
+        },
+        "title": "HttpClient: Legacy Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.ratelimit.rejected.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.ratelimit.rejected.count{$scope,$env})": {
+                  "alias": "Rejected"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Ratelimit: Rejected"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ossindex.service.ratelimit.trackers.count{$scope,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "sum:ossindex.service.ratelimit.trackers.count{$scope,$env}": {
+                  "alias": "Trackers"
+                }
+              }
+            },
+            {
+              "q": "robust_trend(sum:ossindex.service.ratelimit.trackers.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "dotted"
+              },
+              "type": "line",
+              "metadata": {
+                "robust_trend(sum:ossindex.service.ratelimit.trackers.count{$scope,$env})": {
+                  "alias": "Trackers"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Ratelimit: Trackers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:ossindex.service.blacklist.rejected.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(sum:ossindex.service.blacklist.rejected.count{$scope,$env})": {
+                  "alias": "Rejected"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Blacklist: Rejected"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_hour(sum:ossindex.service.user.signIn.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_hour(sum:ossindex.service.user.signIn.count{$scope,$env})": {
+                  "alias": "Sign In"
+                }
+              }
+            }
+          ]
+        },
+        "title": "User: Sign In"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_hour(sum:ossindex.service.user.register.count{$scope,$env}), per_hour(sum:ossindex.service.user.activate.count{$scope,$env})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_hour(sum:ossindex.service.user.register.count{$scope,$env})": {
+                  "alias": "Register"
+                },
+                "per_hour(sum:ossindex.service.user.activate.count{$scope,$env})": {
+                  "alias": "Activate"
+                }
+              }
+            }
+          ]
+        },
+        "title": "User: Registration"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "ossindex",
+        "prefix": "use-case",
+        "name": "scope"
+      },
+      {
+        "default": "prod",
+        "prefix": "environment",
+        "name": "env"
+      }
+    ],
+    "description": "OSS Index Service metrics",
+    "title": "OSS Index: Service (Summary)",
+    "created": "2018-08-13T20:57:39.704684+00:00",
+    "new_id": "zrg-epi-5qj",
+    "id": 886950,
+    "created_by": {
+      "disabled": false,
+      "handle": "jdillon@sonatype.com",
+      "name": "Jason Dillon",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jdillon@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/d9ec305f5c5bb319e39327988bc1553b?s=48&d=retro"
+    },
+    "modified": "2018-11-14T23:35:47.728208+00:00"
+  },
+  "url": "/dash/886950/oss-index-service-summary",
+  "resource": "/api/v1/dash/886950"
+}

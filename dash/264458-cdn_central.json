@@ -1,0 +1,213 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:cdn.request.org.maven.central.count{$status,$request_method,$remote_addr,$pop,$user_agent,$country_code,$region,$city,$port,$ga} by {status}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Requests (by status)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:cdn.request.org.maven.central.count{$status,$request_method,$remote_addr,$pop,$user_agent,$region,$country_code,$city,$port,$ga} by {country_code}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by Country (code)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:cdn.request.org.maven.central.count{$status,$request_method,$remote_addr,$pop,$user_agent,$region,$country_code,$city,$port,$ga} by {port}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by Port (HTTP vs HTTPS)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:cdn.request.org.maven.central.count{$status,$request_method,$remote_addr,$pop,$user_agent,$region,$country_code,$city,$port,$ga} by {request_method}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by Method"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:cdn.request.org.maven.central.request_time{$status,$remote_addr,$request_method,$pop,$user_agent,$country_code,$region,$city,$port,$ga}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Request Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:cdn.request.org.maven.central.response_size{$status,$remote_addr,$request_method,$pop,$user_agent,$country_code,$region,$city,$port,$ga}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Request Size"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:cdn.request.org.maven.central.count{$remote_addr,$status,$request_method,$pop,$user_agent,$country_code,$region,$city,$port,$ga} by {remote_addr}, 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 clients"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:cdn.request.org.maven.central.count{$remote_addr,$status,$request_method,$pop,$user_agent,$country_code,$region,$city,$port,$ga} by {status}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top response status"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:cdn.request.org.maven.central.count{$pop,$status,$remote_addr,$request_method,$user_agent,$country_code,$region,$city,$port,$ga} by {user_agent}, 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 User Agents (unknown didnt match parsing)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:cdn.request.org.maven.central.count{$pop,$status,$remote_addr,$request_method,$user_agent,$country_code,$region,$city,$port,$ga} by {ga}, 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 Requested GAs"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "pop",
+        "name": "pop"
+      },
+      {
+        "default": "*",
+        "prefix": "status",
+        "name": "status"
+      },
+      {
+        "default": "*",
+        "prefix": "remote_addr",
+        "name": "remote_addr"
+      },
+      {
+        "default": "*",
+        "prefix": "request_method",
+        "name": "request_method"
+      },
+      {
+        "default": "*",
+        "prefix": "user_agent",
+        "name": "user_agent"
+      },
+      {
+        "default": "*",
+        "prefix": "country_code",
+        "name": "country_code"
+      },
+      {
+        "default": "*",
+        "prefix": "region",
+        "name": "region"
+      },
+      {
+        "default": "*",
+        "prefix": "city",
+        "name": "city"
+      },
+      {
+        "default": "*",
+        "prefix": "port",
+        "name": "port"
+      },
+      {
+        "default": "*",
+        "prefix": "ga",
+        "name": "ga"
+      }
+    ],
+    "description": "created by rbriganti@sonatype.com (cloned)",
+    "title": "CDN - Central",
+    "created": "2017-03-21T20:10:44.276073+00:00",
+    "new_id": "7ia-ean-8fc",
+    "id": 264458,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2017-03-21T20:31:41.041585+00:00"
+  },
+  "url": "/dash/264458/cdn---central",
+  "resource": "/api/v1/dash/264458"
+}

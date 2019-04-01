@@ -1,0 +1,295 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{$var}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of jenkins.job.duration over $var"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{$var}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of jenkins.job.duration over $var"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/dssavd-260}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dss..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/dssavd-336-dao-changes}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dss..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/dssavd-452-make-id-type-null}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dss..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_staging_deploy}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_staging_deploy"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-blacklist-manager}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-blacklist-manager"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-non-maven-datamart-load}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-non-maven-datamart-load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh-staging-repo-cleanup}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh-staging-repo-cleanup"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_auto-approve_ossrh_email_whois_groupid}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_auto-approve_ossrh_email_..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_auto-approve_ossrh_gitee}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_auto-approve_ossrh_gitee"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_auto-approve_ossrh_github}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_auto-approve_ossrh_github"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_auto-approve_ossrh_requested_groupid_foobar}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_auto-approve_ossrh_reques..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_auto-approve_ossrh_sourceforge}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_auto-approve_ossrh_source..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_ossrh-approve}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_ossrh-approve"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_ossrh-groupid-namespace-report-new}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_ossrh-groupid-namespace-r..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-ossrh_release-notification}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-ossrh_release-notification"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-rhc-datamart-load}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-rhc-datamart-load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-search-build-deploy-to-eb}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-search-build-deploy-to-eb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-search-build-deploy-to-eb/com.sonatype.central:central-allfiles-indexer}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-search-build-deploy-to-eb/com.s..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:central/central-search-build-deploy-to-eb/com.sonatype.central:central-filelisting-indexer}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:central/central-search-build-deploy-to-eb/com.s..."
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "job",
+        "name": "var"
+      }
+    ],
+    "description": "",
+    "title": "Jenkins Jobs",
+    "created": "2019-03-08T16:05:54.735318+00:00",
+    "new_id": "zc9-j6j-49x",
+    "id": 1104180,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2019-03-08T16:14:26.593114+00:00"
+  },
+  "url": "/dash/1104180/jenkins-jobs",
+  "resource": "/api/v1/dash/1104180"
+}

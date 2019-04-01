@@ -1,0 +1,75 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:pipelinetasks_prod.task_status.samplecount{status:success,taskname:tasks.probes.componenthashprobe}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ComponentHashProbe Failures"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:pipelinetasks_prod.task_status.samplecount{status:failure,taskname:tasks.probes.contenthashprobe}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ContentHashProbe Failures"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:pipelinetasks_prod.task_status.samplecount{status:failure,taskname:tasks.probes.svhasher}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "SvHasher Task Failures"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_prod.task_status{data-services,status:failure} by {taskname}",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of pipelinetasks_prod.task_status over data-services,status:failure by ta..."
+      }
+    ],
+    "template_variables": null,
+    "description": "created by cjohnstone@sonatype.com",
+    "title": "Prod Pipeline Task Failures",
+    "created": "2016-09-22T17:09:55.242521+00:00",
+    "new_id": "vdw-tva-k8k",
+    "id": 187100,
+    "created_by": {
+      "disabled": false,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "cjohnstone@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/b4da892ec9307e924fd867f685ba63be?s=48&d=retro"
+    },
+    "modified": "2016-09-22T20:36:04.037027+00:00"
+  },
+  "url": "/dash/187100/prod-pipeline-task-failures",
+  "resource": "/api/v1/dash/187100"
+}

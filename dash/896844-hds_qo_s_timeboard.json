@@ -1,0 +1,255 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.qos.total_hds_time{*}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "events": [
+            {
+              "q": "tags:application:qos,condition:white ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "hds.qos.total_hds_time, condition white (>180 sec) overlay"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.qos.total_hds_time{*}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "events": [
+            {
+              "q": "tags:application:qos,condition:red ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "hds.qos.total_hds_time, condition red (> 60 sec) overlay"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.qos.total_hds_time{*}",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "events": [
+            {
+              "q": "tags:application:qos,condition:orange ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "hds.qos.total_hds_time, condition orange (>30 sec) overlay"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.qos.total_hds_time{*}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "events": [
+            {
+              "q": "tags:application:qos,condition:yellow ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "hds.qos.total_hds_time, condition yellow (>10 sec) overlay"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.total_iq_time{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "hds.qos.total_iq_time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.poll_start{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.poll_start"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.scan_message_received{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.scan_message_received"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.report_changes_applied{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.report_changes_applied"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.policies_evaluated{*}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.policies_evaluated"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.scan_uploaded{*}",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.scan_uploaded"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.qos.policies_persisted{*}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "sum:hds.qos.policies_persisted"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.qos.notifications_sent{*}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "max:hds.qos.notifications_sent"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by ksprochi@sonatype.com",
+    "title": "HDS QoS Timeboard",
+    "created": "2018-08-23T21:05:18.032211+00:00",
+    "new_id": "qjc-ywi-zaf",
+    "id": 896844,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2018-11-05T17:21:57.977467+00:00"
+  },
+  "url": "/dash/896844/hds-qos-timeboard",
+  "resource": "/api/v1/dash/896844"
+}

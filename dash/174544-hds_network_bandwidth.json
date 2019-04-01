@@ -1,0 +1,115 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_rcvd{device:eth0,hds} by {host} * 8",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Network Throughput Received, Mbps"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:system.net.bytes_sent{device:eth0,hds} by {host}, 10, 'mean', 'desc') * 8",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Network Throughput Sent, Mbps"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_sent{host:clmscan01a.contegix.s,device:eth0}",
+              "type": "line"
+            },
+            {
+              "q": "0 - avg:system.net.bytes_rcvd{host:clmscan01a.contegix.s,device:eth0}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_sent{device:eth0,host:clmscan01b.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "0 - avg:system.net.bytes_rcvd{device:eth0,host:clmscan01b.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_sent{device:eth0,host:rhcscan01a.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "0 - avg:system.net.bytes_rcvd{device:eth0,host:rhcscan01a.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "rhcscan01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_sent{device:eth0,host:rhcscan01b.contegix.s}",
+              "type": "line"
+            },
+            {
+              "q": "0 - avg:system.net.bytes_rcvd{device:eth0,host:rhcscan01b.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "rhcscan01a"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "HDS Network Bandwidth",
+    "created": "2016-08-24T13:44:38.721597+00:00",
+    "new_id": "sh7-8p8-z8k",
+    "id": 174544,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2017-02-14T14:54:52.187280+00:00"
+  },
+  "url": "/dash/174544/hds-network-bandwidth",
+  "resource": "/api/v1/dash/174544"
+}

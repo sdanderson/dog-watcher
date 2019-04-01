@@ -1,0 +1,78 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{build_team:insight}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of jenkins.job.duration over build_team:insight"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.waiting{build_team:insight}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of jenkins.job.waiting over build_team:insight"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.completed{build_project:insight-brain}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of jenkins.job.completed over build_project:insight-brain"
+      }
+    ],
+    "template_variables": [],
+    "description": "",
+    "title": "Insight - Jenkins Build Time",
+    "created": "2019-02-28T20:14:32.766649+00:00",
+    "new_id": "6uv-jus-2hz",
+    "id": 1095162,
+    "created_by": {
+      "disabled": false,
+      "handle": "tlevett@sonatype.com",
+      "name": "Tim Levett",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "tlevett@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f32b6e1e7aed8e28b615fc34dc81395d?s=48&d=retro"
+    },
+    "modified": "2019-02-28T22:03:39.992821+00:00"
+  },
+  "url": "/dash/1095162/insight---jenkins-build-time",
+  "resource": "/api/v1/dash/1095162"
+}

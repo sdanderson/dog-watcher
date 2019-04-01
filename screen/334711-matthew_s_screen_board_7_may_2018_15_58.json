@@ -1,0 +1,67 @@
+{
+  "board_title": "Matthew's ScreenBoard 7 May 2018 15:58",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-07T19:58:03.020724+00:00",
+  "new_id": "zjp-d33-tda",
+  "original_title": "",
+  "modified": "2018-05-07T20:00:31.223422+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "mpiggott@sonatype.com",
+    "name": "Matthew Piggott",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "mpiggott@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 334711,
+      "x": 4,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "",
+      "height": 66,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "",
+            "change_type": "absolute",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis{*} by {brain_short_version}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 1,
+      "query": "sum:iq.hds.analysis{*} by {brain_short_version}.as_count(), month_before(sum:iq.hds.analysis{*} by {brain_short_version}.as_count())",
+      "legend_size": "0",
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 334711,
+  "title_edited": false,
+  "isShared": false
+}

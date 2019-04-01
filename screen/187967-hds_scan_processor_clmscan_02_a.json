@@ -1,0 +1,5807 @@
+{
+  "board_title": "HDS Scan Processor: clmscan02a",
+  "read_only": false,
+  "description": null,
+  "created": "2017-05-25T02:14:42.840335+00:00",
+  "new_id": "29z-wxb-5k6",
+  "modified": "2017-05-25T04:13:23.806801+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "height": 768,
+  "width": 1024,
+  "widgets": [
+    {
+      "font_size": "36",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "clmscan02a",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 24,
+      "x": 1,
+      "y": 1,
+      "title_size": 16,
+      "type": "free_text"
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.heap.committed.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.committed.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 9,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.heap.init.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.init.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 9,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.heap.max.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.max.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 9,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.heap.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 29,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.heap.used.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.used.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 29,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.non-heap.committed.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non-heap.committed.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 29,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.non-heap.init.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non-heap.init.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 49,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.non-heap.max.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non-heap.max.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 49,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.non-heap.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non-heap.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 49,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.non-heap.used.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non-heap.used.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 69,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.class_loading.loaded_class_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.loaded_class_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 69,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.class_loading.total_loaded_class_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.total_loaded_class_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 69,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.class_loading.unloaded_class_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.unloaded_class_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 89,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.garbage_collector.g1_old_generation.collection_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector.g1_old_generation.collection_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 89,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.garbage_collector.g1_old_generation.collection_time",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector.g1_old_generation.collection_time{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 89,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.garbage_collector.g1_young_generation._collection_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector.g1_young_generation._collection_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 109,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.garbage_collector.g1_young_generation.collection_time",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector.g1_young_generation.collection_time{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 109,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.current_thread_cpu_time",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.current_thread_cpu_time{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 109,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.current_thread_cpu_time_supported",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.current_thread_cpu_time_supported{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 129,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.current_thread_user_time",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.current_thread_user_time{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 129,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.daemon_thread_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.daemon_thread_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 129,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.peak_thread_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.peak_thread_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 149,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.thread_allocated_memory_enabled",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.thread_allocated_memory_enabled{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 149,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.thread_contention_monitoring_enabled",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.thread_contention_monitoring_enabled{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 149,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.thread_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.thread_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 169,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.thread_cpu_time_enabled",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.thread_cpu_time_enabled{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 169,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.threading.total_started_thread_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.total_started_thread_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 169,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,direct.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,direct.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 189,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,direct.memory_used",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,direct.memory_used{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 189,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,direct.name",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,direct.name{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 189,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,direct.total_capacity",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,direct.total_capacity{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 209,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,mapped.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,mapped.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 209,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,mapped.memory_used",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,mapped.memory_used{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 209,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,mapped.name",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,mapped.name{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 229,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.buffer_pool,mapped.total_capacity",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.buffer_pool,mapped.total_capacity{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 229,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.available_processors",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.available_processors{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 229,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.committed_virtual_memory_size",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.committed_virtual_memory_size{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 249,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.free_physical_memory_size",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.free_physical_memory_size{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 249,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.free_swap_space_size",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.free_swap_space_size{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 249,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.max_file_descriptor_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.max_file_descriptor_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 269,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.open_file_descriptor_count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.open_file_descriptor_count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 269,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.process_cpu_load",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.process_cpu_load{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 269,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.process_cpu_time",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.process_cpu_time{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 289,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.system_cpu_load",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.system_cpu_load{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 289,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.system_load_average",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.system_load_average{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 289,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.total_physical_memory_size",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.total_physical_memory_size{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 309,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.operating_system.total_swap_space_size",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.total_swap_space_size{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 309,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 309,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 329,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 329,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 329,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.2xx-responses.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 349,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 349,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 349,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 369,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 369,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.4xx-responses.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 369,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 389,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 389,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 389,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 409,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.5xx-responses.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 409,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-dispatches.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-dispatches.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 409,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 429,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-suspended.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.active-suspended.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 429,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 429,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 449,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 449,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 449,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-dispatches.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 469,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 469,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 469,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 489,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 489,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.async-timeouts.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 489,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 509,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 509,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 509,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 529,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 529,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 529,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 549,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 549,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.connect-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 549,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 569,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 569,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 569,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 589,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 589,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 589,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 609,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 609,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.delete-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 609,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 629,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 629,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 629,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 649,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 649,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 649,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 669,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 669,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.dispatches.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 669,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 689,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 689,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 689,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 709,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 709,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 709,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 729,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 729,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.get-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 729,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 749,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 749,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 749,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 769,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 769,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 769,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 789,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 789,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.head-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 789,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 809,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 809,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 809,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 829,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 829,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 829,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 849,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 849,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.move-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 849,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 869,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 869,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 869,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 889,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 889,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 889,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 909,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 909,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.options-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 909,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 929,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 929,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 929,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 949,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 949,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 949,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 969,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 969,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.post-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 969,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 989,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 989,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 989,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1009,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1009,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1009,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1029,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1029,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.put-requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1029,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1049,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1049,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1049,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1069,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1069,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1069,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1089,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1089,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.io.dropwizard.jetty.mutable_servlet_context_handler.requests.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1089,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.direct.capacity.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.direct.capacity.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1109,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.direct.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.direct.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1109,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.direct.used.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.direct.used.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1109,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.mapped.capacity.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.mapped.capacity.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1129,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.mapped.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.mapped.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1129,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.buffers.mapped.used.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.buffers.mapped.used.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1129,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.gc.g1_old_generation.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.gc.g1_old_generation.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1149,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.gc.g1_old_generation.time.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.gc.g1_old_generation.time.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1149,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.gc.g1_young_generation.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.gc.g1_young_generation.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1149,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.gc.g1_young_generation.time.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.gc.g1_young_generation.time.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1169,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.code_cache.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.code_cache.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1169,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.compressed_class_space.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.compressed_class_space.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1169,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.g1_eden_space.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.g1_eden_space.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1189,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.g1_old_gen.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.g1_old_gen.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1189,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.g1_survivor_space.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.g1_survivor_space.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1189,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.pools.metaspace.usage.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.pools.metaspace.usage.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1209,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.total.committed.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.total.committed.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1209,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.total.init.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.total.init.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1209,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.total.max.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.total.max.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1229,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.memory.total.used.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.total.used.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1229,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.blocked.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.blocked.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1229,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1249,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.daemon.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.daemon.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1249,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.deadlocks.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.deadlocks.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1249,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.new.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.new.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1269,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.runnable.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.runnable.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1269,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.terminated.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.terminated.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1269,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.timed_waiting.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.timed_waiting.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1289,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.jvm.threads.waiting.count.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.threads.waiting.count.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1289,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.count",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.count{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1289,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.fifteen_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.fifteen_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1309,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.five_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.five_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1309,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.max",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.max{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1309,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.mean",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.mean{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1329,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.mean_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.mean_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1329,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.min",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.min{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1329,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.one_minute_rate",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.one_minute_rate{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1349,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.std_dev",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.server.http_connection_factory.8080.connections.std_dev{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1349,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.jobs.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.jobs.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1349,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.size.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.size.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1369,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "title_size": 10,
+      "title": true,
+      "title_align": "left",
+      "title_text": "scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.utilization.value",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.org.eclipse.jetty.util.thread.queued_thread_pool.dw.utilization.value{identifier:scanprocessor-clmscan02a-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 1369,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "id": 187967
+}

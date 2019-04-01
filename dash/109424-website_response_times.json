@@ -1,0 +1,51 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.blog.http.time.total{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.blog.http.time.total"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.www.http.time.total{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.www.http.time.total"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "website response times",
+    "created": "2016-03-21T18:48:28.157291+00:00",
+    "new_id": "xpb-gft-tdj",
+    "id": 109424,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-03-21T18:48:28.079803+00:00"
+  },
+  "url": "/dash/109424/website-response-times",
+  "resource": "/api/v1/dash/109424"
+}

@@ -1,0 +1,42 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:rhc,env:prod}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.analysis_completed over kind:rhc,env:prod"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by fejoh@sonatype.com",
+    "title": "FRANKLIN_SAMPLE_DASHBOARD1",
+    "created": "2017-08-10T18:48:04.909458+00:00",
+    "new_id": "yxe-2cn-4nm",
+    "id": 339208,
+    "created_by": {
+      "disabled": false,
+      "handle": "fejoh@sonatype.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "fejoh@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/1b40f323b7e4a17c9bbd85ba29036802?s=48&d=retro"
+    },
+    "modified": "2017-08-10T19:09:28.112793+00:00"
+  },
+  "url": "/dash/339208/franklinsampledashboard1",
+  "resource": "/api/v1/dash/339208"
+}

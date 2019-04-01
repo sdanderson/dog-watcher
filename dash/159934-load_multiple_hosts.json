@@ -1,0 +1,87 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:clm01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:clm01.contegix.s"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:warehouse04.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:warehouse04.contegix.s"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:ops02.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:ops02.contegix.s"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:clm-db01.contegix.s"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:idescan01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:idescan01.contegix.s"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "load - multiple hosts",
+    "created": "2016-07-11T17:35:33.565781+00:00",
+    "new_id": "cmk-h9a-n9k",
+    "id": 159934,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-07-11T17:36:42.589573+00:00"
+  },
+  "url": "/dash/159934/load---multiple-hosts",
+  "resource": "/api/v1/dash/159934"
+}

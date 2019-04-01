@@ -1,0 +1,537 @@
+{
+  "originalWidth": "100%",
+  "new_id": "gcq-cwx-7r9",
+  "height": 146,
+  "disableEditing": false,
+  "showGlobalTimeOnboarding": true,
+  "id": 379335,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 379335,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Time to Complete Scans (ms)",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "status": "done",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.clm.scan.time_to_complete_ms{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {},
+      "y": 5,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Time to Complete Scans (ms)",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.rhc.scan.time_to_complete_ms{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 76,
+      "time": {},
+      "y": 5,
+      "x": 80,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans per Day",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.clm.scan.completed{*}.rollup(sum, 86400)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 43,
+      "x": 1,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "generated_title": "",
+      "font_size": "36",
+      "title": true,
+      "color": "#000",
+      "text": "clm",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 37,
+      "x": 1,
+      "y": 1,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "generated_title": "",
+      "font_size": "36",
+      "title": true,
+      "color": "#000",
+      "text": "rhc",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 31,
+      "x": 80,
+      "y": 1,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans per Day",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.rhc.scan.completed{*}.rollup(sum, 86400)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 76,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 43,
+      "x": 80,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "File Size Velocity (size/time to complete)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.clm.scan.size_velocity{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {},
+      "y": 92,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Concurrent Scans per minute",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.clm.max.scans.active{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {},
+      "y": 25,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Concurrent Scans per minute",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.rhc.max.scans.active{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 76,
+      "time": {},
+      "y": 25,
+      "x": 80,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Unique File Velocity (unique files/time to complete)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.clm.scan.file_velocity{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {},
+      "y": 109,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Unique Archive Velocity (unique archive count/time to complete)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scan_processor.clm.scan.archive_velocity{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {},
+      "y": 126,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Scans per Week",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.clm.scan.completed{*}.rollup(sum, 604800)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 59,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Scans per Month",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.clm.scan.completed{*}.rollup(sum, 2419200)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 77,
+      "time": {
+        "live_span": "1y"
+      },
+      "y": 75,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Scans per Week",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.rhc.scan.completed{*}.rollup(sum, 604800)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 76,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 59,
+      "x": 80,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 379335,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "Scans per Month",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scan_processor.rhc.scan.completed{*}.rollup(sum, 2419200)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 76,
+      "time": {
+        "live_span": "1y"
+      },
+      "y": 75,
+      "x": 80,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "isShared": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "HDS Scan Information",
+  "created": "2018-07-09T22:57:18.626981+00:00",
+  "original_title": "HDS Scan Information",
+  "modified": "2018-11-13T14:15:12.440867+00:00",
+  "originalHeight": 121
+}

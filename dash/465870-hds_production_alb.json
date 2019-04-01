@@ -1,0 +1,353 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.target_response_time.average{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: Average Response time per Target Group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.target_response_time.p95{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: P95 Response time per Target Group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.target_response_time.p99{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: P99 Response time per Target Group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.elb.target_response_time.maximum{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: Max Response time per Target Group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count{sonatype-group:skynet,environment:production} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Request count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.healthy_host_count{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:aws.elb.un_healthy_host_count{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: Healthy and UnHealthy Hosts by target group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.un_healthy_host_count{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB: UnHealthy Hosts by target group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_target_2xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Backend 2xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_target_3xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Backend 3xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_target_4xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Backend 4xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_target_5xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com} by {targetgroup}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Backend 5xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_elb_4xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com}.as_rate()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:aws.elb.httpcode_elb_5xx{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com}.as_rate()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB 4xx and 5xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.elb.surge_queue_length{host:hds-production-alb-1569404906.us-east-1.elb.amazonaws.com}",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ELB: Surge Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.client_tlsnegotiation_error_count{sonatype-group:skynet,environment:production}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Client TLS Negotiation Error Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count_per_target{sonatype-group:skynet,environment:production} by {targetgroup}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Average request count per target by target group"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.active_connection_count{sonatype-group:skynet,environment:production}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:aws.applicationelb.new_connection_count{sonatype-group:skynet,environment:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "New and active connection count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.processed_bytes{sonatype-group:skynet,environment:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Total bytes processed"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count{name:hds-production-alb,targetgroup:targetgroup/hds-production-alb-tg01/f3db4d3f8eb7a691}.as_count()+sum:aws.applicationelb.request_count{name:hds-production-alb,name:hds-production-alb-tg02}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "HDS Request Count"
+      }
+    ],
+    "template_variables": null,
+    "description": "Top host-level metrics for hds-production-alb-1569404906.us-east-1.elb",
+    "title": "HDS Production ALB",
+    "created": "2018-01-11T21:04:43.807841+00:00",
+    "new_id": "edd-kf2-wu8",
+    "id": 465870,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2018-07-31T15:24:55.784591+00:00"
+  },
+  "url": "/dash/465870/hds-production-alb",
+  "resource": "/api/v1/dash/465870"
+}

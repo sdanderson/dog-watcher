@@ -1,0 +1,178 @@
+{
+  "board_title": "Rick's Jenkins Build Trends Experiment",
+  "read_only": false,
+  "author_info": {
+    "author_name": "Rick B"
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "created": "2019-03-22T11:45:48.646409+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "rbriganti@sonatype.com",
+    "name": "Rick B",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "rbriganti@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+  },
+  "new_id": "rhh-qp3-8g6",
+  "modified": "2019-03-29T11:34:54.767040+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "job_team",
+      "name": "Team"
+    },
+    {
+      "default": "*",
+      "prefix": "job_parent",
+      "name": "MultibranchParent"
+    },
+    {
+      "default": "*",
+      "prefix": "job_name",
+      "name": "Job"
+    },
+    {
+      "default": "*",
+      "prefix": "job_result",
+      "name": "Result"
+    }
+  ],
+  "isIntegration": false,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": "rhh-qp3-8g6",
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553772600000,
+        "end": 1553859000000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "jenkins.build.duration",
+      "title_text": "",
+      "height": 48,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:jenkins.build.duration{$Team,$MultibranchParent,$Job,$Result} by {job_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 93,
+      "time": {},
+      "error": null,
+      "y": 4,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": "rhh-qp3-8g6",
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553772600000,
+        "end": 1553859000000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "generated_title": "jenkins.build.duration",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "change_type": "absolute",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "sum:jenkins.build.duration{$Team,$MultibranchParent,$Job} by {job_result}",
+            "increase_good": false,
+            "order_by": "change"
+          }
+        ]
+      },
+      "width": 47,
+      "query": "sum:jenkins.build.duration{$Team,$MultibranchParent,$Job} by {job_result}, hour_before(sum:jenkins.build.duration{$Team,$MultibranchParent,$Job} by {job_result})",
+      "time": {},
+      "error": null,
+      "y": 4,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": "rhh-qp3-8g6",
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1553772600000,
+        "end": 1553859000000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "jenkins.stage.duration",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:jenkins.stage.duration{$Team,$MultibranchParent,$Job} by {stage_name}, 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 21,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "disableCog": false,
+  "id": 621111,
+  "isShared": false
+}

@@ -1,0 +1,140 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:ossrh}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over host:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.latency{host:ossrh-787223923.us-east-1.elb.amazonaws.com}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.latency over host:ossrh-787223923.us-east-1.elb.amazonaws.com"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_5xx{name:ossrh}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_elb_5xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_2xx{name:ossrh}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Avg of aws.elb.httpcode_backend_2xx over name:ossrh"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "nginx.net.reading{host:ossrh}, nginx.net.waiting{host:ossrh}, nginx.net.writing{host:ossrh}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "nginx connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ebs.volume_queue_length{host:ossrh}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nexus.staging.repos{instance:oss.sonatype.org,state:closed}, nexus.staging.repos{instance:oss.sonatype.org,state:open}, nexus.staging.repos{instance:oss.sonatype.org,state:released}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Staging Repositories"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.ossrh.repocount{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.ossrh.repocount"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.total{host:ossrh,device:/dev/mapper/VolGroup01-work}, avg:system.disk.used{host:ossrh,device:/dev/mapper/VolGroup01-work}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "EBS usage"
+      }
+    ],
+    "template_variables": [],
+    "description": null,
+    "title": "ossrh / nexus overview",
+    "created": "2015-11-25T18:12:57.449420+00:00",
+    "new_id": "xx4-pbj-iqd",
+    "id": 83661,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2019-02-06T19:58:41.902151+00:00"
+  },
+  "url": "/dash/83661/ossrh--nexus-overview",
+  "resource": "/api/v1/dash/83661"
+}

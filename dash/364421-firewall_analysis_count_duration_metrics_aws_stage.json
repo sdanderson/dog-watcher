@@ -1,0 +1,179 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:firewall,env:stage,location:aws} by {host}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Firewall analysis count distribution"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:firewall,env:stage,location:aws} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P99 Firewall analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:firewall,success:true,location:aws,env:stage} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P75 firewall analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:firewall,location:aws,env:stage}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:firewall,env:stage,location:aws})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "P99 Firewall analysis duration (moving average)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:firewall,location:aws,env:stage}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:firewall,location:aws,env:stage})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Median Firewall analysis duration (moving average)"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:firewall,success:true,location:aws,env:stage}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Count of successful Firewall analyses"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{success:true,kind:firewall,location:aws,env:stage} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P99 Firewall analysis duration"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:firewall,success:true,location:aws,env:stage} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P75 firewall analysis duration"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{success:true,kind:firewall,env:stage,location:aws} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Median Firewall analysis duration for successful analyses"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:firewall,env:prod,success:false}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Count of unsuccessful Firewall analyses"
+      }
+    ],
+    "template_variables": null,
+    "description": "Operational metrics for Firewall analyses (cloned)",
+    "title": "Firewall analysis count/duration metrics (AWS Stage)",
+    "created": "2017-09-25T21:25:08.823561+00:00",
+    "new_id": "429-khy-i43",
+    "id": 364421,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2017-09-25T21:27:19.796560+00:00"
+  },
+  "url": "/dash/364421/firewall-analysis-countduration-metrics-aws-stage",
+  "resource": "/api/v1/dash/364421"
+}

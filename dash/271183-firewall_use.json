@@ -1,0 +1,78 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{client:nexus,kind:firewall} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Firewall scans by RM version"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{kind:firewall} by {brain_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Firewall scans by IQ version"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{kind:firewall} by {cause}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Firewall Scans by Cause"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "client_version",
+        "name": "version"
+      }
+    ],
+    "description": "created by mpiggott@sonatype.com (cloned)",
+    "title": "Firewall Use",
+    "created": "2017-04-05T17:42:39.874017+00:00",
+    "new_id": "tmq-zvf-x2z",
+    "id": 271183,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2017-04-05T17:57:43.651920+00:00"
+  },
+  "url": "/dash/271183/firewall-use",
+  "resource": "/api/v1/dash/271183"
+}

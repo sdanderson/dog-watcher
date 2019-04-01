@@ -1,0 +1,75 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.hds.clmweb01a.clm.scan_metadata_add.count{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.hds.clmweb01a.clm.scan_metadata_add.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.hds.clmweb01a.clm.scan_metadata_add_error.count{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "metrics.hds.clmweb01a.clm.scan_metadata_add_error.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.hds.clmweb01a.rhc.scan_metadata_add.count{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.hds.clmweb01a.rhc.scan_metadata_add.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.hds.clmweb01b.rhc.scan_metadata_add_error.count{*}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "metrics.hds.clmweb01a.rhc.scan_metadata_add_error.count"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "HDS Metadata",
+    "created": "2016-04-29T15:36:57.093938+00:00",
+    "new_id": "y59-85s-ykg",
+    "id": 126331,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-04-29T15:40:20.289403+00:00"
+  },
+  "url": "/dash/126331/hds-metadata",
+  "resource": "/api/v1/dash/126331"
+}

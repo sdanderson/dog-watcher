@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.instance_count{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.instance_count"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "AWS Instance Count",
+    "created": "2016-12-14T23:42:59.786336+00:00",
+    "new_id": "8b5-r8r-vv5",
+    "id": 224574,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-12-14T23:42:59.768240+00:00"
+  },
+  "url": "/dash/224574/aws-instance-count",
+  "resource": "/api/v1/dash/224574"
+}

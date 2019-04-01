@@ -1,0 +1,88 @@
+{
+  "board_title": "drollo test screen board",
+  "read_only": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2016-06-30T18:08:27.734280+00:00",
+  "new_id": "rmt-644-ycy",
+  "original_title": "",
+  "modified": "2016-06-30T20:44:09.525410+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "drollo@sonatype.com",
+    "name": "Dan Rollo",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "drollo@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/7c15ebd1ef9bd214499d701ac31b208a?s=48&d=retro"
+  },
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 98527,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Count of Client",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.scan{*} by {client}.as_count(), 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 4,
+      "x": 8,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 98527,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Count of Brain Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.scan{*} by {brain_version}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 24,
+      "x": 8,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    }
+  ],
+  "shared": false,
+  "id": 98527,
+  "title_edited": false
+}

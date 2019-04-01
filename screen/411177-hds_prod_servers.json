@@ -1,0 +1,199 @@
+{
+  "board_title": "hds prod servers",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-15T13:53:08.809005+00:00",
+  "new_id": "vaa-2zx-5mg",
+  "original_title": "ksprochi's Screenboard 15 Aug 2018 09:53",
+  "modified": "2018-08-15T14:27:42.952003+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 411177,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "max cpu",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.cpu.user{name:hds-production-ec2-clmscan01a}, max:system.cpu.system{name:hds-production-ec2-clmscan01a}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 10,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 411177,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "clmscan01a",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 24,
+      "x": 1,
+      "y": 2,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 411177,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "JVM heap used",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01a}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 30,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 411177,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "max cpu",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.cpu.user{name:hds-production-ec2-clmscan01b}, max:system.cpu.system{name:hds-production-ec2-clmscan01b}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 10,
+      "x": 112,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 411177,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "clmscan01b",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 24,
+      "x": 112,
+      "y": 2,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 411177,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "JVM heap used",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01b}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 30,
+      "x": 112,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 411177,
+  "title_edited": true,
+  "isShared": false
+}

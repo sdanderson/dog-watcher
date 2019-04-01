@@ -1,0 +1,307 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{$env,$branch,$build_key}, avg:system.cpu.system{$env,$branch,$build_key}, avg:system.cpu.iowait{$env,$branch,$build_key}, avg:system.cpu.user{$env,$branch,$build_key}, avg:system.cpu.stolen{$env,$branch,$build_key}, avg:system.cpu.guest{$env,$branch,$build_key}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$env,$branch,$build_key}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.5{$env,$branch,$build_key}",
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.15{$env,$branch,$build_key}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Load Averages 1-5-15"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{$env,$branch,$build_key}, sum:system.mem.total{$env,$branch,$build_key} - sum:system.mem.usable{$env,$branch,$build_key}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.heap_memory{$env,$branch,$build_key}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "JVM Heap Memory"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.thread_count{$env,$branch,$build_key}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "JVM Thread Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{$env,$branch,$build_key}",
+              "type": "line"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{$env,$branch,$build_key}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{$env,$branch,$build_key} by {host}, avg:system.cpu.system{$env,$branch,$build_key} by {host}, avg:system.cpu.iowait{$env,$branch,$build_key} by {host}, avg:system.cpu.user{$env,$branch,$build_key} by {host}, avg:system.cpu.stolen{$env,$branch,$build_key} by {host}, avg:system.cpu.guest{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU usage (%) by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "avg:system.load.5{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "avg:system.load.15{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Load Averages 1-5-15 by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{$env,$branch,$build_key} by {host}, sum:system.mem.total{$env,$branch,$build_key} by {host} - sum:system.mem.usable{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Memory breakdown by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec) by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.heap_memory{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "JVM Heap Memory by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.thread_count{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "JVM Thread Count by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.disk.in_use{$env,$branch,$build_key} by {device,host} * 100",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Disk usage by device (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.r_s{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "avg:system.io.w_s{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "I/O ops, by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.rkb_s{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "avg:system.io.wkb_s{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "I/O data, by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.util{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Utilization, by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.wrqm_s{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Write queue, by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.w_await{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            },
+            {
+              "q": "- avg:system.io.r_await{$env,$branch,$build_key} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO R/W Await, by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jvm.gc.cms.count{$env,$build_key,$branch}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of jvm.gc.cms.count over $env,$build_key,$branch"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "env:nxrm_test",
+        "prefix": "env",
+        "name": "env"
+      },
+      {
+        "default": "branch:master",
+        "prefix": "branch",
+        "name": "branch"
+      },
+      {
+        "default": "*",
+        "prefix": "build_key",
+        "name": "build_key"
+      }
+    ],
+    "description": "Top host-level metrics for i-0387915527f129a5c. Clone this dashboard t (cloned)",
+    "title": "NXRM Performance Testing (experimental)",
+    "created": "2017-06-01T11:13:58.433861+00:00",
+    "new_id": "w4i-f34-4v8",
+    "id": 297093,
+    "created_by": {
+      "disabled": false,
+      "handle": "nblair@sonatype.com",
+      "name": "Nicholas Blair",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "nblair@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/703b899fad6b0058236e5997c9ae186a?s=48&d=retro"
+    },
+    "modified": "2017-07-06T14:33:39.207545+00:00"
+  },
+  "url": "/dash/297093/nxrm-performance-testing-experimental",
+  "resource": "/api/v1/dash/297093"
+}

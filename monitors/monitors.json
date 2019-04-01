@@ -1,0 +1,5543 @@
+[
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):max:system.disk.in_use{*} by {device,host,name} > 0.95",
+    "message": "The Future needs fixing! @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 310455,
+    "multi": true,
+    "name": "Disk space alert",
+    "created": "2015-10-22T15:35:57.517244+00:00",
+    "created_at": 1445528157000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-03T16:29:39.584048+00:00",
+    "overall_state_modified": "2019-04-01T16:22:17.220674+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "host:sonatype-search01.managed.contegix.com": null,
+        "host:sonatype-rso01.managed.contegix.com": null,
+        "device:/dev/xvda1,host:i-07e231db424f1e4fe": null
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing!   @slack-ops-alerts {host.name_tag}}",
+      "thresholds": {
+        "critical": 0.95
+      }
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:system.load.norm.5{!host:abd01-1.mgmt.contegix.s,!host:abd01-2.contegix.s,!host:abd02-1.contegix.s,!host:abd02-2.contegix.s,!env:nxrm_test} by {host} > 10",
+    "message": "The Future needs fixing!  @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 311839,
+    "multi": true,
+    "name": "High Load",
+    "created": "2015-10-23T13:41:06.515856+00:00",
+    "created_at": 1445607666000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:35:58.674663+00:00",
+    "overall_state_modified": "2019-03-31T19:43:22.079242+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "host:i-93d805c1": null
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing!  @slack-ops-alerts",
+      "thresholds": {
+        "critical": 10,
+        "warning": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "max(last_1h):avg:aws.elb.un_healthy_host_count{host:internal-npm-couch-db-elb-1411895186.us-east-1.elb.amazonaws.com} > 0",
+    "message": "{{#is_alert}}The NPM CouchDB Mirror ELB has 0 healthy backend nodes{{/is_alert}}\n{{^is_alert}} The NPM CouchDB Mirror seems to have returned to normal.{{/is_alert}} @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 336708,
+    "multi": false,
+    "name": "Npmjs CouchDB mirror unhealthy host count",
+    "created": "2015-11-09T17:44:06.168145+00:00",
+    "created_at": 1447091046000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:56:53.611243+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:fastly.status_5xx{service:central} > 1000",
+    "message": "{{#is_alert}}\nAverage 5xx response is high!\n{{/is_alert}} \n{{#is_warning}}\nAverage 5xx response is high!\n{{/is_warning}} \n{{#is_recovery}}\nAverage 5xx response has returned to normal\n{{/is_recovery}}\n@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 356737,
+    "multi": false,
+    "name": "Fastly 5XX errors",
+    "created": "2015-11-25T17:09:36.741621+00:00",
+    "created_at": 1448471376000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:00:25.285299+00:00",
+    "overall_state_modified": "2019-01-16T06:50:37.957594+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 1000,
+        "warning": 100
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "\"datadog.agent.up\".over(\"*\").exclude(\"env:nxrm_test\",\"data-services\",\"name:robohash\",\"env:nxrm_stress_master\",\"host:dr01\",\"name:jenkins\").by(\"host\").last(2).count_by_status()",
+    "message": "{{host.name}} {{host.name_tag}}  {{host.ip}} {{host.use-case}} @slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 459140,
+        "start": 1549038849,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 461780667
+      }
+    ],
+    "id": 459140,
+    "multi": true,
+    "name": "Host Reporting",
+    "created": "2016-02-05T18:56:14.522209+00:00",
+    "created_at": 1454698574000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-30T16:02:16.986361+00:00",
+    "overall_state_modified": "2019-03-29T18:21:07.662712+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "host:i-0cef95ca8099b2a1a": null,
+        "*": null,
+        "host:sonatype-dev02.managed.contegix.com": null,
+        "host:sonatype-rso01.managed.contegix.com": null,
+        "host:vpn02.contegix.s": null,
+        "host:i-0f9de6ab9dfc044a9": null,
+        "host:vpn01.contegix.s": null,
+        "host:gw01.contegix.s": null
+      },
+      "include_tags": true,
+      "no_data_timeframe": 4,
+      "new_host_delay": 86400,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "warning": 1,
+        "ok": 1,
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "max(last_10m):avg:system.fs.inodes.in_use{*} by {device,host,name} > 0.95",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 459144,
+    "multi": true,
+    "name": "Inode Utilization",
+    "created": "2016-02-05T18:58:39.885169+00:00",
+    "created_at": 1454698719000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-02-13T18:47:13.386892+00:00",
+    "overall_state_modified": "2019-03-27T21:49:25.263769+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 0.95,
+        "warning": 0.85
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_30m):avg:search.index_queue.size{*} > 500",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 495786,
+        "start": 1510154876,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 261575748
+      }
+    ],
+    "id": 495786,
+    "multi": false,
+    "name": "Search Index Queue",
+    "created": "2016-02-29T14:57:00.518335+00:00",
+    "created_at": 1456757820000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:47:10.910846+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 500,
+        "warning": 300
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:hds.ahc.com.sonatype.ahc.services.EloquaService.failedRequests.count{env:prod} > 5",
+    "message": "{{host.name_tag}}\n@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519188,
+    "multi": false,
+    "name": "Prod Eloqua Service Failure",
+    "created": "2016-03-17T15:02:35.350961+00:00",
+    "created_at": 1458226955000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:00:43.593388+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 5,
+        "warning": 2
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:hds.ahc.com.sonatype.ahc.services.EloquaService.failedRequests.count{env:staging} > 5",
+    "message": "{{host.name_tag}}\n@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519202,
+    "multi": false,
+    "name": "Staging Eloqua Service Failure",
+    "created": "2016-03-17T15:11:00.615312+00:00",
+    "created_at": 1458227460000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:59:08.073198+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 5,
+        "warning": 2
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):sum:hds.mysql.db_conns{env:prod} > 580",
+    "message": "@pagerduty @slack-skynet-critical-alert  @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519208,
+    "multi": false,
+    "name": "AWS: HDS Prod DB Connection Limit",
+    "created": "2016-03-17T15:17:41.334440+00:00",
+    "created_at": 1458227861000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:17:33.028585+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 580,
+        "warning": 500
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_staging_status",
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):sum:hds.mysql.db_conns{env:staging} > 580",
+    "message": "@slack-skynet-alerts @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519210,
+    "multi": false,
+    "name": "AWS: HDS Staging DB Connection Limit",
+    "created": "2016-03-17T15:18:09.652157+00:00",
+    "created_at": 1458227889000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:25:53.573397+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 60,
+      "escalation_message": "s  @slack-ops-alerts @slack-skynet-critical-alert  @pagerduty",
+      "thresholds": {
+        "critical": 580,
+        "warning": 500
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "sum(last_15m):sum:iq.hds.analysis_completed{kind:rhc}.as_count() < 25",
+    "message": "@pagerduty @slack-skynet-critical-alert   @slack-ops-alerts \n\nHDS RHC scan count is < 25 over the last 15m\n\nDashboard: https://app.datadoghq.com/dash/214204/iq-scan-status?live=true",
+    "matching_downtimes": [],
+    "id": 519217,
+    "multi": false,
+    "name": "AWS: HDS RHC Scans",
+    "created": "2016-03-17T15:31:04.352096+00:00",
+    "created_at": 1458228664000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:18:26.279178+00:00",
+    "overall_state_modified": "2018-05-29T07:21:41.582237+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 25
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:nginx.net.connections{host:sonatype-rso01.managed.contegix.com} > 650",
+    "message": "@webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519275,
+    "multi": false,
+    "name": "RSO Nginx Connections",
+    "created": "2016-03-17T16:46:32.879622+00:00",
+    "created_at": 1458233192000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:00:19.645641+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 650,
+        "warning": 250
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:nginx.net.writing{host:sonatype-rso01.managed.contegix.com} > 100",
+    "message": "@webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 519277,
+    "multi": false,
+    "name": "RSO Nginx Writes",
+    "created": "2016-03-17T16:47:22.939463+00:00",
+    "created_at": 1458233242000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:59:51.605921+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 100
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elasticbeanstalk.environment_health{environmentname:aha-sso-env} > 5",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 524640,
+    "multi": false,
+    "name": "Aha SSO Integration Health",
+    "created": "2016-03-21T12:56:56.634203+00:00",
+    "created_at": 1458565016000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T18:20:28.934691+00:00",
+    "overall_state_modified": "2018-07-27T14:10:11.510106+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elasticbeanstalk.environment_health{environmentname:support-sso-env} > 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 524641,
+    "multi": false,
+    "name": "Support SSO Integration Health",
+    "created": "2016-03-21T12:57:32.383986+00:00",
+    "created_at": 1458565052000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:58:41.274242+00:00",
+    "overall_state_modified": "2018-07-27T14:09:46.897800+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:nexus.staging.repos{instance:oss.sonatype.org,state:released} > 20",
+    "message": "{{#is_alert}}\nToo many staging repos in a released state can mean that the scheduled task to delete them is not running correctly.\n{{/is_alert}} \n@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 524674,
+    "multi": false,
+    "name": "OSSRH Staging Repos (released)",
+    "created": "2016-03-21T13:48:45.518045+00:00",
+    "created_at": 1458568125000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:55:12.923121+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 20
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_30m):max:system.io.util{!host:ossrh} by {device,host,name} >= 100",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 524899,
+    "multi": true,
+    "name": "High IO",
+    "created": "2016-03-21T16:31:05.612609+00:00",
+    "created_at": 1458577865000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-05T18:04:33.931610+00:00",
+    "overall_state_modified": "2019-04-01T04:31:20.648986+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 100,
+        "warning": 90
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):avg:metrics.ossrh.repocount{*} > 700",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 524903,
+    "multi": false,
+    "name": "OSSRH Repocount",
+    "created": "2016-03-21T16:40:28.902344+00:00",
+    "created_at": 1458578428000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:55:32.441001+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 700,
+        "warning": 400
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "events('priority:normal status:error tags:nodeping excluded_tags:check:tyson_s_corner,check:aha_ideas_sso,check:central_search_search.maven.org,check:www.sonatype.com,check,check:blog.sonatype.com,check:').by('check').rollup('count').last('15m') > 3",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 528627,
+    "multi": true,
+    "name": "External (NodePing) Urgent Alert",
+    "created": "2016-03-23T20:15:57.868524+00:00",
+    "created_at": 1458764157000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:09:52.001188+00:00",
+    "overall_state_modified": "2017-11-18T05:12:30.854688+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "check:maven.java.net": null,
+        "check:support-sso.sonatype.com": null,
+        "check:licensing.sonatype.com_html": null,
+        "check:nx.sonatype.com": null,
+        "check:www.sonatype.org": null,
+        "check:search.maven.org": null
+      },
+      "thresholds": {
+        "critical": "0"
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "no_data_timeframe": 30
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"elasticsearch.cluster_health\".over(\"name:es-nodes\").by(\"host\",\"port\").last(6).count_by_status()",
+    "message": "The Future needs fixing! @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 537063,
+    "multi": true,
+    "name": "Elasticsearch Health",
+    "created": "2016-03-29T18:34:00.185084+00:00",
+    "created_at": 1459276440000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:08.625022+00:00",
+    "overall_state_modified": "2017-07-06T20:26:04.876384+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": true,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "warning": 5,
+        "ok": 2,
+        "critical": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "no_data_timeframe": 5
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"Default Heap Usage\"').rollup('count').last('5m') >= 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 539794,
+    "multi": false,
+    "name": "DripStat Default Heap Usage Alert",
+    "created": "2016-03-31T17:46:52.250843+00:00",
+    "created_at": 1459446412000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:46:39.647720+00:00",
+    "overall_state_modified": "2019-03-26T05:35:35.256323+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 1
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"NetApp critical event detected\"').rollup('count').last('5m') >= 2",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 548660,
+    "multi": false,
+    "name": "NetApp critical event detected",
+    "created": "2016-04-07T18:20:30.078409+00:00",
+    "created_at": 1460053230000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:47:29.959150+00:00",
+    "overall_state_modified": null,
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "no_data_timeframe": 10
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "\"process.up\".over(\"host:i-0090a6f07ae00556c\",\"process:bambooagent\").by(\"host\",\"process\").last(5).count_by_status()",
+    "message": "@slack-ops-alerts Welcome to tomorrow land!",
+    "matching_downtimes": [],
+    "id": 549610,
+    "multi": true,
+    "name": "Bamboo deployment agent",
+    "created": "2016-04-08T13:01:58.481236+00:00",
+    "created_at": 1460120518000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:29.363327+00:00",
+    "overall_state_modified": "2018-07-30T16:19:48.820376+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "warning": 2,
+        "ok": 2,
+        "critical": 4
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts Welcome to tomorrow land!",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "max(last_30m):max:metrics.central.search.index.size{*} > 23000000000",
+    "message": "{{#is_no_data}}Central Search Index too old!{{/is_no_data}}\n{{#is_alert}}Central Search Index too large!{{/is_alert}}\n{{#is_warning}}Central Search Index growing!{{/is_warning}}  @slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 549634,
+        "start": 1510154923,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 261575836
+      }
+    ],
+    "id": 549634,
+    "multi": false,
+    "name": "Central Search Index",
+    "created": "2016-04-08T13:15:50.003039+00:00",
+    "created_at": 1460121350000,
+    "creator": {
+      "id": 149725,
+      "handle": "sstecker@sonatype.com",
+      "name": "Shane Stecker",
+      "email": "sstecker@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:12:49.539954+00:00",
+    "overall_state_modified": "2017-12-08T23:30:17.837611+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "include_tags": false,
+      "no_data_timeframe": 240,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 23000000000,
+        "warning": 21000000000
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('priority:all status:error \"merged.lst is out of date\"').rollup('count').last('5m') >= 2",
+    "message": "@slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 556211,
+    "multi": false,
+    "name": "Leveldb Consumer merged.lst",
+    "created": "2016-04-13T14:46:05.352120+00:00",
+    "created_at": 1460558765000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:47:52.989000+00:00",
+    "overall_state_modified": "2019-03-25T13:33:13.292846+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "Joel fix me please! @slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"OpenLDAP ldapsearch\"').rollup('count').last('5m') > 3",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 567212,
+    "multi": false,
+    "name": "OpenLDAP ldapsearch (Runtime Errors)",
+    "created": "2016-04-20T01:30:31.284701+00:00",
+    "created_at": 1461115831000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:35.174526+00:00",
+    "overall_state_modified": null,
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 3
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "@slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"OpenLDAP Syncrepl\"').rollup('count').last('1m') >= 15",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 582126,
+    "multi": false,
+    "name": "OpenLDAP Syncrepl (Runtime Errors)",
+    "created": "2016-04-21T14:39:14.112554+00:00",
+    "created_at": 1461249554000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:43.609950+00:00",
+    "overall_state_modified": null,
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 40
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "@slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "avg(last_30m):avg:system.net.icmp.packet_loss{*} by {host} > 25",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 587391,
+    "multi": true,
+    "name": "VPN packet loss",
+    "created": "2016-04-25T17:32:05.777396+00:00",
+    "created_at": 1461605525000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:04:14.572703+00:00",
+    "overall_state_modified": "2018-05-23T22:33:52.898844+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 25
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:system.net.icmp.response_time{*} by {host} > 200",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 587393,
+    "multi": true,
+    "name": "VPN response time",
+    "created": "2016-04-25T17:32:49.813085+00:00",
+    "created_at": 1461605569000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:03:47.803748+00:00",
+    "overall_state_modified": "2019-01-18T02:26:54.346804+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 200
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_30m):max:metrics.central.smartproxy.pulls{*} > 15000",
+    "message": "{{#is_no_data}}Central: no new artifacts in over an hour{{/is_no_data}}\n{{#is_alert}}Large artifact push to central{{/is_alert}}  @slack-central-alerts",
+    "matching_downtimes": [],
+    "id": 589175,
+    "multi": false,
+    "name": "Central: new artifacts",
+    "created": "2016-04-26T16:36:16.752318+00:00",
+    "created_at": 1461688576000,
+    "creator": {
+      "id": 149725,
+      "handle": "sstecker@sonatype.com",
+      "name": "Shane Stecker",
+      "email": "sstecker@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-22T19:47:06.176432+00:00",
+    "overall_state_modified": "2019-04-01T14:05:37.265775+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 60,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 15000,
+        "warning": 9000
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "\"http.can_connect\".over(\"http-page\").exclude(\"instance:ahc_vip\",\"instance:ahc_stage_vip\",\"instance:nxrm_ha_vip_healthcheck\",\"instance:nxrm_ha_vip_ping\",\"url:http://nxrm-ha.zion.aws.s/service/metrics/healthcheck\",\"url:http://nxrm-ha.zion.aws.s/service/metrics/ping\",\"url:https://licensing.sonatype.com/nexus/form/trial\",\"instance:nxrm01_zion_healthcheck\",\"instance:nxrm01_zion_ping\",\"instance:nxrm02_zion_healthcheck\",\"instance:nxrm02_zion_ping\",\"instance:nxrm03_zion_healthcheck\",\"instance:nxrm03_zion_ping\",\"instance:secure_central_lb_float_http\",\"instance:secure_central_lb_float_http_auth\",\"instance:secure_central_lb_float_ssl\",\"instance:secure_central_be01\",\"instance:secure_central_be02\",\"hds\").by(\"host\",\"instance\",\"url\").last(5).count_by_status()",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 590977,
+        "start": 1541609196,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 416076916
+      }
+    ],
+    "id": 590977,
+    "multi": true,
+    "name": "HTTP Checks (page/hc notify)",
+    "created": "2016-04-27T18:07:28.916019+00:00",
+    "created_at": 1461780448000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-12-18T16:28:37.309463+00:00",
+    "overall_state_modified": "2019-03-19T07:23:11.106316+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "url:http://bamboo.zion.aws.s": 1554623100,
+        "*": null
+      },
+      "include_tags": true,
+      "thresholds": {
+        "critical": 4,
+        "ok": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:postfix.queue.size{queue:deferred} >= 10",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 591264,
+    "multi": false,
+    "name": "Deferred Mail",
+    "created": "2016-04-27T20:18:37.565488+00:00",
+    "created_at": 1461788317000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:49.254615+00:00",
+    "overall_state_modified": "2017-09-12T14:33:16.982702+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 10
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "\"tcp.can_connect\".over(\"tcp-page\").by(\"host\",\"instance\",\"port\",\"target_host\").last(5).count_by_status()",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 592209,
+    "multi": true,
+    "name": "TCP Check (page/hc notify)",
+    "created": "2016-04-28T11:56:40.464329+00:00",
+    "created_at": 1461844600000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:37:58.378666+00:00",
+    "overall_state_modified": "2018-01-24T18:10:52.339400+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 4,
+        "ok": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "@slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "\"http.ssl_cert\".over(\"http-page\").by(\"host\",\"instance\",\"url\").last(5).count_by_status()",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 592224,
+        "start": 1537211795,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 391186553
+      }
+    ],
+    "id": 592224,
+    "multi": true,
+    "name": "HTTPS Checks (page/hc notify)",
+    "created": "2016-04-28T12:27:44.660035+00:00",
+    "created_at": 1461846464000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:55:18.177925+00:00",
+    "overall_state_modified": "2019-03-19T07:23:11.106316+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "thresholds": {
+        "warning": 2,
+        "ok": 2,
+        "critical": 4
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "max(last_1h):sum:nexus.schedules.broken{http://ossrh.1.aws.s:8081,!configbackup} >= 1",
+    "message": "Broken tasks were found. Look at nexus or in datadog for the metric nexus.schedules.broken in the explorer. @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 598815,
+    "multi": false,
+    "name": "OSSRH Broken Tasks",
+    "created": "2016-05-02T18:29:01.297078+00:00",
+    "created_at": 1462213741000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:30:17.642978+00:00",
+    "overall_state_modified": "2017-04-22T05:57:20.471755+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 1,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"process.up\".over(\"process:be_procs\").exclude(\"host:central-be01.contegix.s\",\"host:central-be02.contegix.s\").by(\"host\",\"process\").last(5).count_by_status()",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 608617,
+        "start": 1525307146,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 315959648
+      }
+    ],
+    "id": 608617,
+    "multi": true,
+    "name": "Secure Central BE Processes",
+    "created": "2016-05-09T13:51:12.861420+00:00",
+    "created_at": 1462801872000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:43.601628+00:00",
+    "overall_state_modified": "2018-05-03T19:41:51.461005+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "thresholds": {
+        "warning": 2,
+        "ok": 2,
+        "critical": 4
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:dns.lookup{monitor-type:internal} by {resolved_hostname,type} >= 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 613244,
+    "multi": true,
+    "name": "DNS Queries",
+    "created": "2016-05-11T21:52:44.403829+00:00",
+    "created_at": 1463003564000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:38:04.864963+00:00",
+    "overall_state_modified": "2018-11-05T15:51:46.569554+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_10m):avg:central.smartproxy_log.stale{host:central-sync01.contegix.s} >= 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 615116,
+    "multi": false,
+    "name": "Smartproxy log mtime",
+    "created": "2016-05-12T19:14:51.907664+00:00",
+    "created_at": 1463080491000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:44.016680+00:00",
+    "overall_state_modified": "2017-10-11T08:31:16.941515+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_10m):avg:central.smartproxy_log.size{host:central-sync01.contegix.s} <= 128",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 615120,
+    "multi": false,
+    "name": "Smartproxy log minimum size",
+    "created": "2016-05-12T19:18:14.941450+00:00",
+    "created_at": 1463080694000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:44.325055+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 128
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_10m):avg:central.smartproxy_log.size{host:central-sync01.contegix.s} >= 1000000",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 615121,
+    "multi": false,
+    "name": "Smartproxy log maximum size",
+    "created": "2016-05-12T19:18:46.407693+00:00",
+    "created_at": 1463080726000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:44.690166+00:00",
+    "overall_state_modified": "2017-12-28T10:58:13.544052+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1000000
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_15m):avg:central.push.stale{host:sonatype-central02.managed.contegix.com} >= 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617627
+      },
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617623
+      },
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617622
+      },
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617624
+      },
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617625
+      },
+      {
+        "end": null,
+        "monitor_id": null,
+        "start": 1506956949,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 252634883
+      },
+      {
+        "end": 1554184800,
+        "monitor_id": 615359,
+        "start": 1554159600,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 496617626
+      }
+    ],
+    "id": 615359,
+    "multi": false,
+    "name": "Push to central",
+    "created": "2016-05-12T20:41:44.724811+00:00",
+    "created_at": 1463085704000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:45.057631+00:00",
+    "overall_state_modified": "2018-05-29T20:11:04.824051+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "host:sonatype-central02.managed.contegix.com": 1554184800
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):avg:central.smartproxy_feed.stale{host:ops02.contegix.s} by {smartproxy_host} >= 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": 1554202800,
+        "monitor_id": 619251,
+        "start": 1554166800,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:ops02.contegix.s"
+        ],
+        "id": 496731865
+      },
+      {
+        "end": 1554202800,
+        "monitor_id": 619251,
+        "start": 1554166800,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:ops02.contegix.s"
+        ],
+        "id": 496731863
+      },
+      {
+        "end": null,
+        "monitor_id": null,
+        "start": 1527103995,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "host:ops02.contegix.s"
+        ],
+        "id": 324011860
+      },
+      {
+        "end": 1554202800,
+        "monitor_id": 619251,
+        "start": 1554166800,
+        "groups": [],
+        "active": false,
+        "scope": [
+          "host:ops02.contegix.s"
+        ],
+        "id": 496731864
+      }
+    ],
+    "id": 619251,
+    "multi": true,
+    "name": "Smartproxy Feed mtime",
+    "created": "2016-05-17T12:54:55.728986+00:00",
+    "created_at": 1463489695000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:45.447831+00:00",
+    "overall_state_modified": "2018-02-22T11:00:54.061566+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "host:ops02.contegix.s": 1554202800
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"http.can_connect\".over(\"central-ingest\").by(\"host\",\"instance\",\"url\").last(3).count_by_status()",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 619872,
+    "multi": true,
+    "name": "Central Ingest Tasks (jenkins)",
+    "created": "2016-05-17T15:19:47.795915+00:00",
+    "created_at": 1463498387000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:45.737238+00:00",
+    "overall_state_modified": "2018-05-30T20:11:33.409450+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "instance:leveldb_full_staging_non_central": null
+      },
+      "thresholds": {
+        "warning": 1,
+        "ok": 1,
+        "critical": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "min(last_1h):avg:aws.ec2.instance_age{name:bam::server03::bamboo} by {host} >= 108000",
+    "message": "Verify that the instance isn't hung. Don't want to have rogue unused elastic bamboo instances hanging around. @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 622012,
+    "multi": true,
+    "name": "Long running Elastic Bamboo",
+    "created": "2016-05-18T19:39:42.348834+00:00",
+    "created_at": 1463600382000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:49:47.234679+00:00",
+    "overall_state_modified": "2019-03-30T02:45:52.790102+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "evaluation_delay": 900,
+      "escalation_message": "@slack-ops-alerts Verify that the instance isn't hung. Don't want to have rogue unused elastic bamboo instances hanging around.",
+      "thresholds": {
+        "critical": 108000,
+        "warning": 86400
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"datadog.agent.up\".over(\"host:sonatype-central02.managed.contegix.com\").by(\"host\").last(2).count_by_status()",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": null,
+        "start": 1506956949,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "host:sonatype-central02.managed.contegix.com"
+        ],
+        "id": 252634883
+      }
+    ],
+    "id": 625005,
+    "multi": true,
+    "name": "Host Reporting (central02)",
+    "created": "2016-05-20T11:30:08.618421+00:00",
+    "created_at": 1463743808000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:46.006572+00:00",
+    "overall_state_modified": "2017-10-03T14:46:11.609844+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 15,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "warning": 1,
+        "ok": 1,
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_1h):sum:fastly.requests{*} > 200000",
+    "message": "Fastly / central request rate is at a ludicrous level- averaging more than 200K/min for the last hour.  Typical peak usage (4-5AM) is around 150K/min. @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 755974,
+    "multi": false,
+    "name": "Fastly Requests",
+    "created": "2016-07-26T18:05:22.528229+00:00",
+    "created_at": 1469556322000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:12:52.748521+00:00",
+    "overall_state_modified": "2019-04-01T00:34:35.933747+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 1,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 200000
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:ldap.search.status{*} by {host} < 1",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 840384,
+    "multi": true,
+    "name": "OpenLDAP ldapsearch",
+    "created": "2016-08-19T19:06:20.923777+00:00",
+    "created_at": 1471633580000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:01:34.318135+00:00",
+    "overall_state_modified": "2019-01-18T02:21:25.586878+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.rds.free_storage_space{aws_account:732481404831} by {dbname} < 0.075",
+    "message": "@slack-Main_Account-pipeline-alerts  {{#is_alert}}   {{/is_alert}} @slack-Main_Account-ops-alerts",
+    "matching_downtimes": [],
+    "id": 883391,
+    "multi": true,
+    "name": "Pipeline RDS Low Disk",
+    "created": "2016-09-01T18:48:35.834644+00:00",
+    "created_at": 1472755715000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:49:37.476185+00:00",
+    "overall_state_modified": "2019-03-02T08:55:32.653297+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 120,
+      "escalation_message": "Gonna run out of disk soon ...\n\n@jorlina@sonatype.com {{#is_alert}} @slack-Main_Account-ops-alerts  {{/is_alert}}",
+      "thresholds": {
+        "critical": 0.075,
+        "warning": 0.1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):avg:system.disk.in_use{data-services} by {name} > 0.9",
+    "message": "@slack-pipeline-alerts",
+    "matching_downtimes": [],
+    "id": 883504,
+    "multi": true,
+    "name": "Pipeline EC2 Low Disk",
+    "created": "2016-09-01T19:57:56.263144+00:00",
+    "created_at": 1472759876000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:50:04.496481+00:00",
+    "overall_state_modified": "2018-12-11T21:31:36.484245+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0.9,
+        "warning": 0.8
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"datadog.agent.up\".over(\"data-services\").by(\"host\").last(2).count_by_status()",
+    "message": "@slack-Main_Account-pipeline-alerts",
+    "matching_downtimes": [],
+    "id": 883533,
+    "multi": true,
+    "name": "Pipeline EC2 Host Not Reporting",
+    "created": "2016-09-01T20:03:35.022584+00:00",
+    "created_at": 1472760215000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:50:29.199304+00:00",
+    "overall_state_modified": "2019-02-16T18:53:12.569340+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "warning": 1,
+        "ok": 1,
+        "critical": 1
+      },
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "no_data_timeframe": 5
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_4h):avg:aws.redshift.percentage_disk_space_used{!clusteridentifier:sonatype-bi-vpc-logs} by {clusteridentifier} > 95",
+    "message": "@slack-pipeline-alerts",
+    "matching_downtimes": [],
+    "id": 883759,
+    "multi": true,
+    "name": "Pipeline Redshift Low Disk",
+    "created": "2016-09-01T20:23:45.771084+00:00",
+    "created_at": 1472761425000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:20:18.871724+00:00",
+    "overall_state_modified": "2018-12-17T23:24:21.015779+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 95,
+        "warning": 90
+      }
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "max(last_5m):sum:nginx.request.com.sonatype.clm.count{status:500} + sum:nginx.request.com.sonatype.clm.count{status:501} + sum:nginx.request.com.sonatype.clm.count{status:502} + sum:nginx.request.com.sonatype.clm.count{status:503} + sum:nginx.request.com.sonatype.clm.count{status:504} + sum:nginx.request.com.sonatype.clm.count{status:505} + sum:nginx.request.com.sonatype.clm.count{status:506} + sum:nginx.request.com.sonatype.clm.count{status:507} + sum:nginx.request.com.sonatype.clm.count{status:508} + sum:nginx.request.com.sonatype.clm.count{status:510} + sum:nginx.request.com.sonatype.clm.count{status:511} > 100",
+    "message": "{{#is_warning}}@slack-skynet-alerts\n\nRunbook: https://docs.sonatype.com/display/OPS/Run+Book#RunBook-WARN:IQServices5XXErrorRate\n{{/is_warning}}\n\n{{#is_alert}}@slack-skynet-critical-alert @pagerduty @insight-operations-group@sonatype.com\n\nRunbook: https://docs.sonatype.com/display/OPS/Run+Book#RunBook-ALERT:IQServices5XXErrorRate\n{{/is_alert}}",
+    "matching_downtimes": [],
+    "id": 921805,
+    "multi": false,
+    "name": "IQ services 5XX Error Rate",
+    "created": "2016-09-13T19:00:09.917264+00:00",
+    "created_at": 1473793209000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:55:52.125822+00:00",
+    "overall_state_modified": "2017-12-11T05:58:59.743662+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 20,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 100,
+        "warning": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):sum:pipelinetasks_prod.task_status{status:failure,!taskname:tasks.npmpackagedownloadtask} by {taskname} > 1",
+    "message": "@slack-pipeline-alerts",
+    "matching_downtimes": [],
+    "id": 948448,
+    "multi": true,
+    "name": "Failing pipeline prod tasks!",
+    "created": "2016-09-22T20:13:15.294389+00:00",
+    "created_at": 1474575195000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:10:06.816302+00:00",
+    "overall_state_modified": "2019-03-31T20:09:30.005278+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"RSO Heap\"').rollup('count').last('5m') >= 1",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 965672,
+    "multi": false,
+    "name": "DripStat RSO Heap Usage Alert",
+    "created": "2016-09-28T19:14:55.060354+00:00",
+    "created_at": 1475090095000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:45:59.934083+00:00",
+    "overall_state_modified": "2017-04-25T13:55:18.665364+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 1
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "min(last_1h):max:aws.elb.un_healthy_host_count{data-services,!host:drd-dashboard-prod-1211872785.us-east-1.elb.amazonaws.com,!host:drd-dashboard-staging-723848889.us-east-1.elb.amazonaws.com} by {name} > 0",
+    "message": "@slack-pipeline-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 998932,
+        "start": 1527796468,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 327248499
+      }
+    ],
+    "id": 998932,
+    "multi": true,
+    "name": "Data pipeline ELB has Unhealthy Hosts!",
+    "created": "2016-10-12T14:45:03.139696+00:00",
+    "created_at": 1476283503000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:09:45.288897+00:00",
+    "overall_state_modified": "2019-03-27T20:09:54.148505+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "max(last_5m):avg:pipelinetasks_prod.task_status{status:failure,taskname:tasks.svimport} > 0",
+    "message": "@slack-Main_Account-pipeline-alerts @slck",
+    "matching_downtimes": [],
+    "id": 1064648,
+    "multi": false,
+    "name": "SV Import Task Failures!",
+    "created": "2016-10-28T16:03:40.194791+00:00",
+    "created_at": 1477670620000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:21:41.125009+00:00",
+    "overall_state_modified": null,
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:cert.subject_valid{*} by {url} >= 1",
+    "message": "@slack-ops-alerts cn mismatch! woe is me!",
+    "matching_downtimes": [],
+    "id": 1312110,
+    "multi": true,
+    "name": "Ceritificate CN validation",
+    "created": "2016-11-23T16:35:39.190162+00:00",
+    "created_at": 1479918939000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:38:20.719060+00:00",
+    "overall_state_modified": "2018-04-24T15:42:32.916547+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": true,
+      "renotify_interval": 1440,
+      "escalation_message": "@slack-ops-alerts cn mismatch! woe is me!",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_10m):avg:nfs.not_responding{nfs_host:nas02.nfs} >= 1",
+    "message": "clients are reporting nfs not responding for nas02 @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 1419719,
+    "multi": false,
+    "name": "NFS Not Responding (nas02)",
+    "created": "2016-12-22T13:46:56.920565+00:00",
+    "created_at": 1482414416000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:48:50.772445+00:00",
+    "overall_state_modified": "2018-11-06T20:03:50.366602+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 1,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts nfs clients are still having a hard time mounting from nas02",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:aws priority:all status:error tags:data-services \"NOT AWSEB NOT waldo NOT metadata-collection\"').rollup('count').last('15m') > 0",
+    "message": "@slack-Main_Account-pipeline-alerts",
+    "matching_downtimes": [],
+    "id": 1625618,
+    "multi": false,
+    "name": "Pipeline Cloudwatch Alert!",
+    "created": "2017-02-16T17:43:33.575172+00:00",
+    "created_at": 1487267013000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-31T17:52:27.003298+00:00",
+    "overall_state_modified": "2019-04-01T02:23:39.629535+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "sum(last_5m):sum:nginx.request.com.sonatype.ds_3p.count{status:500} + sum:nginx.request.com.sonatype.ds_3p.count{status:501} + sum:nginx.request.com.sonatype.ds_3p.count{status:502} + sum:nginx.request.com.sonatype.ds_3p.count{status:503} + sum:nginx.request.com.sonatype.ds_3p.count{status:504} + sum:nginx.request.com.sonatype.ds_3p.count{status:505} + sum:nginx.request.com.sonatype.ds_3p.count{status:506} + sum:nginx.request.com.sonatype.ds_3p.count{status:507} + sum:nginx.request.com.sonatype.ds_3p.count{status:508} + sum:nginx.request.com.sonatype.ds_3p.count{status:510} + sum:nginx.request.com.sonatype.ds_3p.count{status:511} > 1",
+    "message": "@slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 1656796,
+    "multi": false,
+    "name": "ds-3p services 5XX Error Rate",
+    "created": "2017-02-23T20:33:19.695524+00:00",
+    "created_at": 1487881999000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:02:55.101606+00:00",
+    "overall_state_modified": "2018-11-06T20:04:12.964559+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 1,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "sum(last_1m):sum:nginx.request.org.sonatype.oss.count{status:504} > 10",
+    "message": "@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 1753792,
+    "multi": false,
+    "name": "OSSRH services 504 Error Rate",
+    "created": "2017-03-16T14:57:23.598650+00:00",
+    "created_at": 1489676243000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:54:14.149029+00:00",
+    "overall_state_modified": "2017-05-13T00:13:11.966588+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 1,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The Future needs fixing! @pagerduty  @slack-ops-alerts",
+      "thresholds": {
+        "critical": 10
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "sum(last_15m):sum:iq.hds.analysis_completed{kind:app}.as_count() < 5",
+    "message": "@pagerduty @jswank@sonatype.com @ksprochi@sonatype.com  @sangles@sonatype.com \n\nHDS App scan count is < 5 over last 15m @slack-ops-alerts @slack-skynet-critical-alert",
+    "matching_downtimes": [],
+    "id": 1879090,
+    "multi": false,
+    "name": "AWS: HDS App Scans",
+    "created": "2017-04-12T19:38:09.200320+00:00",
+    "created_at": 1492025889000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:21:26.409707+00:00",
+    "overall_state_modified": "2018-10-03T00:02:12.432311+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "*"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:system.swap.used{env:prod,hds,!host:clm-db01.contegix.s} by {host} > 536870912",
+    "message": "@slack-skynet-alerts scan-processor swap usage is high on {{host.name}} @slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 2876169,
+    "multi": true,
+    "name": "High swap usage on {{host.name}}",
+    "created": "2017-09-22T16:29:47.962395+00:00",
+    "created_at": 1506097787000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:46.235558+00:00",
+    "overall_state_modified": "2019-02-19T18:34:11.480805+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts scan-processor swap usage is high on {{host.name}}",
+      "thresholds": {
+        "critical": 536870912
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_staging_status"
+    ],
+    "deleted": null,
+    "query": "min(last_5m):avg:runit.status{sonatype-group:skynet,environment:staging} by {name} < 1",
+    "message": "@slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 2887274,
+    "multi": true,
+    "name": "AWS: HDS Stage Runit Service Issue",
+    "created": "2017-09-25T21:37:34.632387+00:00",
+    "created_at": 1506375454000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:26:46.410093+00:00",
+    "overall_state_modified": "2019-04-01T14:43:16.005919+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "escalation_message": "@slack-skynet-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "events('sources:sns priority:all tags:topic:datapipelinebackupstatus \"Failure\"').rollup('count').last('5m') >= 1",
+    "message": "or more Datapipeline Backup jobs have failed @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 3045896,
+    "multi": false,
+    "name": "Datapipeline Backup Job Status",
+    "created": "2017-10-17T20:33:06.422795+00:00",
+    "created_at": 1508272386000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:37:00.571311+00:00",
+    "overall_state_modified": "2018-07-22T14:08:57.398635+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "\"http.can_connect\".over(\"hds\",\"ping\").exclude(\"license\",\"external\",\"host:ops02.contegix.s\").by(\"host\",\"instance\",\"url\").last(4).count_by_status()",
+    "message": "{{#is_alert}}url.name failed to respond.\n\nEnsure the ds-web-worker services are running and healthy on:\n\n1. clmweb01a\n2. clmweb01b\n\nEnsure the scan-processor services are running and healthy on:\n\n1. rhcscan01a\n2. rhcscan01b\n3. clmscan01a\n4. clmscan01b\n5. clmscan01c\n6. idescan01\n\nNotify:@slack-skynet-alerts @insight-operations-group@sonatype.com [Log searching guide](https://docs.sonatype.com/display/OPS/Log+console)\n{{/is_alert}} \n\n{{#is_no_data}}No data is being reported for this monitor. SSH into ops02 and check the status of the Datadog agent by issuing: `sudo /etc/init.d/datadog-agent status`\n\nNotify: @slack-Main_Account-skynet-p2-alerts  @insight-operations-group@sonatype.com {{/is_no_data}}\n\n{{#is_no_data_recovery}}The monitor is now receiving data.\n\nNotify: @slack-Main_Account-skynet-p2-alerts  @insight-operations-group@sonatype.com {{/is_no_data_recovery}}\n\n{{#is_alert_recovery}}Notify: @slack-skynet-alerts @insight-operations-group@sonatype.com{{/is_alert_recovery}}",
+    "matching_downtimes": [],
+    "id": 3513716,
+    "multi": true,
+    "name": "AWS: HDS Internal service ping failed for {{url.name}}",
+    "created": "2017-12-06T21:48:39.385109+00:00",
+    "created_at": 1512596919000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:18.639007+00:00",
+    "overall_state_modified": "2019-03-27T22:40:10.383976+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "thresholds": {
+        "critical": 3,
+        "ok": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 30,
+      "escalation_message": "Ping has still not responded successfully.\n\nEscalation contacts: hds-ops-group@sonatype.com @ksprochi@sonatype.com @sangles@sonatype.com",
+      "no_data_timeframe": 3
+    }
+  },
+  {
+    "tags": [
+      "*"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.rds.cpuutilization{host:db-G656G6WWRDS4KY7B4NYLSDGKTA} > 80",
+    "message": "High CPU alert for AVD prod DB @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 3530980,
+    "multi": false,
+    "name": "High CPU load - AVD prod DB",
+    "created": "2017-12-08T20:16:28.257288+00:00",
+    "created_at": 1512764188000,
+    "creator": {
+      "id": 361216,
+      "handle": "bbleiberg@sonatype.com",
+      "name": "Ben Bleiberg",
+      "email": "bbleiberg@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:06:32.046807+00:00",
+    "overall_state_modified": "2019-03-31T18:27:41.971068+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 60,
+      "escalation_message": "@slack-avd-dev-alerts \nAVD prod DB still has high CPU load. Please fix me :(",
+      "thresholds": {
+        "critical": 80,
+        "critical_recovery": 50
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):sum:nginx.request.com.sonatype.clm.count{status:404} > 400",
+    "message": "{{#is_warning}}\n@slack-skynet-alerts\n{{/is_warning}} \n\n{{#is_alert}}\n@slack-skynet-alerts @insight-operations-group@sonatype.com\n{{/is_alert}}\n\nIQ services are returning 404 responses to requests more than normal. This could indicate a potential problem with the service, but isn't a problem in and of itself. Check the health checks on all HDS services and ensure they're healthy.",
+    "matching_downtimes": [],
+    "id": 3556619,
+    "multi": false,
+    "name": "IQ Services 404 rate",
+    "created": "2017-12-12T16:21:52.777900+00:00",
+    "created_at": 1513095712000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:18.902787+00:00",
+    "overall_state_modified": "2018-01-16T16:19:16.601305+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 10,
+      "escalation_message": "@slack-skynet-p2-alerts \n\nIQ services are still returning 404 responses to requests more than normal. This could indicate a potential problem with the service, but isn't a problem in and of itself. Check the health checks on all HDS services and ensure they're healthy.",
+      "thresholds": {
+        "critical": 400,
+        "warning": 300
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "avg(last_1m):avg:runit.status{sonatype-group:skynet,environment:production} by {name} < 1",
+    "message": "@slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 3879734,
+    "multi": true,
+    "name": "AWS: HDS Prod Runit Service Issue",
+    "created": "2018-01-10T22:06:11.131132+00:00",
+    "created_at": 1515621971000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:19.178721+00:00",
+    "overall_state_modified": "2019-02-19T18:38:15.689887+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "escalation_message": "@slack-ops-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "*"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:system.swap.used{sonatype-group:skynet} by {name} > 134217728",
+    "message": "@slack-skynet-alerts swap usage is high on {{name.name}} @slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 3879831,
+    "multi": true,
+    "name": "AWS: High swap usage on {{name.name}}",
+    "created": "2018-01-10T22:16:05.074329+00:00",
+    "created_at": 1515622565000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:55:46.472564+00:00",
+    "overall_state_modified": "2018-12-11T21:32:50.348699+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-ops-alerts swap usage is high on {{name.name}}",
+      "thresholds": {
+        "critical": 134217728,
+        "warning": 33554432
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "min(last_5m):( sum:aws.applicationelb.httpcode_target_4xx{sonatype-group:skynet,environment:production}.as_rate() + sum:aws.applicationelb.httpcode_elb_4xx{sonatype-group:skynet,environment:production}.as_rate() ) * 60 > 3000",
+    "message": "{{#is_warning}}\n@slack-skynet-alerts \n\n\nThe HDS is returning 4xx level responses to requests more than normal. This could indicate a potential problem with the service, but isn't a problem in and of itself. Check the health checks on all HDS services and ensure they're healthy.\n{{/is_warning}} \n\n{{#is_alert}}\n@slack-skynet-critical-alert \n\nThe HDS is returning 4xx level responses to requests more than normal. This could indicate a potential problem with the service, but isn't a problem in and of itself. Check the health checks on all HDS services and ensure they're healthy.\n{{/is_alert}}\n\n{{#is_warning_recovery}}@slack-skynet-alerts{{/is_warning_recovery}}\n\n{{#is_alert_recovery}}@slack-skynet-critical-alert{{/is_alert_recovery}}",
+    "matching_downtimes": [],
+    "id": 3890081,
+    "multi": false,
+    "name": "AWS: HDS 4xx responses",
+    "created": "2018-01-11T16:56:39.421263+00:00",
+    "created_at": 1515689799000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-10-03T12:47:35.106481+00:00",
+    "overall_state_modified": "2019-03-26T00:20:43.193247+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 3000,
+        "warning": 2000
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "min(last_5m):( sum:aws.applicationelb.httpcode_target_5xx{sonatype-group:skynet,environment:production}.as_rate() + sum:aws.applicationelb.httpcode_elb_5xx{sonatype-group:skynet,environment:production}.as_rate() ) * 60 > 100",
+    "message": "{{#is_warning}} @slack-skynet-alerts  @ksprochi@sonatype.com \nRunbook: https://docs.sonatype.com/display/OPS/Run+Book#RunBook-WARN:IQServices5XXErrorRate\n{{/is_warning}}\n\n{{#is_alert}} @insight-operations-group@sonatype.com @slack-skynet-critical-alert  @ksprochi@sonatype.com @sangles@sonatype.com @slack-ops-alerts @pagerduty \nRunbook: https://docs.sonatype.com/display/OPS/Run+Book#RunBook-ALERT:IQServices5XXErrorRate\n{{/is_alert}}\n\n{{#is_warning_recovery}} @slack-skynet-alerts  @ksprochi@sonatype.com\n{{/is_warning_recovery}}\n\n{{#is_alert_recovery}}@insight-operations-group@sonatype.com @slack-skynet-critical-alert  @ksprochi@sonatype.com @sangles@sonatype.com @slack-ops-alerts @pagerduty \n{{/is_alert_recovery}}",
+    "matching_downtimes": [],
+    "id": 3891613,
+    "multi": false,
+    "name": "AWS: HDS 5xx responses",
+    "created": "2018-01-11T19:50:04.756148+00:00",
+    "created_at": 1515700204000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:27:28.553030+00:00",
+    "overall_state_modified": "2019-03-27T11:50:15.599768+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 10,
+      "escalation_message": "s  @insight-operations-group@sonatype.com @slack-ops-alerts @slack-skynet-critical-alert @pagerduty \n\nEscalation contacts: hds-ops-group@sonatype.com @ksprochi@sonatype.com @sangles@sonatype.com",
+      "thresholds": {
+        "critical": 100,
+        "warning": 10
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:leveldb.mem.pressure{sonatype-group:skynet,environment:production} by {name} > 95",
+    "message": "@slack-Main_Account-skynet-p2-alerts ramdisk + scan-processor is using {{threshold}} of total available memory.",
+    "matching_downtimes": [],
+    "id": 3892460,
+    "multi": true,
+    "name": "AWS: HDS LevelDB Ramdisk Pressure",
+    "created": "2018-01-11T20:32:24.716635+00:00",
+    "created_at": 1515702744000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-08-30T13:11:54.664962+00:00",
+    "overall_state_modified": "2018-12-11T21:32:19.455105+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-Main_Account-skynet-p2-alerts ramdisk + scan-processor is using {{threshold}} of total available memory.",
+      "thresholds": {
+        "critical": 95
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "min(last_1h):avg:scanprocessor.scans.slow{sonatype-group:skynet,environment:production} >= 1",
+    "message": "@slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 3914150,
+    "multi": false,
+    "name": "AWS: HDS Slow Scans",
+    "created": "2018-01-15T20:10:00.321165+00:00",
+    "created_at": 1516047000000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:27:57.556441+00:00",
+    "overall_state_modified": "2019-04-01T09:29:52.626964+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "@slack-skynet-alerts",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "*"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elasticbeanstalk.environment_health{environmentname:insight-license} >= 10",
+    "message": "@slack-skynet-alerts\n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=insight-license&environmentId=e-js3zvn5b66\n\n{{#is_warning}}The health of the insight-license service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The insight-license service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The insight-license service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The insight-license service is healthy.{{/is_warning_recovery}}",
+    "matching_downtimes": [],
+    "id": 3947278,
+    "multi": false,
+    "name": "Elastic Beanstalk Prod Insight License Service Health",
+    "created": "2018-01-19T14:30:33.235358+00:00",
+    "created_at": 1516372233000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:20.868652+00:00",
+    "overall_state_modified": "2018-12-17T03:59:59.547001+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 10,
+      "escalation_message": "@slack-skynet-p2-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=insight-license&environmentId=e-js3zvn5b66\n\n{{#is_warning}}The health of the insight-license service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The insight-license service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The insight-license service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The insight-license service is healthy.{{/is_warning_recovery}}",
+      "thresholds": {
+        "critical": 10,
+        "warning": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "*"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elasticbeanstalk.environment_health{environmentname:ahc-proxy-shim-prod} >= 10",
+    "message": "@slack-skynet-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=ahc-proxy-shim&environmentId=e-iwachxwcv8\n\n{{#is_warning}}The health of the ahc-proxy-shim-prod service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The ahc-proxy-shim-prod service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The ahc-proxy-shim-prod service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The ahc-proxy-shim-prod service is healthy.{{/is_warning_recovery}}",
+    "matching_downtimes": [],
+    "id": 3947282,
+    "multi": false,
+    "name": "Elastic Beanstalk Prod AHC Proxy Shim Health",
+    "created": "2018-01-19T14:32:06.683994+00:00",
+    "created_at": 1516372326000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:21.158071+00:00",
+    "overall_state_modified": "2019-04-01T19:01:04.480035+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 10,
+      "escalation_message": "@slack-skynet-p2-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=ahc-proxy-shim&environmentId=e-iwachxwcv8\n\n{{#is_warning}}The health of the ahc-proxy-shim-prod service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The ahc-proxy-shim-prod service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The ahc-proxy-shim-prod service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The ahc-proxy-shim-prod service is healthy.{{/is_warning_recovery}}",
+      "thresholds": {
+        "critical": 10,
+        "warning": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.efs.data_write_iobytes.average{filesystemid:fs-72423092} < 15000",
+    "message": "@slack-skynet-alerts \n@ksprochi@sonatype.com \nThe write volume for the HDS EFS scan and report store is low.",
+    "matching_downtimes": [],
+    "id": 3996105,
+    "multi": false,
+    "name": "AWS: HDS EFS scan and report store low write volume",
+    "created": "2018-01-25T23:12:06.391132+00:00",
+    "created_at": 1516921926000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-21T00:31:15.535207+00:00",
+    "overall_state_modified": "2019-03-15T01:40:46.658380+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 60,
+      "escalation_message": "@slack-skynet-critical-alert \n@slack-ops-alerts \n@pagerduty \nThe write volume for the HDS EFS scan volume is still low.",
+      "thresholds": {
+        "critical": 15000,
+        "warning": 30000
+      }
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):max:nexus.repos.staging{url:http://ossrh.1.aws.s:8081,!state:released,!state:stale,!state:closed,!state:open} > 2000",
+    "message": "{{#is_alert}} The staging repo on OSSRH is alarming {{/is_alert}}  \n{{#is_recovery}} The staging repo on OSSRH has  recovered {{/is_recovery}} \n{{#is_alert}} The number of processes are over 2000 and OSSRH will soon tip over. {{/is_alert}}\n{{#is_warning}} The number of processes are over 1500 and OSSRH will soon tip over at 2000. {{/is_warning}} \n{{#is_recovery}} We are all happy now. {{/is_recovery}} \n@pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 4039206,
+    "multi": false,
+    "name": "OSSRH Total Staging repo count",
+    "created": "2018-02-01T16:17:06.177121+00:00",
+    "created_at": 1517501826000,
+    "creator": {
+      "id": 648789,
+      "handle": "sanderson@sonatype.com",
+      "name": "Scott Anderson",
+      "email": "sanderson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-19T14:12:58.018112+00:00",
+    "overall_state_modified": "2019-03-19T15:46:08.341045+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "evaluation_delay": 900,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 2000,
+        "warning": 1500
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_staging_status"
+    ],
+    "deleted": null,
+    "query": "sum(last_1m):sum:veneur.worker.metrics_flushed_total{aws_name_tag:hds-staging-global-veneur-collector} by {host}.as_count() <= 0",
+    "message": "The global veneur collector in staging appears to be down. The way to fix this problem is to ssh into {{ host.name }} and do this as root:\n\n# sudo sv start veneur\n# tail -f /var/log/veneur/current\n\nSometimes the veneur process will be running but unable to bind to its port (8126) because of dogstatsd. The veneur agent will keep spewing an error message to the logs about the port being in use if dogstatsd is running. We disable dogstatsd by adding a line to /etc/dd-agent/datadog.conf:\n\nuse_dogstatsd: no\n\nSometimes dogstatsd gets started up for various bad reasons. If the datadog config file has that line to disable dogstatsd and ps shows dogstatsd is running, then the following should fix that problem (as root):\n\n# /etc/init.d/datadog restart\n\nAfter that, start up the veneur agent with \n\n# sv start veneur\n\nIf the agent won't start, or the logs show other problems after that, please contact the SKYNET team to fix the problem.\n\nNotify: @ksprochi@sonatype.com @slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 4075362,
+    "multi": true,
+    "name": "AWS: HDS Staging Global Veneur Collector diminished capacity",
+    "created": "2018-02-06T16:58:05.722359+00:00",
+    "created_at": 1517936285000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:09.351963+00:00",
+    "overall_state_modified": "2018-10-10T16:57:42.958658+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 4,
+      "require_full_window": false,
+      "new_host_delay": 15,
+      "notify_no_data": true,
+      "renotify_interval": 90,
+      "escalation_message": "Notify: @slack-skynet-alerts",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "sum(last_1m):sum:veneur.worker.metrics_flushed_total{aws_name_tag:hds-production-global-veneur-collector} by {host}.as_count() <= 0",
+    "message": "The global veneur collector in production appears to be down. The way to fix this problem is to ssh into {{ host.name }} and do this as root:\n\n# sudo sv start veneur\n# tail -f /var/log/veneur/current\n\nSometimes the veneur process will be running but unable to bind to its port (8126) because of dogstatsd. The veneur agent will keep spewing an error message to the logs about the port being in use if dogstatsd is running. We disable dogstatsd by adding a line to /etc/dd-agent/datadog.conf:\n\nuse_dogstatsd: no\n\nSometimes dogstatsd gets started up for various bad reasons. If the datadog config file has that line to disable dogstatsd and ps shows dogstatsd is running, then the following should fix that problem (as root):\n\n# /etc/init.d/datadog restart\n\nAfter that, start up the veneur agent with \n\n# sv start veneur\n\nIf the agent won't start, or the logs show other problems after that, please contact the SKYNET team to fix the problem.\n\nNotify: @ksprochi@sonatype.com",
+    "matching_downtimes": [],
+    "id": 4076442,
+    "multi": true,
+    "name": "AWS: HDS Production Global Veneur Collector diminished capacity",
+    "created": "2018-02-06T19:53:40.080121+00:00",
+    "created_at": 1517946820000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:13.911667+00:00",
+    "overall_state_modified": "2018-10-10T16:57:42.958658+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 4,
+      "require_full_window": false,
+      "new_host_delay": 15,
+      "notify_no_data": true,
+      "renotify_interval": 60,
+      "escalation_message": "Notify:  @slack-skynet-critical-alert @slack-ops-alerts @pagerduty",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_staging_status"
+    ],
+    "deleted": null,
+    "query": "events('sources:sns priority:all status:info tags:topic:staging-efs-cleanup-topic \"Success AWS-RunDocument\"').rollup('count').last('2d') <= 0",
+    "message": "@slack-skynet-alerts \n\nCheck the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-03eaed9ba3ce1ea28/description?region=us-east-1",
+    "matching_downtimes": [],
+    "id": 4106867,
+    "multi": false,
+    "name": "AWS: HDS Staging Scan and Report cleanup not successful in the past 48 hours",
+    "created": "2018-02-09T15:39:21.285357+00:00",
+    "created_at": 1518190761000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:18.028906+00:00",
+    "overall_state_modified": "2018-03-26T02:15:48.636045+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 5760,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 1440,
+      "escalation_message": "@sangles@sonatype.com @ksprochi@sonatype.com @slack-skynet-alerts @slack-ops-alerts"
+    }
+  },
+  {
+    "tags": [
+      "hds_staging_status"
+    ],
+    "deleted": null,
+    "query": "events('sources:sns priority:all status:info tags:topic:staging-ods-cleanup-topic \"Success AWS-RunDocument\"').rollup('count').last('2d') <= 0",
+    "message": "@slack-skynet-alerts @ksprochi@sonatype.com \n\nCheck the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-00abc1fbebdad47c8/description?region=us-east-1",
+    "matching_downtimes": [],
+    "id": 4128851,
+    "multi": false,
+    "name": "AWS: HDS Staging ODS cleanup not successful in the past 48 hours",
+    "created": "2018-02-12T22:53:16.356754+00:00",
+    "created_at": 1518475996000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:48.460597+00:00",
+    "overall_state_modified": "2018-03-25T03:58:13.479154+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 5760,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 360,
+      "escalation_message": "@sangles@sonatype.com @ksprochi@sonatype.com @slack-skynet-critical-alert  @slack-ops-alerts"
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "events('sources:sns priority:all status:info tags:topic:hds-production-ods-cleanup-topic \"Success AWS-RunRemoteScript\"').rollup('count').last('2d') <= 0",
+    "message": "Check the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-06413afbf05e06e80/description?region=us-east-1\n\n@sangles@sonatype.com @ksprochi@sonatype.com @slack-skynet-critical-alert",
+    "matching_downtimes": [],
+    "id": 4144440,
+    "multi": false,
+    "name": "AWS: HDS Production ODS cleanup not successful in the past 48 hours",
+    "created": "2018-02-14T14:21:36.077279+00:00",
+    "created_at": 1518618096000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:59.544200+00:00",
+    "overall_state_modified": "2019-03-07T10:31:01.479200+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 5760,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 360,
+      "escalation_message": "Check the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-06413afbf05e06e80/description?region=us-east-1\n\n@sangles@sonatype.com @ksprochi@sonatype.com @slack-skynet-critical-alert @pagerduty @slack-ops-alerts"
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "events('sources:sns priority:all status:info tags:topic:hds-production-efs-cleanup-topic \"Success AWS-RunRemoteScript\"').rollup('count').last('2d') <= 0",
+    "message": "@slack-skynet-alerts \n@ksprochi@sonatype.com \n@sangles@sonatype.com \n\nCheck the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-03eaed9ba3ce1ea28/description?region=us-east-1",
+    "matching_downtimes": [],
+    "id": 4144443,
+    "multi": false,
+    "name": "AWS: HDS Production Scan and Report cleanup not successful in the past 48 hours",
+    "created": "2018-02-14T14:22:37.869819+00:00",
+    "created_at": 1518618157000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:28:59.788996+00:00",
+    "overall_state_modified": "2018-10-12T08:25:08.224706+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 5760,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 1440,
+      "escalation_message": "Check the S3 logs in the following maintenance window for more information https://console.aws.amazon.com/systems-manager/maintenance-windows/mw-03eaed9ba3ce1ea28/description?region=us-east-1\n\n@slack-skynet-critical-alert   @sangles@sonatype.com @ksprochi@sonatype.com @slack-skynet-critical-alert @slack-ops-alerts @pagerduty"
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1d):sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-staging}.as_count() <= 0",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4237725,
+    "multi": false,
+    "name": "AVD Staging - No External Issues processed on queue avd-external-issue-feed-staging",
+    "created": "2018-02-23T20:19:05.866664+00:00",
+    "created_at": 1519417145000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:31:20.138414+00:00",
+    "overall_state_modified": "2019-04-01T01:48:47.081648+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1d):sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-prod}.as_count() <= 0",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4237771,
+    "multi": false,
+    "name": "AVD Prod - No External Issues processed on queue avd-external-issue-feed-prod",
+    "created": "2018-02-23T20:26:28.747156+00:00",
+    "created_at": 1519417588000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:34:29.476039+00:00",
+    "overall_state_modified": "2019-03-31T13:49:32.431486+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1d):sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_count.sum{*} <= 0",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4237799,
+    "multi": false,
+    "name": "AVD Staging - No External Issues ingested by OSSIndex feed producer",
+    "created": "2018-02-23T20:33:51.173784+00:00",
+    "created_at": 1519418031000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:31:53.380203+00:00",
+    "overall_state_modified": "2018-02-24T20:40:01.127483+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1d):sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_count.sum{*} <= 0",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4237814,
+    "multi": false,
+    "name": "AVD Prod - No External Issues ingested by OSSIndex feed producer",
+    "created": "2018-02-23T20:35:25.829973+00:00",
+    "created_at": 1519418125000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:34:49.899436+00:00",
+    "overall_state_modified": "2019-03-11T01:50:15.345454+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0,
+        "critical_recovery": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "max(last_1d):sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_ingest_error_count{*} >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4238223,
+    "multi": false,
+    "name": "AVD Prod - OSSIndex feed producer ingest error",
+    "created": "2018-02-23T21:28:49.003022+00:00",
+    "created_at": 1519421329000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:33:51.867242+00:00",
+    "overall_state_modified": "2018-02-23T21:28:56.959238+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1,
+        "critical_recovery": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "max(last_1d):sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_error_count{*} >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4238231,
+    "multi": false,
+    "name": "AVD Prod - OSSIndex feed producer publish error",
+    "created": "2018-02-23T21:29:32.517555+00:00",
+    "created_at": 1519421372000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:33:31.153349+00:00",
+    "overall_state_modified": "2018-06-09T21:37:12.323892+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 24,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1,
+        "critical_recovery": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_5m):sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-errors-staging}.as_count() >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4256093,
+    "multi": false,
+    "name": "AVD Staging - Messages written to the External Issue errors queue.",
+    "created": "2018-02-26T17:06:11.928842+00:00",
+    "created_at": 1519664771000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:32:49.912752+00:00",
+    "overall_state_modified": "2018-02-26T17:10:55.103910+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1,
+        "critical_recovery": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1h):sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-errors-prod}.as_count() >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4256152,
+    "multi": false,
+    "name": "AVD Prod - Messages written to the External Issues errors queue.",
+    "created": "2018-02-26T17:14:52.031770+00:00",
+    "created_at": 1519665292000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:35:14.197825+00:00",
+    "overall_state_modified": "2018-02-26T17:15:02.546025+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1,
+        "critical_recovery": 0
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "\"http.ssl_cert\".over(\"instance:clm_dogfood_app_healthcheck\",\"url:https://policy.s/healthcheck\").by(\"host\",\"instance\",\"url\").last(4).count_by_status()",
+    "message": "@webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 4256433,
+    "multi": true,
+    "name": "HTTPS Checks (page business hours/hc notify)",
+    "created": "2018-02-26T18:01:50.928299+00:00",
+    "created_at": 1519668110000,
+    "creator": {
+      "id": 648789,
+      "handle": "sanderson@sonatype.com",
+      "name": "Scott Anderson",
+      "email": "sanderson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-04T16:42:07.836631+00:00",
+    "overall_state_modified": "2019-01-04T16:44:08.640719+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "thresholds": {
+        "warning": 2,
+        "ok": 2,
+        "critical": 3
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "events('priority:all status:error \"reported that nxrm* is down\"').rollup('count').last('10m') >= 3",
+    "message": "The NXRM HA Cluster appears to be flapping. Please investigate. @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 4418729,
+    "multi": false,
+    "name": "NXRM Cluster Flap Detection",
+    "created": "2018-03-16T17:40:37.877360+00:00",
+    "created_at": 1521222037000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:48:22.517805+00:00",
+    "overall_state_modified": "2018-04-24T14:35:31.060290+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 20,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 180,
+      "escalation_message": "The NXRM HA Cluster appears to be flapping. Please investigate. @slack-ops-alerts"
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_1d):diff(sum:aws.s3.number_of_objects{bucketname:avd-github-event-archives-staging}) < 24",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4583195,
+    "multi": false,
+    "name": "No New Archives staging",
+    "created": "2018-04-04T19:11:33.566929+00:00",
+    "created_at": 1522869093000,
+    "creator": {
+      "id": 361216,
+      "handle": "bbleiberg@sonatype.com",
+      "name": "Ben Bleiberg",
+      "email": "bbleiberg@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:05:57.528211+00:00",
+    "overall_state_modified": "2019-03-13T18:56:37.219418+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 1416,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "evaluation_delay": 900,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 24
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "min(last_1h):sum:aws.elb.un_healthy_host_count{sonatype-group:data-science,use-case:avd,environment:prod} by {name} >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4810976,
+    "multi": true,
+    "name": "AVD Prod ELB has Unhealthy Hosts!",
+    "created": "2018-04-30T18:14:23.086608+00:00",
+    "created_at": 1525112063000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:08:53.976762+00:00",
+    "overall_state_modified": "2019-03-02T09:01:07.816019+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "evaluation_delay": 900,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "min(last_1h):sum:aws.elb.un_healthy_host_count{sonatype-group:data-science,use-case:avd,environment:staging} by {name} >= 1",
+    "message": "@slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 4810979,
+    "multi": true,
+    "name": "AVD Staging ELB has Unhealthy Hosts!",
+    "created": "2018-04-30T18:15:15.566233+00:00",
+    "created_at": 1525112115000,
+    "creator": {
+      "id": 313182,
+      "handle": "cjohnstone@sonatype.com",
+      "name": null,
+      "email": "cjohnstone@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T19:30:59.702452+00:00",
+    "overall_state_modified": "2019-03-02T09:01:08.858035+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": false,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "evaluation_delay": 900,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "events('priority:all \"#nodeping\"').rollup('count').last('5m') > 1",
+    "message": "{{ event.text }}\n @webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 4954103,
+    "multi": false,
+    "name": "{{ event.title }}",
+    "created": "2018-05-16T01:46:16.166152+00:00",
+    "created_at": 1526435176000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:02:23.049301+00:00",
+    "overall_state_modified": "2019-02-13T19:40:23.835450+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "events('priority:all \"empty jar file queries\"').rollup('count').last('15m') >= 2",
+    "message": "There are {{event.tags.query_count}} queries for the empty jar file hash. That probably means that the HDS is going to run out of database connections very soon and all of HDS will have an unscheduled outage (that is very BAD). The solution is to restart the web workers and any other scan processor servers that are holding DB connections so that they free them up. It also may be necessary to kill off any query that is doing a SELECT for a specific hash. It would probably be best to contact somebody from the SKYNET team to fix this problem ASAP.\n\n@slack-skynet-alerts\n@ksprochi@sonatype.com @sangles@sonatype.com @jorlina@sonatype.com",
+    "matching_downtimes": [],
+    "id": 5257452,
+    "multi": false,
+    "name": "AWS: HDS - Hash of Doom Queries",
+    "created": "2018-06-16T03:59:08.707433+00:00",
+    "created_at": 1529121548000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T02:29:00.077898+00:00",
+    "overall_state_modified": "2018-06-16T04:28:13.575304+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 20,
+      "escalation_message": "There are still {{event.tags.query_count}} queries for the empty jar file hash. That probably means that the HDS is going to fail completely soon and have an unplanned outage.  The solution is to restart the web workers and any other scan processor servers that are holding DB connections so that they free them up. It also may be necessary to kill off any query that is doing a SELECT for a specific hash. It would probably be best to contact somebody from the SKYNET team to fix this problem ASAP.\n\n \n@slack-skynet-critical-alert \n@slack-ops-alerts \n@pagerduty \n@jorlina@sonatype.com @ksprochi@sonatype.com @sangles@sonatype.com"
+    }
+  },
+  {
+    "tags": [
+      "tier:p2"
+    ],
+    "deleted": null,
+    "query": "max(last_15m):avg:mailq.num{*} > 20",
+    "message": "Too many mail messages are waiting to be delivered from smtp-relay.aws.s (mail.s). @webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 5301475,
+    "multi": false,
+    "name": "Mailq on smtp-relay.aws.s",
+    "created": "2018-06-20T15:21:20.716664+00:00",
+    "created_at": 1529508080000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T20:49:19.119031+00:00",
+    "overall_state_modified": "2018-06-20T15:21:57.344300+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 90,
+      "escalation_message": "Too many mail messages are *still* waiting to be delivered from smtp-relay.aws.s (mail.s). @webhook-p2-pagerduty @slack-ops-alerts",
+      "thresholds": {
+        "critical": 20
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1",
+      "prod",
+      "lqa",
+      "ops-alerts",
+      "ossindex"
+    ],
+    "deleted": null,
+    "query": "avg(last_30m):avg:aws.rds.cpuutilization{use-case:lqa,environment:prod} > 80",
+    "message": "{{#is_alert}}\nLQA Prod DB CPU usage is high\n{{/is_alert}} \n{{#is_recovery}}\nLQA Prod DB CPU is back to nominal\n{{/is_recovery}} \n\n@pagerduty  @slack-avd-dev-alerts @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 5303896,
+    "multi": false,
+    "name": "LQA Prod: DB CPU Usage",
+    "created": "2018-06-20T20:54:12.651524+00:00",
+    "created_at": 1529528052000,
+    "creator": {
+      "id": 361216,
+      "handle": "bbleiberg@sonatype.com",
+      "name": "Ben Bleiberg",
+      "email": "bbleiberg@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-14T18:49:19.546501+00:00",
+    "overall_state_modified": "2018-06-20T20:54:14.986394+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 2,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 60,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "evaluation_delay": 900,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 80,
+        "critical_recovery": 30
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('priority:all tags:avd-exception-event,env-stage').rollup('count').last('5m') > 0",
+    "message": "{{event.text}} @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 5499268,
+    "multi": false,
+    "name": "Exception happened in Staging",
+    "created": "2018-07-09T14:39:00.602292+00:00",
+    "created_at": 1531147140000,
+    "creator": {
+      "id": 361216,
+      "handle": "bbleiberg@sonatype.com",
+      "name": "Ben Bleiberg",
+      "email": "bbleiberg@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:07:20.783520+00:00",
+    "overall_state_modified": "2019-04-01T17:46:29.120377+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('priority:all tags:avd-exception-event,env-prod').rollup('count').last('5m') > 0",
+    "message": "{{event.text}} @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 5499278,
+    "multi": false,
+    "name": "Exception happened in Prod",
+    "created": "2018-07-09T14:40:22.728861+00:00",
+    "created_at": 1531147222000,
+    "creator": {
+      "id": 361216,
+      "handle": "bbleiberg@sonatype.com",
+      "name": "Ben Bleiberg",
+      "email": "bbleiberg@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-14T21:07:40.890538+00:00",
+    "overall_state_modified": "2019-03-28T22:19:39.413494+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elasticbeanstalk.environment_health{environmentname:user-telemetry-forwarder-prod} >= 10",
+    "message": "@slack-ops-alerts @slack-skynet-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=user-telemetry-forwarder&environmentId=e-mvim3zc2f2\n\n{{#is_warning}}The health of the user-telemetry-forwarder service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The user-telemetry-forwarder service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The user-telemetry-forwarder service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The user-telemetry-forwarder service is healthy.{{/is_warning_recovery}}",
+    "matching_downtimes": [],
+    "id": 5560909,
+    "multi": false,
+    "name": "Elastic Beanstalk Prod User Telemetry Forwarder Health",
+    "created": "2018-07-16T13:09:05.631509+00:00",
+    "created_at": 1531746545000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-25T01:19:22.779619+00:00",
+    "overall_state_modified": "2019-04-01T08:11:50.922838+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "escalation_message": "@slack-ops-alerts @slack-skynet-p2-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=user-telemetry-forwarder&environmentId=e-mvim3zc2f2\n\n{{#is_warning}}The health of the user-telemetry-forwarder service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The user-telemetry-forwarder service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The user-telemetry-forwarder service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The user-telemetry-forwarder service is healthy.{{/is_warning_recovery}}",
+      "thresholds": {
+        "critical": 10,
+        "warning": 5
+      }
+    }
+  },
+  {
+    "tags": [
+      "*",
+      "tier:p3"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.elasticbeanstalk.environment_health{environmentname:user-telemetry-forwarder-staging} >= 300",
+    "message": "@slack-skynet-alerts @slack-ops-alerts  \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=user-telemetry-forwarder-staging&environmentId=e-vpnxgmmeqk\n\n{{#is_warning}}The health of the user-telemetry-forwarder service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The user-telemetry-forwarder service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The user-telemetry-forwarder service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The user-telemetry-forwarder service is healthy.{{/is_warning_recovery}} @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 5560923,
+    "multi": false,
+    "name": "Elastic Beanstalk Staging User Telemetry Forwarder Health",
+    "created": "2018-07-16T13:11:26.702171+00:00",
+    "created_at": 1531746686000,
+    "creator": {
+      "id": 501196,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "email": "sangles@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-12-17T18:02:51.684607+00:00",
+    "overall_state_modified": "2018-12-17T18:00:05.903716+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "escalation_message": "@slack-skynet-p2-alerts @slack-ops-alerts \n\nhttps://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=user-telemetry-forwarder-staging&environmentId=e-vpnxgmmeqk\n\n{{#is_warning}}The health of the user-telemetry-forwarder service is currently unknown, which may indicate a problem.{{/is_warning}}\n\n{{#is_alert}}The user-telemetry-forwarder service is unhealthy.{{/is_alert}} \n\n{{#is_alert_recovery}}The user-telemetry-forwarder service is healthy.{{/is_alert_recovery}}\n{{#is_warning_recovery}}The user-telemetry-forwarder service is healthy.{{/is_warning_recovery}}",
+      "thresholds": {
+        "critical": 300,
+        "warning": 200
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status",
+      "tier:p1"
+    ],
+    "deleted": null,
+    "query": "\"aws_alb_target_healthcheck\".over(\"env:production\",\"hds\").by(\"target_group\").last(4).count_by_status()",
+    "message": "{{#is_alert}}@ksprochi@sonatype.com @slack-skynet-critical-alert @slack-ops-alerts  @insight-operations@sonatype.com @pagerduty \n# P1 Outage \n*P1 Outage*\n\nThere are *no* healthy targets in target group {{target_group.name}}\n\nHDS is out of service and needs immediate attention!\n\nscan processor servers: clmscan01a/clmscan01b/idescan01a/rhcscan01a/rhcscan01b\n\nThings to look at:\n\n1. ssh into the web workers (clmweb01a/clmweb01b) and see if the ds-web-worker process is running. if not, sudo sv start ds-web-worker and look at /var/log/ds-web-worker/ds-web-worker.log to see if there are any errors\n2. ssh into the scan processor server and see if the scan-processor java process is running (or ide-scan process if it's the ide scan server). If the service isn't running then sv start scan-processor (or sv start ide-scan)     \n3. Check the logs in /var/log/scan-processor (or /var/log/ide-scan) for errors.\n4. Database connections may have been all used up. There will be log messages indicating db connectivity failures.\n \n{{/is_alert}}\n\n{{#is_warning}}@slack-skynet-alerts \nThere is at least one unhealthy target in target group {{target_group.name}}\n\nscan processor servers: clmscan01a/clmscan01b/idescan01a/rhcscan01a/rhcscan01b\n\nThings to look at:\n\n1. ssh into the web workers (clmweb01a/clmweb01b) and see if the ds-web-worker process is running. if not, sudo sv start ds-web-worker and look at /var/log/ds-web-worker/ds-web-worker.log to see if there are any errors\n2. ssh into the scan processor server and see if the scan-processor java process is running (or ide-scan process if it's the ide scan server). If the service isn't running then sv start scan-processor (or sv start ide-scan)     \n3. Check the logs in /var/log/scan-processor (or /var/log/ide-scan) for errors.\n4. Database connections may have been all used up. There will be log messages indicating db connectivity failures.\n{{/is_warning}}\n\n{{#is_alert_recovery}}@ksprochi@sonatype.com @slack-skynet-critical-alert @slack-ops-alerts   @insight-operations@sonatype.com @pagerduty\nAll targets in target group {{target_group.name}} are now healthy.\n{{/is_alert_recovery}}\n\n{{#is_warning_recovery}}@slack-skynet-alerts\nAll targets in target group {{target_group.name}} are now healthy.\n{{/is_warning_recovery}}",
+    "matching_downtimes": [],
+    "id": 5607407,
+    "multi": true,
+    "name": "AWS: HDS ALB target health",
+    "created": "2018-07-20T18:32:18.665144+00:00",
+    "created_at": 1532111538000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-04-01T19:14:34.904539+00:00",
+    "overall_state_modified": "2019-04-01T19:05:09.643977+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 2,
+      "new_host_delay": 60,
+      "notify_no_data": false,
+      "renotify_interval": 10,
+      "escalation_message": "{{#is_alert}}@slack-skynet-critical-alert @slack-ops-alerts @insight-operations@sonatype.com @pagerduty \nThere are *still no* healthy targets in target group {{target_group.name}}.\n{{/is_alert}}",
+      "thresholds": {
+        "warning": 2,
+        "ok": 1,
+        "critical": 3
+      }
+    }
+  },
+  {
+    "tags": [
+      "lqa",
+      "prod",
+      "ops-alerts",
+      "tier:p1",
+      "ossindex"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.elb.target_response_time.p95{name:lqa-prod-ecs-alb} > 10",
+    "message": "{{#is_alert}}\nLQA Prod ALB Response Time is very slow\n{{/is_alert}} \n{{#is_recovery}}\nLQA Prod ALB Response Time is back to normal\n{{/is_recovery}} \n\n\n@webhook-p2-pagerduty  \n@ethompson@sonatype.com @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 5608568,
+    "multi": false,
+    "name": "LQA Prod: ALB Response Time",
+    "created": "2018-07-20T21:02:39.301230+00:00",
+    "created_at": 1532120559000,
+    "creator": {
+      "id": 820252,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "email": "ethompson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-14T18:41:33.648920+00:00",
+    "overall_state_modified": "2018-07-20T21:02:51.071755+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 10,
+        "warning": 8
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:aws priority:all status:error tags:data-services,data-aws \"vulnerability OR cve OR avd OR batch\"').rollup('count').last('15m') > 0",
+    "message": "@slack-Main_Account-data-security-alerts",
+    "matching_downtimes": [],
+    "id": 6177922,
+    "multi": false,
+    "name": "Data Security CloudWatch Alarm",
+    "created": "2018-08-31T19:00:28.169620+00:00",
+    "created_at": 1535742028000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-06T02:00:42.479536+00:00",
+    "overall_state_modified": "2019-03-31T18:03:23.322928+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:aws priority:all status:error tags:data-aws,data-services \"-license OR license* OR *license* OR *License* OR *CoreServices* OR *HealthLongWarningPeriod*\"').rollup('count').last('15m') > 0",
+    "message": "@slack-Main_Account-data-license-alerts",
+    "matching_downtimes": [],
+    "id": 6177938,
+    "multi": false,
+    "name": "Data License CloudWatch Alarm",
+    "created": "2018-08-31T19:03:50.000803+00:00",
+    "created_at": 1535742230000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-11-05T16:56:47.428828+00:00",
+    "overall_state_modified": "2019-03-31T03:12:40.652935+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:aws priority:all status:error tags:data-aws,data-services \"Pypi* OR RHC* OR Ingest* OR stack-ingest* OR datamart OR database OR pipeline OR inactivity OR IdSrvStagingUnhealthy OR aname\"').rollup('count').last('15m') > 0",
+    "message": "@slack-Main_Account-data-identity-alerts",
+    "matching_downtimes": [
+      {
+        "end": null,
+        "monitor_id": 6177948,
+        "start": 1552934015,
+        "groups": [],
+        "active": true,
+        "scope": [
+          "*"
+        ],
+        "id": 488306929
+      }
+    ],
+    "id": 6177948,
+    "multi": false,
+    "name": "Data Identity CloudWatch Alarm",
+    "created": "2018-08-31T19:07:06.729950+00:00",
+    "created_at": 1535742426000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-08T23:57:01.212274+00:00",
+    "overall_state_modified": "2019-04-01T17:40:49.216805+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {
+        "*": null
+      },
+      "include_tags": true,
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 1440
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:aws priority:all status:error tags:data-aws,data-services \"metadata-\"').rollup('count').last('15m') > 0",
+    "message": "@slack-Main_Account-data-hygiene-alerts",
+    "matching_downtimes": [],
+    "id": 6178397,
+    "multi": false,
+    "name": "Data Hygiene Cloudwatch Alarm",
+    "created": "2018-08-31T20:16:44.649105+00:00",
+    "created_at": 1535746604000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-09-06T02:01:32.606524+00:00",
+    "overall_state_modified": "2018-10-31T17:31:21.172883+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_10m):avg:system.disk.in_use{host:i-0d2314caecaf20a74,device:/dev/nvme0n1p1} > 0.81",
+    "message": "{{#is_warning}} @slack-cdi-alerts \nThe free space on jenkins.zion.aws.s is at 2gb free.\n{{/is_warning}}\n\n{{#is_alert}} @slack-cdi-alerts   @webhook-p2-pagerduty  The free space on jenkins.zion.aws.s is under 1.5gb free.{{/is_alert}}",
+    "matching_downtimes": [],
+    "id": 6254589,
+    "multi": false,
+    "name": "CDI Jenkins disk space",
+    "created": "2018-09-07T17:21:07.812363+00:00",
+    "created_at": 1536340867000,
+    "creator": {
+      "id": 648789,
+      "handle": "sanderson@sonatype.com",
+      "name": "Scott Anderson",
+      "email": "sanderson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-23T14:25:03.448685+00:00",
+    "overall_state_modified": "2018-09-11T16:06:10.915798+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0.81,
+        "warning": 0.75
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p3",
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "events('priority:all tags:hds,clm,scan_file_size \"Very large app scan file\"').rollup('count').last('5m') >= 1",
+    "message": "{{event.title}} \n{{event.text}} \n\nnotify: @ksprochi@sonatype.com @slack-skynet-alerts",
+    "matching_downtimes": [],
+    "id": 6640429,
+    "multi": false,
+    "name": "AWS: HDS - Very large app scan file received",
+    "created": "2018-10-09T21:17:04.594346+00:00",
+    "created_at": 1539119824000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-10-10T13:33:09.216263+00:00",
+    "overall_state_modified": "2018-11-07T05:44:50.839281+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):min:nodeping.checks{enabled:active,!label:md_office,!label:license-manager.sonatype.com,!label:help.sonatype.com} by {label} < 1",
+    "message": "{{#is_alert}}\nNodeping is reporting this check is failing. {{label.name}}\n{{/is_alert}}\n{{#is_alert_recovery}}\nCheck has recovered.\n{{/is_alert_recovery}}  @webhook-p2-pagerduty @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 6720610,
+    "multi": true,
+    "name": "P2 {{label.name}} External Check",
+    "created": "2018-10-16T11:50:26.463696+00:00",
+    "created_at": 1539690626000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-02-13T19:25:20.785422+00:00",
+    "overall_state_modified": "2019-04-01T13:06:13.241303+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p1",
+      "lqa",
+      "prod",
+      "ops-alerts",
+      "ossindex"
+    ],
+    "deleted": null,
+    "query": "avg(last_1h):sum:aws.applicationelb.healthy_host_count{use-case:lqa,environment:prod} / sum:aws.ecs.service.desired{cluster:lqa-prod} < 0.25",
+    "message": "{{#is_alert}}\nLQA Prod Host health is degraded\n{{/is_alert}} \n\n{{#is_recovery}}\nLQA Prod Host health has returned to normal\n{{/is_recovery}} \n\n@ethompson@sonatype.com \n@slack-ops-alerts \n@pagerduty",
+    "matching_downtimes": [],
+    "id": 6886095,
+    "multi": false,
+    "name": "LQA Prod: Target Health",
+    "created": "2018-10-30T15:03:16.256673+00:00",
+    "created_at": 1540911796000,
+    "creator": {
+      "id": 820252,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "email": "ethompson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-14T18:41:33.664096+00:00",
+    "overall_state_modified": "2019-02-27T16:41:16.834945+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "new_host_delay": 300,
+      "require_full_window": true,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0.25,
+        "warning": 0.5
+      }
+    }
+  },
+  {
+    "tags": [
+      "lqa",
+      "prod",
+      "ops-alerts",
+      "tier:p2",
+      "ossindex"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:aws.ecs.service.running{cluster:lqa-prod} by {cluster} / avg:aws.ecs.service.desired{cluster:lqa-prod} by {cluster} * 100 <= 25",
+    "message": "{{#is_alert}}\nP2: LQA Prod container count is at less than desired % of running containers\n{{/is_alert}} \n{{#is_recovery}}\nP2: LQA Prod container count is back from the Danger Zone™\n{{/is_recovery}} \n\n@ethompson@sonatype.com @pagerduty @slack-ops-alerts @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 6886237,
+    "multi": true,
+    "name": "LQA Prod: Container Count",
+    "created": "2018-10-30T15:20:14.907455+00:00",
+    "created_at": 1540912814000,
+    "creator": {
+      "id": 820252,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "email": "ethompson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-14T18:40:25.308823+00:00",
+    "overall_state_modified": "2019-04-01T13:01:39.213151+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 25,
+        "warning": 50
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('priority:all \"HDS configuration update in progress\"').rollup('count').last('5m') > 0",
+    "message": "HDS configuration update in progress. There may be additional alerts triggered in the next few minutes.\n\n@slack-Main_Account-skynet-alerts \n@slack-Main_Account-skynet-critical-alert \n @ksprochi@sonatype.com",
+    "matching_downtimes": [],
+    "id": 7098256,
+    "multi": false,
+    "name": "AWS: HDS configuration update in progress",
+    "created": "2018-11-14T17:36:40.124167+00:00",
+    "created_at": 1542217000000,
+    "creator": {
+      "id": 516151,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "email": "ksprochi@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-13T20:55:58.237652+00:00",
+    "overall_state_modified": "2019-04-01T19:05:18.179058+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 2,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [
+      "prod"
+    ],
+    "deleted": null,
+    "query": "min(last_1h):avg:aws.rds.free_storage_space{dbname:avd,dbinstanceidentifier:avd-prod} < 50000000000",
+    "message": "The production RDS instance for AVD is below 50 gigs.   @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 7408558,
+    "multi": false,
+    "name": "AVD Prod - RDS Disk Space Below 50 Gigs",
+    "created": "2018-12-03T17:47:06.408164+00:00",
+    "created_at": 1543859226000,
+    "creator": {
+      "id": 1035913,
+      "handle": "klehrke@sonatype.com",
+      "name": null,
+      "email": "klehrke@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-12-03T17:47:06.408164+00:00",
+    "overall_state_modified": "2018-12-03T17:47:14.074311+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": true,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 1440,
+      "escalation_message": "This is a reminder that the RDS instance for AVD is still below 50 gigs.",
+      "synthetics_check_id": null,
+      "thresholds": {
+        "critical": 50000000000,
+        "warning": 80000000000
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.rds.free_storage_space{dbname:avd,dbinstanceidentifier:avd-staging} < 50000000000",
+    "message": "Staging RDS disk space is below 50 gigs.  @slack-avd-dev-alerts",
+    "matching_downtimes": [],
+    "id": 7408588,
+    "multi": false,
+    "name": "AVD Staging - RDS disk space below 50 gigs",
+    "created": "2018-12-03T17:50:49.762277+00:00",
+    "created_at": 1543859449000,
+    "creator": {
+      "id": 1035913,
+      "handle": "klehrke@sonatype.com",
+      "name": null,
+      "email": "klehrke@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2018-12-03T17:50:49.762277+00:00",
+    "overall_state_modified": "2018-12-03T17:50:52.826971+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 1440,
+      "escalation_message": "This is a reminder that staging RDS disk space is still below 50 gigs.",
+      "synthetics_check_id": null,
+      "thresholds": {
+        "critical": 50000000000,
+        "warning": 100000000000
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):sum:metrics.central.blacklistSize{host:fastlylogs} < 45",
+    "message": "{{#is_alert}}\nBlacklist size is shrinking below a suspicious threshold. @slack-central-alerts\n{{/is_alert}}",
+    "matching_downtimes": [],
+    "id": 7937770,
+    "multi": false,
+    "name": "Central blacklist automation",
+    "created": "2019-01-14T18:30:05.001681+00:00",
+    "created_at": 1547490605000,
+    "creator": {
+      "id": 820251,
+      "handle": "tyanko@sonatype.com",
+      "name": "Terry Yanko",
+      "email": "tyanko@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-16T21:24:18.885120+00:00",
+    "overall_state_modified": "2019-01-16T21:40:11.998548+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 45
+      }
+    }
+  },
+  {
+    "tags": [
+      "tier:p2",
+      "prod",
+      "use-case:vpn.sonatype.com"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:openvpn.licenses_available{*} < 5",
+    "message": "We are running low/out of licenses on our VPN server.\n\n@webhook-p2-pagerduty \n@hipchat-ops-alerts \n@ethompson@sonatype.com \n@jswank@sonatype.com",
+    "matching_downtimes": [],
+    "id": 7949899,
+    "multi": false,
+    "name": "OpenVPN: Running out of licenses on vpn.sonatype.com",
+    "created": "2019-01-15T16:34:10.092089+00:00",
+    "created_at": 1547570050000,
+    "creator": {
+      "id": 820252,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "email": "ethompson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-15T16:34:10.092089+00:00",
+    "overall_state_modified": "2019-01-15T16:34:20.343718+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": true,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 5,
+        "warning": 10
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"http.ssl_cert\".over(\"instance:jenkins_ci\",\"jenkins\").by(\"host\",\"instance\",\"url\").last(4).count_by_status()",
+    "message": "@slack-cdi-alerts  @pagerduty",
+    "matching_downtimes": [],
+    "id": 8054450,
+    "multi": true,
+    "name": "CDI Jenkins HTTP",
+    "created": "2019-01-23T14:00:08.413728+00:00",
+    "created_at": 1548252008000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-23T14:23:54.395688+00:00",
+    "overall_state_modified": "2019-03-21T00:18:42.468899+00:00",
+    "type": "service check",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "thresholds": {
+        "critical": 3,
+        "ok": 2
+      },
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 60,
+      "no_data_timeframe": 2
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "max(last_15m):avg:jenkins.queue.running{master:https://jenkins.zion.aws.s:8443} <= 0",
+    "message": "@slack-cdi-alerts There are no Jenkins builds running. Please check the build queue",
+    "matching_downtimes": [],
+    "id": 8054529,
+    "multi": false,
+    "name": "CDI Jenkins running builds",
+    "created": "2019-01-23T14:11:28.445894+00:00",
+    "created_at": 1548252688000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-23T14:25:18.042904+00:00",
+    "overall_state_modified": "2019-03-21T00:16:11.039054+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 10,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):avg:jvm.heap_memory{name:jenkins} / avg:jvm.heap_memory_max{name:jenkins} * 100 > 90",
+    "message": "@slack-cdi-alerts",
+    "matching_downtimes": [],
+    "id": 8054586,
+    "multi": false,
+    "name": "CDI Jenkins Heap usage",
+    "created": "2019-01-23T14:17:40.770426+00:00",
+    "created_at": 1548253060000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-23T14:27:43.692217+00:00",
+    "overall_state_modified": "2019-03-21T00:18:07.637986+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 10,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 90,
+        "warning": 85
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.vpc.peerings.active_peerings{aws_account:cdi} by {id} <= 0",
+    "message": "@slack-cdi-alerts @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 8153641,
+    "multi": true,
+    "name": "CDI Missing VPC Peering",
+    "created": "2019-01-29T23:21:58.308256+00:00",
+    "created_at": 1548804118000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-29T23:21:58.308256+00:00",
+    "overall_state_modified": "2019-01-29T23:39:02.296611+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 10,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_1h):avg:aws.vpc.peerings.active_peerings{aws_account:cdi} by {id} >= 2",
+    "message": "@slack-cdi-alerts @slack-ops-alerts",
+    "matching_downtimes": [],
+    "id": 8153643,
+    "multi": true,
+    "name": "CDI Unexpected VPC Peering",
+    "created": "2019-01-29T23:22:44.873812+00:00",
+    "created_at": 1548804164000,
+    "creator": {
+      "id": 13065,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "email": "rbriganti@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-01-29T23:23:02.497304+00:00",
+    "overall_state_modified": "2019-01-29T23:39:04.742542+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 10,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 180,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 2
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):min:nodeping.checks{enabled:active,label:help.sonatype.com} by {label} < 1",
+    "message": "{{#is_alert}}\nNodeping is reporting this check is failing. {{label.name}}\n{{/is_alert}}\n{{#is_alert_recovery}}\nCheck has recovered.\n{{/is_alert_recovery}}  @slack-ops-alerts @pagerduty",
+    "matching_downtimes": [],
+    "id": 8317813,
+    "multi": true,
+    "name": "P1 help.sonatype.com External Check",
+    "created": "2019-02-13T19:21:11.922677+00:00",
+    "created_at": 1550085671000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-02-13T19:27:19.397017+00:00",
+    "overall_state_modified": "2019-03-18T17:30:14.543260+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):min:nodeping.checks{enabled:active,label:license-manager.sonatype.com} by {label} < 1",
+    "message": "{{#is_alert}}\nNodeping is reporting this check is failing.  Report this to Nick Cook <ncook@sonatype.com>.\n{{/is_alert}}\n{{#is_alert_recovery}}\nCheck has recovered.\n{{/is_alert_recovery}}  @slack-ops-alerts @pagerduty",
+    "matching_downtimes": [],
+    "id": 8317980,
+    "multi": true,
+    "name": "P1 license-manager.sonatype.com External Check",
+    "created": "2019-02-13T19:34:29.316552+00:00",
+    "created_at": 1550086469000,
+    "creator": {
+      "id": 9763,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "email": "jswank@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-02-13T19:40:46.783186+00:00",
+    "overall_state_modified": "2019-02-13T19:34:38.941248+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 1
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "events('sources:sns priority:all tags:aws_account:732481404831 \"data-identity-alarms\"').rollup('count').last('15m') > 0",
+    "message": "@slack-data-identity-alerts",
+    "matching_downtimes": [],
+    "id": 8542510,
+    "multi": false,
+    "name": "Data Identity CloudWatch Alarm from SNS",
+    "created": "2019-03-09T17:53:37.439153+00:00",
+    "created_at": 1552154017000,
+    "creator": {
+      "id": 10840,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "email": "jorlina@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-19T00:18:59.881923+00:00",
+    "overall_state_modified": "2019-04-01T17:41:11.638852+00:00",
+    "type": "event alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": 30,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "sum(last_1h):avg:aws.lambda.errors{functionname:production-sonatype-nvs-cloud-scanner-lambda-scanner}.as_count() > 0",
+    "message": "{{#is_alert}}\nInvestigation steps:\n\n1. Check monitor tab on lamda, it includes timeouts.\n2. Check AWS cloudwatch logs for the file storage lambda.\n3. Check AWS XRay trace information for execution log.\n{{/is_alert}} \n\n{{#is_recovery}}NVS cloud lambda is back to normal.{{/is_recovery}}  @slack-nvs-alerts",
+    "matching_downtimes": [],
+    "id": 8594971,
+    "multi": false,
+    "name": "NVS cloud lambda invocation error.",
+    "created": "2019-03-12T14:38:28.713405+00:00",
+    "created_at": 1552401508000,
+    "creator": {
+      "id": 1099652,
+      "handle": "dfernando@sonatype.com",
+      "name": null,
+      "email": "dfernando@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-12T15:00:44.155517+00:00",
+    "overall_state_modified": "2019-03-12T15:00:27.543347+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": true,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 30,
+      "evaluation_delay": 600,
+      "escalation_message": "NVS cloud lambda invocation error is unresolved.",
+      "thresholds": {
+        "critical": 0
+      }
+    }
+  },
+  {
+    "tags": [
+      "lqa",
+      "prod",
+      "ops-alerts",
+      "tier:p1",
+      "ossindex"
+    ],
+    "deleted": null,
+    "query": "sum(last_5m):avg:aws.applicationelb.httpcode_target_5xx{name:lqa-prod-ecs-alb}.as_count() > 10",
+    "message": "{{#is_alert}}\nLQA Prod is throwing HTTP 5xx errors!\n{{/is_alert}} \n{{#is_recovery}}\nLQA Prod HTTP 5xx errors are back to normal\n{{/is_recovery}} \n\n  \n@ethompson@sonatype.com @slack-ops-alerts @pagerduty",
+    "matching_downtimes": [],
+    "id": 8670288,
+    "multi": false,
+    "name": "LQA Prod: ALB HTTP 5xx Errors",
+    "created": "2019-03-14T18:48:35.552401+00:00",
+    "created_at": 1552589315000,
+    "creator": {
+      "id": 820252,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "email": "ethompson@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-14T18:48:35.552401+00:00",
+    "overall_state_modified": null,
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 10,
+        "warning": 8
+      }
+    }
+  },
+  {
+    "tags": [
+      "hds_status"
+    ],
+    "deleted": null,
+    "query": "avg(last_5m):avg:jvm.heap_memory{process:ds-web-worker} by {aws_name_tag,env} / avg:jvm.heap_memory_max{process:ds-web-worker} by {aws_name_tag,env} > 0.9",
+    "message": "{{#is_match \"env.name\" \"production\"}}\n@slack-skynet-critical-alert\n{{/is_match}} \n\n{{^is_match \"env.name\" \"production\"}}\n@slack-skynet-alerts\n{{/is_match}} \n\nHeap utilization is very high on {{aws_name_tag.name}}",
+    "matching_downtimes": [],
+    "id": 8689191,
+    "multi": true,
+    "name": "{{env}} HDS Web Worker Heap Usage: {{aws_name_tag.name}}",
+    "created": "2019-03-15T20:13:00.541079+00:00",
+    "created_at": 1552680780000,
+    "creator": {
+      "id": 1110852,
+      "handle": "afitzgerald@sonatype.com",
+      "name": "Andrew Fitzgerald",
+      "email": "afitzgerald@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-18T15:18:20.646536+00:00",
+    "overall_state_modified": "2019-03-18T01:57:53.026240+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": null,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": false,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0.9,
+        "warning": 0.8
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_10m):max:metrics.central.centralsync.nexus{*} < 0.66",
+    "message": "{{#is_no_data}}** Central-sync nexus down! **{{/is_no_data}}\n{{#is_warning}}Central-sync nexus degraded{{/is_warning}}\n{{#is_recovery}}Central-sync nexus healthy{{/is_recovery}}\n{{#is_alert}}Central-sync nexus critical{{/is_alert}}  @slack-central-alerts",
+    "matching_downtimes": [],
+    "id": 8787964,
+    "multi": false,
+    "name": "Central-sync service",
+    "created": "2019-03-21T16:01:20.894471+00:00",
+    "created_at": 1553184080000,
+    "creator": {
+      "id": 149725,
+      "handle": "sstecker@sonatype.com",
+      "name": "Shane Stecker",
+      "email": "sstecker@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-25T14:59:47.089320+00:00",
+    "overall_state_modified": "2019-03-21T19:37:05.889523+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 20,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 0.66,
+        "warning": 0.99
+      }
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_15m):max:metrics.central.ingest.releases.ossrh{*} > 15000",
+    "message": "{{#is_no_data}}** OSSRH:  No new artifacts in over 30min, central-sync and / or OSSRH probably busted!**{{/is_no_data}}\n{{#is_alert}}Large OSSRH release to central{{/is_alert}}  @slack-central-alerts",
+    "matching_downtimes": [],
+    "id": 8818486,
+    "multi": false,
+    "name": "OSSRH Smartproxy",
+    "created": "2019-03-25T14:29:41.975170+00:00",
+    "created_at": 1553524181000,
+    "creator": {
+      "id": 149725,
+      "handle": "sstecker@sonatype.com",
+      "name": "Shane Stecker",
+      "email": "sstecker@sonatype.com"
+    },
+    "org_id": 3430,
+    "modified": "2019-03-25T14:50:32.697602+00:00",
+    "overall_state_modified": "2019-04-01T14:00:49.604708+00:00",
+    "type": "metric alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 30,
+      "require_full_window": false,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "thresholds": {
+        "critical": 15000,
+        "warning": 9000
+      }
+    }
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{env:production} by {host,aws_name_tag}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses for All Hosts"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.load.1{name:hds-production-ec2-clmweb01a} by {host}, max:system.load.1{name:hds-production-ec2-clmweb01b} by {host}",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max System Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.util{name:hds-production-ec2-clmweb01a}, max:system.io.util{name:hds-production-ec2-clmweb01b}",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Max System IO"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmscan01a,success:true}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Completed Scans - clmscan01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:jvm.heap_memory_max{aws_name_tag:hds-production-clmweb01a}, max:jvm.heap_memory{aws_name_tag:hds-production-clmweb01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "heap - clmweb01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{env:production,aws_name_tag:hds-production-clmweb01a} by {host}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses - clmweb01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.user{name:hds-production-ec2-clmweb01a}, max:system.cpu.system{name:hds-production-ec2-clmweb01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU - user and system - clmweb01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.stolen{name:hds-production-ec2-clmweb01a}, max:system.cpu.guest{name:hds-production-ec2-clmweb01a}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "CPU - stolen and guest - clmweb01a"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{name:hds-production-ec2-clmweb01a}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Wait (percentage) - clmweb01a"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{aws_name_tag:hds-production-clmscan01b,success:true}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Completed Scans - clmscan01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{env:production,aws_name_tag:hds-production-clmweb01b} by {host}.as_count(), 10, 'last', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Completed Analyses - clmweb01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.user{name:hds-production-ec2-clmweb01b}, max:system.cpu.system{name:hds-production-ec2-clmweb01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU - clmweb01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:jvm.heap_memory_max{aws_name_tag:hds-production-clmweb01b}, max:jvm.heap_memory{aws_name_tag:hds-production-clmweb01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "heap - clmweb01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.stolen{name:hds-production-ec2-clmweb01b}, max:system.cpu.guest{name:hds-production-ec2-clmweb01b}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "CPU - stolen and guest - clmweb01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{name:hds-production-ec2-clmweb01b}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "IO Wait (percentage) - clmweb01b"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.httpcode_target_4xx{name:hds-production-alb-tg01}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ALB Target Group 1 4xx HTTP Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.httpcode_target_5xx{environment:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ALB Target Group 1 5xx HTTP Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.swap.used{name:hds-production-ec2-clmweb01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmweb01a - swap"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by ksprochi@sonatype.com",
+    "title": "HDS Production Web Workers",
+    "created": "2018-01-09T19:57:14.397986+00:00",
+    "new_id": "4wn-437-3kk",
+    "id": 450826,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2019-03-21T02:42:22.985371+00:00"
+  },
+  "url": "/dash/450826/hds-production-web-workers",
+  "resource": "/api/v1/dash/450826"
+}

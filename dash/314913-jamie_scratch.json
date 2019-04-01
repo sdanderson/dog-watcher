@@ -1,0 +1,57 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{*} by {client}.as_count(), 50, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.scan over * by client"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.scan{kind:app} by {client}.as_count(), 50, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.scan over kind:app by client"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jwhitehouse@sonatype.com",
+    "title": "Jamie scratch",
+    "created": "2017-06-30T15:39:47.374575+00:00",
+    "new_id": "xkg-mhe-952",
+    "id": 314913,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2017-06-30T15:42:50.348788+00:00"
+  },
+  "url": "/dash/314913/jamie-scratch",
+  "resource": "/api/v1/dash/314913"
+}

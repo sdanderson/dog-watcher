@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "hour_before",
+              "q": "max:aws.elasticmapreduce.apps_failed{*} by {cluster_name}",
+              "increase_good": false,
+              "order_by": "present"
+            }
+          ]
+        },
+        "title": "Max of aws.elasticmapreduce.apps_failed over * by cluster_name"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jorlina@sonatype.com",
+    "title": "EMR Test",
+    "created": "2018-06-01T16:54:08.263546+00:00",
+    "new_id": "xi9-h8g-58a",
+    "id": 825611,
+    "created_by": {
+      "disabled": false,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "jorlina@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/cc7aa67153bf16c97dede5281013ada4?s=48&d=retro"
+    },
+    "modified": "2018-06-01T16:56:33.885331+00:00"
+  },
+  "url": "/dash/825611/emr-test",
+  "resource": "/api/v1/dash/825611"
+}

@@ -1,0 +1,222 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {brain_version}.as_count(), 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IQ Server Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {brain_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IQ Server OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {brain_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IQ Server Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {client}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Clients Used"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {client_os}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client OSes"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {client_java_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Java Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:nexus} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Nexus RM Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client_os:linux} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Linux Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client_os:windows} by {client_os_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Windows Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:sonatype_clm_ide_eclipse} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Eclipse Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{client:nexus_iq_idea} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "IDEA Plugin Versions"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{*} by {client_other}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Client Other (IDE version)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{*} by {client_version}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "RHC Scans by Version"
+      }
+    ],
+    "template_variables": null,
+    "description": "Versions of various software in use.",
+    "title": "PO IQ Versions",
+    "created": "2017-06-01T18:45:59.367047+00:00",
+    "new_id": "z53-3tv-388",
+    "id": 297320,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2018-03-05T20:29:06.185141+00:00"
+  },
+  "url": "/dash/297320/po-iq-versions",
+  "resource": "/api/v1/dash/297320"
+}

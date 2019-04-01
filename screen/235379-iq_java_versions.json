@@ -1,0 +1,322 @@
+{
+  "board_title": "IQ - Java Versions",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-10-27T16:37:00.524653+00:00",
+  "new_id": "usy-qvr-xy9",
+  "original_title": "Matthew's ScreenBoard 27 Oct 2017 12:37",
+  "modified": "2017-10-27T16:46:06.897112+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "mpiggott@sonatype.com",
+    "name": "Matthew Piggott",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "mpiggott@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain Java Versions",
+      "height": 68,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod} by {brain_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 2,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IntelliJ",
+      "height": 16,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:nexus_iq_idea} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 18,
+      "x": 49,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CI Clients (Old jenkins/hudson plugins?)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_ci} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 2,
+      "x": 148,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CLI",
+      "height": 16,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_cli} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 18,
+      "x": 99,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maven",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_maven} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 2,
+      "x": 99,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Eclipse",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_ide_eclipse} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 2,
+      "x": 49,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Bamboo",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_ci_bamboo} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 18,
+      "x": 148,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Hudson",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_ci_hudson} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 34,
+      "x": 148,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jenkins",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:sonatype_clm_ci_jenkins} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 48,
+      "x": 148,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 235379,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "nexus_jenkins_plugin_user_agent ??",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:prod,client:nexus_jenkins_plugin_user_agent} by {client_java_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 64,
+      "x": 148,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 235379,
+  "title_edited": true,
+  "isShared": false
+}

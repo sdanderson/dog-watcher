@@ -1,0 +1,156 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{$rest_endpoint,$status,$request_method,$remote_addr,!status:200,!status:204} by {rest_endpoint,status}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Requests (by endpoint and status)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{$rest_endpoint,$status,$request_method,$remote_addr,!status:200,!status:204} by {rest_endpoint}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by endpoint"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{$rest_endpoint,$status,$request_method,$remote_addr,!status:200,!status:204} by {status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by response"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.clm.request_time{$rest_endpoint,$status,$remote_addr,$request_method,!status:200,!status:204} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Request Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.clm.body_bytes_sent{$rest_endpoint,$remote_addr,$request_method,$status,!status:200,!status:204} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Body Bytes Sent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.clm.request_length{$rest_endpoint,$status,$remote_addr,$request_method,!status:200,!status:204} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Request Length"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.clm.count{$remote_addr,$status,$rest_endpoint,$request_method,!status:200,!status:204} by {remote_addr}, 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 clients"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.clm.count{$remote_addr,$status,$rest_endpoint,$request_method,!status:200,!status:204} by {status}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top response status"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "rest_endpoint",
+        "name": "rest_endpoint"
+      },
+      {
+        "default": "*",
+        "prefix": "status",
+        "name": "status"
+      },
+      {
+        "default": "*",
+        "prefix": "remote_addr",
+        "name": "remote_addr"
+      },
+      {
+        "default": "*",
+        "prefix": "request_method",
+        "name": "request_method"
+      }
+    ],
+    "description": "Not 2xx responses",
+    "title": "Nginx - IQ non success",
+    "created": "2017-02-22T18:30:26.370273+00:00",
+    "new_id": "um5-grd-xqs",
+    "id": 251888,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2017-02-22T18:54:38.637150+00:00"
+  },
+  "url": "/dash/251888/nginx---iq-non-success",
+  "resource": "/api/v1/dash/251888"
+}

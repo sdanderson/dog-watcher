@@ -1,0 +1,172 @@
+{
+  "board_title": "ctrinh's ScreenBoard 16 Nov 2016 12:51",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2016-11-16T17:51:26.397528+00:00",
+  "new_id": "jt6-tnt-bwk",
+  "original_title": "ctrinh's ScreenBoard 16 Nov 2016 12:51",
+  "modified": "2016-11-22T00:52:18.063642+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ctrinh@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ctrinh@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/ca86daebff2db5e1a7cf1f4ce5f9bb1c?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 137602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Reader Processing Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:core_services_dev.comsonatypedatacvss_cve_feed_reader_processing_count{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 137602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Reader Processing Timing",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:core_services_dev.comsonatypedatacvss_cve_feed_reader_processing_time{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 17,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 137602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Processor Failure",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:core_services_dev.comsonatypedataservicesresources_cvefeed_processor_resource_processing_failure{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 137602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Processor Success",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:core_services_dev.comsonatypedataservicesresources_cvefeed_processor_resource_processing_success{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 17,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 137602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Processor Timing",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:core_services_dev.comsonatypedataservicesresources_cvefeed_processor_resource_processing_time{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 34,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "id": 137602,
+  "title_edited": false,
+  "isShared": false
+}

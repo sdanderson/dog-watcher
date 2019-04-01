@@ -1,0 +1,190 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_state_duration.avg{state:uploading,$env,$analysis-kind}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Average Upload Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "abs(avg:iq.hds.analysis_state_duration.avg{state:queued,$env,$analysis-kind})/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Average Queue Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_state_duration.avg{state:processing,$analysis-kind,$env}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Average Processing Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_state_duration.avg{state:generating-report,$analysis-kind,$env}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Average Report Generation Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_state_changed{$env,$analysis-kind} by {state}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Analysis State Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_state_changed{state:queued,$env,$analysis-kind}.as_count().rollup(sum, 300)-sum:iq.hds.analysis_state_changed{state:processing,$env,$analysis-kind}.as_count().rollup(sum, 300)",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Queue Depth (queue count - processing count)"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "max:iq.hds.analysis_state_duration.99percentile{state:queued,$env,$analysis-kind}/1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P99 Queue Wait Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "abs(avg:iq.hds.analysis_state_duration.99percentile{state:queued,$env,$analysis-kind})/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "P99 Queue Wait Time (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "(abs(avg:iq.hds.analysis_state_duration.avg{state:queued,$env,$analysis-kind})+abs(avg:iq.hds.analysis_completed.duration.avg{env:production,$env,$analysis-kind}))/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Average end-to-end Processing Time (seconds)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "production",
+        "prefix": "env",
+        "name": "env"
+      },
+      {
+        "default": "app",
+        "prefix": "kind",
+        "name": "analysis-kind"
+      }
+    ],
+    "description": "created by sangles@sonatype.com",
+    "title": "HDS Scan State and Timing Metrics Demo",
+    "created": "2018-12-06T14:54:32.900784+00:00",
+    "new_id": "rde-cmi-dpc",
+    "id": 1012317,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2018-12-13T20:37:05.146151+00:00"
+  },
+  "url": "/dash/1012317/hds-scan-state-and-timing-metrics-demo",
+  "resource": "/api/v1/dash/1012317"
+}

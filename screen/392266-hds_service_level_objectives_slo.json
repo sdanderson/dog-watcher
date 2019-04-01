@@ -1,0 +1,1798 @@
+{
+  "originalWidth": "100%",
+  "new_id": "zb9-44t-f9n",
+  "height": 109,
+  "disableEditing": false,
+  "showGlobalTimeOnboarding": true,
+  "id": 392266,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "jswank@sonatype.com",
+    "name": "Jason Swank",
+    "is_admin": true,
+    "role": "",
+    "access_role": "adm",
+    "verified": true,
+    "email": "jswank@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App Scan Queue",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "yaxis": {
+          "min": "0"
+        },
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:hds.scans.CI_CHECK.submitted{env:prod}-max:hds.scans.CI_CHECK.isprocessing{env:prod}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 30,
+      "x": 14,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App: P99",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "300"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "120"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {},
+      "y": 47,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "P99 Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 120,
+            "value": "y = 120",
+            "label": "2m"
+          },
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 300,
+            "value": "y = 300",
+            "label": "5m"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{env:production,kind:app,success:true}/1000",
+            "type": "bars",
+            "metadata": {
+              "max:iq.hds.analysis_completed.duration.99percentile{env:production,kind:app,success:true}/1000": {
+                "alias": "P99"
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 47,
+      "x": 14,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App: Mean",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:hds.scans.CI_CHECK.accepted{env:prod}.rollup(avg, 600)-avg:hds.scans.CI_CHECK.isprocessing{env:prod}.rollup(avg, 600)",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "4"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 30,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Successful Scan Times",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 25,
+      "x": 0,
+      "y": 42,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Mean Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": "90",
+            "value": "y = 90",
+            "label": "90s"
+          },
+          {
+            "type": "error dashed",
+            "val": "120",
+            "value": "y = 120",
+            "label": "2m"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{env:production,kind:app,success:true}/1000",
+            "type": "bars",
+            "metadata": {
+              "max:iq.hds.analysis_completed.duration.50percentile{env:production,kind:app,success:true}/1000": {
+                "alias": "mean"
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 57,
+      "x": 14,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App: Mean",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": false,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "90"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "90"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 57,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Repository Scan Queue",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "yaxis": {
+          "min": "0"
+        },
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:hds.scans.REPOSITORY.submitted{env:prod}-sum:hds.scans.REPOSITORY.isprocessing{env:prod}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 37,
+      "time": {},
+      "y": 30,
+      "x": 69,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Repo: Mean",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:hds.scans.REPOSITORY.submitted{env:prod}.rollup(avg, 600)-avg:hds.scans.REPOSITORY.isprocessing{env:prod}.rollup(avg, 600)",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "16"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "8"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "4"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 30,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Queue Length",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 19,
+      "x": 0,
+      "y": 25,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "isShared": false,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "5xx Responses",
+      "precision": 0,
+      "width": 15,
+      "alert_id": "3891613",
+      "y": -44,
+      "x": 36,
+      "text_size": "auto",
+      "height": 6,
+      "type": "alert_value",
+      "unit": "auto",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Repo: P99",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:rhc,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "40"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "20"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1"
+      },
+      "width": 13,
+      "time": {},
+      "y": 47,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Repo: Mean",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{env:production,success:true,kind:rhc}.rollup(avg, 600)/1000",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "4"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "s",
+        "precision": "1"
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 57,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "P99 Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": "20",
+            "value": "y = 20"
+          },
+          {
+            "type": "error dashed",
+            "val": "40",
+            "value": "y = 40"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{success:true,env:production,kind:rhc}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 37,
+      "time": {},
+      "y": 47,
+      "x": 69,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "iq.hds.analysis_completed.duration.50percentile",
+      "title_text": "",
+      "height": 7,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed.duration.50percentile{env:production,success:true,kind:rhc}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": "1",
+            "value": "y = 1"
+          },
+          {
+            "type": "error dashed",
+            "val": "4",
+            "value": "y = 4"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        }
+      },
+      "width": 37,
+      "time": {},
+      "y": 57,
+      "x": 69,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IDE: P99 Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": ".5",
+            "value": "y = .5"
+          },
+          {
+            "type": "error dashed",
+            "val": "2",
+            "value": "y = 2"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{env:production,kind:ide,success:true}/1000",
+            "type": "bars",
+            "metadata": {
+              "max:iq.hds.analysis_completed.duration.99percentile{env:production,kind:ide,success:true}/1000": {
+                "alias": "P99"
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 37,
+      "time": {},
+      "y": 67,
+      "x": 69,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IDE: Mean Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": ".1",
+            "value": "y = .1"
+          },
+          {
+            "type": "error dashed",
+            "val": ".5",
+            "value": "y = .5"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{env:production,kind:ide,success:true}/1000",
+            "type": "bars",
+            "metadata": {
+              "max:iq.hds.analysis_completed.duration.50percentile{env:production,kind:ide,success:true}/1000": {
+                "alias": "P99"
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 37,
+      "time": {},
+      "y": 77,
+      "x": 69,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Firewall: Mean Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "type": "warning dashed",
+            "val": "1",
+            "value": "y = 1",
+            "label": "5m"
+          },
+          {
+            "type": "error dashed",
+            "val": "5",
+            "value": "y = 5",
+            "label": "10m"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{env:production,kind:firewall,success:true}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 77,
+      "x": 14,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Firewall: P99",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{kind:firewall,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 67,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Firewall: Mean",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{kind:firewall,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 77,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IDE: P99",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{success:true,env:production,kind:ide}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "0.5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0.5"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 67,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IDE: Mean",
+      "height": 7,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "custom_unit": "s",
+        "precision": "1",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.50percentile{kind:firewall,success:true,env:production}.rollup(avg, 600)/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "0.5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "0.1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0.1"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 13,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 77,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Firewall: P99 Processing Time",
+      "height": 7,
+      "tile_def": {
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        },
+        "markers": [
+          {
+            "dim": "y",
+            "type": "warning dashed",
+            "val": 2,
+            "value": "y = 2"
+          },
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 5,
+            "value": "y = 5"
+          }
+        ],
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:iq.hds.analysis_completed.duration.99percentile{env:production,success:true,kind:firewall}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 67,
+      "x": 14,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Processed: RHC",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:rhc,success:true,env:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 30,
+      "time": {},
+      "y": 5,
+      "x": 76,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Processed: App",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:app,success:true,env:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 30,
+      "time": {},
+      "y": 5,
+      "x": 22,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 65,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: Repo",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:rhc}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 10,
+      "time": {},
+      "y": 5,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 10,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: App",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:app}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 11,
+      "time": {},
+      "y": 5,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Scans Processed",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 20,
+      "x": 0,
+      "y": 0,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Failed: App",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:false,kind:app}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 9,
+      "time": {},
+      "y": 5,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Failed: Repo",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:false,kind:rhc}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 9,
+      "time": {},
+      "y": 5,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 55,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Failed: IDE",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:false,kind:ide}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 9,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Failed: Firewall",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:false,kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 9,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 10,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: Firewall",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 11,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "x": 65,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans: IDE",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{env:production,success:true,kind:ide}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 10,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Processed: Firewall",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:firewall,success:true,env:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 30,
+      "time": {},
+      "y": 14,
+      "x": 22,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 392266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scans Processed: IDE",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:ide,success:true,env:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "events": [
+          {
+            "q": "aws-prod HDS configuration update completed ",
+            "tags_execution": "and"
+          }
+        ]
+      },
+      "width": 30,
+      "time": {},
+      "y": 14,
+      "x": 76,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "disableCog": false,
+  "title_edited": true,
+  "board_title": "HDS Service Level Objectives (SLO)",
+  "created": "2018-07-24T18:48:32.645928+00:00",
+  "original_title": "HDS Service Level Objectives",
+  "modified": "2018-10-09T15:55:32.604186+00:00",
+  "originalHeight": 109
+}

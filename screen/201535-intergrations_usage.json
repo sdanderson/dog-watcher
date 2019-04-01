@@ -1,0 +1,213 @@
+{
+  "board_title": "Intergrations Usage",
+  "read_only": true,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-07-07T23:27:39.573922+00:00",
+  "new_id": "zhn-9a5-m3z",
+  "original_title": "Intergrations Usage",
+  "modified": "2018-02-15T21:19:37.790038+00:00",
+  "disableEditing": false,
+  "height": 64,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "jyoung@sonatype.com",
+    "name": "Justin Young",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jyoung@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/22582e398179885e8dd5c82bb8c77014?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ Client Usage",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{env:production} by {client}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ for Jenkins Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{client:nexus_jenkins_plugin_user_agent,env:production} by {client_version}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 17,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ for Jenkins OS",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{client:nexus_jenkins_plugin_user_agent,env:production} by {client_os_version}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 17,
+      "x": 75,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ for IDEA Plugin Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{client:nexus_iq_idea,env:production} by {client_version}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 33,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ for IDEA OS",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{client:nexus_iq_idea,env:production} by {client_os_version}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 33,
+      "x": 75,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 201533,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "IQ for IDEA IDE Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:iq.hds.analysis{client:nexus_iq_idea,env:production} by {client_other}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 36,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 33,
+      "x": 38,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 201535,
+  "title_edited": false,
+  "isShared": false
+}

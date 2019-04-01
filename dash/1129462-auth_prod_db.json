@@ -1,0 +1,176 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.network_throughput{$app,$env}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Network Tput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.cpuutilization{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.database_connections{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS DB Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.read_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.write_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.commit_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.update_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.insert_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.aurora_replica_lag_maximum{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS Replica Lag"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.freeable_memory{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS Freeable Memory"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "auth-service",
+        "prefix": "use-case",
+        "name": "app"
+      },
+      {
+        "default": "prod",
+        "prefix": "environment",
+        "name": "env"
+      }
+    ],
+    "description": "",
+    "title": "Auth Prod: DB",
+    "created": "2019-03-28T20:18:12.056124+00:00",
+    "new_id": "c6t-dd9-ri9",
+    "id": 1129462,
+    "created_by": {
+      "disabled": false,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "ethompson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/beaf8ec99411f3622f018bde843b4ada?s=48&d=retro"
+    },
+    "modified": "2019-03-28T20:18:27.606547+00:00"
+  },
+  "url": "/dash/1129462/auth-prod-db",
+  "resource": "/api/v1/dash/1129462"
+}

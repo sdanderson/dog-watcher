@@ -1,0 +1,179 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:app} by {host}.as_count()",
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "App analysis distribution"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app} by {env} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P99 app analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{env:prod,kind:app} / 1000",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "P75 app analysis duration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true,env:prod}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true,env:prod})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "P99 scan duration (moving average)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true,env:prod}) / 1000",
+              "type": "bars"
+            },
+            {
+              "q": "hour_before(ewma_5(avg:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true,env:prod})) / 1000",
+              "style": {
+                "width": "thin"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Median scan duration (moving average)"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:app,success:true,env:prod}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "App analysis successful count"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{success:false,kind:app,env:prod}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "App analysis failed count"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true,env:prod} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P99 app analysis duration for successful scans"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{env:prod,kind:app,success:true} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "P75 app analysis duration for successful scans"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true,env:prod} / 1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Median app analysis duration for successful scans"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by sangles@sonatype.com (cloned)",
+    "title": "App analysis count/duration metrics (staging)",
+    "created": "2017-08-07T12:31:10.109060+00:00",
+    "new_id": "gvj-y6c-ewy",
+    "id": 336027,
+    "created_by": {
+      "disabled": false,
+      "handle": "mrekveld@sonatype.com",
+      "name": "Mark Rekveld",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "mrekveld@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/c34ec96ae29c2644d7e50d0f18fe347e?s=48&d=retro"
+    },
+    "modified": "2017-08-07T12:31:29.198997+00:00"
+  },
+  "url": "/dash/336027/app-analysis-countduration-metrics-staging",
+  "resource": "/api/v1/dash/336027"
+}

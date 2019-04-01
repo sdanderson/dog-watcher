@@ -1,0 +1,48 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "palette": "green_to_orange",
+            "paletteFlip": false
+          },
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "name:rhc-unknown-components-scanner-prod"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{name:rhc-unknown-components-scanner-prod} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over name:rhc-unknown-components-scanner-prod by host"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jharris@sonatype.com",
+    "title": "RHC Component Processing",
+    "created": "2016-03-24T21:28:26.112730+00:00",
+    "new_id": "mz3-jwj-aqq",
+    "id": 111087,
+    "created_by": {
+      "disabled": false,
+      "handle": "jharris@sonatype.com",
+      "name": "Jesse Harris",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jharris@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/4859ee87289ae5c0a1dbb7f1f5a43c22?s=48&d=retro"
+    },
+    "modified": "2016-12-03T18:38:08.681397+00:00"
+  },
+  "url": "/dash/111087/rhc-component-processing",
+  "resource": "/api/v1/dash/111087"
+}

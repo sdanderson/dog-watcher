@@ -1,0 +1,137 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.queries{$name}.as_rate()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Queries"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.database_connections{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS DB Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.read_latency{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.write_latency{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.commit_latency{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.update_latency{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.insert_latency{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.aurora_replica_lag_maximum{$name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS Replica Lag"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "ossi-prod",
+        "prefix": "name",
+        "name": "name"
+      }
+    ],
+    "description": "created by jswank@sonatype.com",
+    "title": "OSS Index: DB",
+    "created": "2018-02-20T15:05:57.155230+00:00",
+    "new_id": "xfd-mx6-ghe",
+    "id": 588123,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-06-21T17:49:12.820622+00:00"
+  },
+  "url": "/dash/588123/oss-index-db",
+  "resource": "/api/v1/dash/588123"
+}

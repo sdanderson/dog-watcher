@@ -1,0 +1,124 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.dl_staging.count{$status,$request_method,$remote_addr} by {status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by response"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.dl_staging.body_bytes_sent{$remote_addr,$request_method,$status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Body Bytes Sent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.dl_staging.count{$status,$request_method,$remote_addr} by {request_method}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Requests by Method"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.dl_staging.count{$remote_addr,$status,$request_method} by {status}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top response status"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.dl_staging.count{$remote_addr,$status,$request_method} by {remote_addr}, 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 clients"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.dl_staging.count{$remote_addr,$status,$request_method}, 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top endpoint requests"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "status",
+        "name": "status"
+      },
+      {
+        "default": "*",
+        "prefix": "remote_addr",
+        "name": "remote_addr"
+      },
+      {
+        "default": "*",
+        "prefix": "request_method",
+        "name": "request_method"
+      }
+    ],
+    "description": "",
+    "title": "Nginx - dl-staging.sonatype.com",
+    "created": "2017-10-27T12:57:21.076067+00:00",
+    "new_id": "jzi-dqr-4wk",
+    "id": 387740,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2017-10-27T13:00:12.058414+00:00"
+  },
+  "url": "/dash/387740/nginx---dl-stagingsonatypecom",
+  "resource": "/api/v1/dash/387740"
+}

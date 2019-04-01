@@ -1,0 +1,139 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:rhc,env:production} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:rhc,env:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "RHC Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:app,env:production} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:app,env:production}.as_count()",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "App Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:ide,env:production} by {host}.as_count()",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Component Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:firewall,env:production} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:iq.hds.analysis_completed{kind:firewall,env:production}.as_count()",
+              "style": {
+                "palette": "orange",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Firewall Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.scans.slow{env:production}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Slow Scans"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by mpiggott@sonatype.com",
+    "title": "IQ Scan Status ",
+    "created": "2016-11-18T16:21:27.986840+00:00",
+    "new_id": "n5a-itx-p8j",
+    "id": 214204,
+    "created_by": {
+      "disabled": false,
+      "handle": "mpiggott@sonatype.com",
+      "name": "Matthew Piggott",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "mpiggott@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+    },
+    "modified": "2018-02-06T19:09:06.129440+00:00"
+  },
+  "url": "/dash/214204/iq-scan-status",
+  "resource": "/api/v1/dash/214204"
+}

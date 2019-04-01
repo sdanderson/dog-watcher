@@ -1,0 +1,813 @@
+{
+  "new_id": "x66-6nr-ubt",
+  "height": 111,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "id": 189702,
+  "read_only": false,
+  "isIntegration": false,
+  "created_by": {
+    "disabled": false,
+    "handle": "jwhitehouse@sonatype.com",
+    "name": "Jamie Whitehouse",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jwhitehouse@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+  },
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 189702,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known Components",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "status": "done",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Unknown Components",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "status": "done",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.unknown{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "conditional_formats": [
+              {
+                "palette": "white_on_gray",
+                "comparator": ">",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Formats (requests processed)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "status": "done",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 34,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "day_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), day_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 68,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "day_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), day_before(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count())",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "x": 34,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed by Format (for Daniel)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "status": "done",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 73,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "week_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), week_before(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count())",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "x": 68,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "week_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), week_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "generated_title": "",
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Longterm Stats",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 24,
+      "x": 0,
+      "y": 36,
+      "title_size": 16,
+      "isShared": false,
+      "type": "free_text",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "x": 136,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed by Format (for Daniel)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "status": "done",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 89,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Formats Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count()",
+            "increase_good": true,
+            "order_by": "name"
+          }
+        ]
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), month_before(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count())",
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "x": 68,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "title_text": "Completed Change",
+      "height": 13,
+      "tile_def": {
+        "viz": "change",
+        "status": "done",
+        "requests": [
+          {
+            "extra_col": "present",
+            "change_type": "relative",
+            "order_dir": "desc",
+            "compare_to": "month_before",
+            "q": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count()",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "query": "sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count(), month_before(sum:iq.hds.analysis_completed{kind:firewall} by {cause}.as_count())",
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "change",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed Analysis",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "x": 136,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known components",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 16,
+      "x": 68,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Known Components by Cause",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed.components.known{kind:firewall} by {cause}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "x": 102,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Formats (requests processed)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "status": "done",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "x": 34,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Formats (requests processed)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "status": "done",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "x": 34,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "toplist",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Sum of component counts",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:iq.hds.analysis_completed.components.unknown{kind:firewall}.as_count()",
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 101,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 73,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average of component counts",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iq.hds.analysis_completed.components.known{kind:firewall}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:iq.hds.analysis_completed.components.unknown{kind:firewall}.as_count()",
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 101,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 89,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Components",
+      "height": 13,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "precision": "0",
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.total{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 189702,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Components",
+      "height": 13,
+      "tile_def": {
+        "status": "done",
+        "autoscale": true,
+        "precision": "2",
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:iq.hds.analysis_completed.components.total{kind:firewall}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 57,
+      "title_size": 16,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "query_value",
+      "legend": false,
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "templated": true,
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "PO Firewall",
+  "created": "2017-05-31T17:17:37.221596+00:00",
+  "original_title": "PO Firewall",
+  "modified": "2018-11-09T14:31:03.523640+00:00",
+  "originalHeight": 111
+}

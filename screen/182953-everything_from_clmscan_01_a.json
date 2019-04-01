@@ -1,0 +1,20 @@
+{
+  "board_title": "everything from clmscan01a",
+  "read_only": false,
+  "description": null,
+  "created": "2017-05-11T17:52:37.563738+00:00",
+  "new_id": "b4b-62k-dq7",
+  "modified": "2017-05-11T17:52:37.563761+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "id": 182953
+}

@@ -1,0 +1,163 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.rds.database_connections{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Database Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.rds.cpuutilization{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.rds.write_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            },
+            {
+              "q": "aws.rds.read_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            },
+            {
+              "q": "aws.rds.delete_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            },
+            {
+              "q": "aws.rds.insert_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            },
+            {
+              "q": "aws.rds.update_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            },
+            {
+              "q": "aws.rds.select_latency{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Reads and Writes latencies"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.queries{sonatype-group:skynet,environment:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Query count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.network_throughput{*}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Network throughput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.active_transactions{sonatype-group:skynet,environment:production}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Active transactions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.rds.replica_lag{host:db-IWH66ZNIOETLIAJXGTNNZS4FBQ}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Replication Lag"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.login_failures{sonatype-group:skynet,environment:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "RDS: Login failure count"
+      }
+    ],
+    "template_variables": null,
+    "description": "Top host-level metrics for HDS Production RDS",
+    "title": "HDS Production RDS",
+    "created": "2018-01-11T21:05:24.460475+00:00",
+    "new_id": "jgr-pqf-ci3",
+    "id": 465871,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2018-01-18T18:22:08.881348+00:00"
+  },
+  "url": "/dash/465871/hds-production-rds",
+  "resource": "/api/v1/dash/465871"
+}

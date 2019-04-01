@@ -1,0 +1,538 @@
+{
+  "showGlobalTimeOnboarding": true,
+  "new_id": "gv2-afp-mtf",
+  "height": 82,
+  "created_by": {
+    "disabled": false,
+    "handle": "cjohnstone@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "cjohnstone@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/b4da892ec9307e924fd867f685ba63be?s=48&d=retro"
+  },
+  "originalWidth": "100%",
+  "id": 292398,
+  "read_only": false,
+  "isIntegration": false,
+  "disableEditing": false,
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "AVD External Issue Consumer Queue Processing - Staging",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-staging}.as_count()",
+            "type": "line",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-staging}.as_count()": {
+                "alias": "Sent to Queue"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-staging}.as_count()": {
+                "alias": "Processed"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-errors-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "dashed"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-errors-staging}.as_count()": {
+                "alias": "Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 21,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSSIndex External Issue Ingest (Producer) - Staging",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_item_count.sum{*}",
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_item_count.sum{*}": {
+                "alias": "Received From OSSIndex"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_count.sum{*}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_count.sum{*}": {
+                "alias": "Published to SNS"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_ingest_error_count{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_ingest_error_count{*}": {
+                "alias": "Ingest Errors"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_error_count{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_error_count{*}": {
+                "alias": "Publish Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 48,
+      "time": {},
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSSIndex External Issue Ingest (Producer) - Prod",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_item_count.sum{*}",
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_item_count.sum{*}": {
+                "alias": "Received From OSSIndex"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_count.sum{*}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_count.sum{*}": {
+                "alias": "Published To SNS"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_ingest_error_count{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_ingest_error_count{*}": {
+                "alias": "Ingest Errors"
+              }
+            }
+          },
+          {
+            "q": "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_error_count{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:scheduled_services_prod.comsonatypedatasources_ossindex_source_publish_error_count{*}": {
+                "alias": "Publish Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 0,
+      "x": 52,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "AVD External Issue Consumer Queue Processing - Prod",
+      "height": 20,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-prod}.as_count()",
+            "type": "line",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_sent{queuename:avd-external-issue-feed-prod}.as_count()": {
+                "alias": "Sent to Queue"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-prod}.as_count()": {
+                "alias": "Processed"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-errors-prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-external-issue-feed-errors-prod}.as_count()": {
+                "alias": "Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 21,
+      "x": 52,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "LQA External Issue Export - Prod",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:com.sonatype.data.drd.nbm.export.services.ExportService.received_issues{env:prod}",
+            "type": "line",
+            "metadata": {
+              "avg:com.sonatype.data.drd.nbm.export.services.ExportService.received_issues{env:prod}": {
+                "alias": "Read From AVD"
+              }
+            }
+          },
+          {
+            "q": "avg:com.sonatype.data.drd.nbm.export.services.ExportService.exported_issues{env:prod}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "avg:com.sonatype.data.drd.nbm.export.services.ExportService.exported_issues{env:prod}": {
+                "alias": "Exported To LQA"
+              }
+            }
+          },
+          {
+            "q": "avg:com.sonatype.data.drd.nbm.export.services.ExportService.failed_issues{env:prod}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:com.sonatype.data.drd.nbm.export.services.ExportService.failed_issues{env:prod}": {
+                "alias": "Failed"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 44,
+      "x": 52,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "LQA External Issue Export - Staging",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "max:com.sonatype.data.drd.nbm.export.services.ExportService.received_issues{env:staging}",
+            "type": "line",
+            "metadata": {
+              "max:com.sonatype.data.drd.nbm.export.services.ExportService.received_issues{env:staging}": {
+                "alias": "Read From AVD"
+              }
+            }
+          },
+          {
+            "q": "max:com.sonatype.data.drd.nbm.export.services.ExportService.exported_issues{env:staging}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "max:com.sonatype.data.drd.nbm.export.services.ExportService.exported_issues{env:staging}": {
+                "alias": "Exported To LQA"
+              }
+            }
+          },
+          {
+            "q": "max:com.sonatype.data.drd.nbm.export.services.ExportService.failed_issues{env:staging}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "max:com.sonatype.data.drd.nbm.export.services.ExportService.failed_issues{env:staging}": {
+                "alias": "Failed"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 44,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 292398,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1550858400000,
+        "end": 1551463200000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.events.invocations",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.events.invocations{rulename:nbm-export-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 65,
+      "x": 3,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "isShared": false,
+  "author_info": {
+    "author_name": null
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "templated": true,
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "AVD External Issue Queue/LQA Export",
+  "created": "2018-02-23T19:24:15.187081+00:00",
+  "original_title": "AVD External Issue Queue/LQA Export",
+  "modified": "2019-03-01T15:16:33.034997+00:00",
+  "originalHeight": 82
+}

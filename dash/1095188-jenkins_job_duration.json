@@ -1,0 +1,267 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/oss-index/oss-index/dssavd-383}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/oss-index/oss-index/dssavd-383"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/develop}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dev..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/dssavd-383}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dss..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/dssavd-434}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/dss..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_pr_pipeline/upgrade_dwguice}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_pr_pipeline/upg..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_prod_deploy}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_prod_deploy"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/security_research_dashboard_staging_deploy}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/security_research_dashboard_staging_deploy"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:avd/workers/prod_download_github_archives_singleday}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:avd/workers/prod_download_github_archives_singl..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/ant}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/ant"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/assume-cross-account-role}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/assume-cross-account-role"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/datadog}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/datadog"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/docker}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/docker"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/groovy}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/groovy"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/java}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/java"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/jenkins-iq}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/jenkins-iq"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/master-assume-cross-account-role}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/master-assume-cross-account-role"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/maven}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/maven"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/nodejs}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/nodejs"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/python}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/python"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:cdi/agenttests/ruby}"
+            }
+          ],
+          "events": []
+        },
+        "title": "jenkins.job.duration with job:cdi/agenttests/ruby"
+      }
+    ],
+    "template_variables": null,
+    "description": null,
+    "title": "Jenkins Job Duration",
+    "created": "2019-02-28T20:23:39.537767+00:00",
+    "new_id": "2qf-7ec-xmq",
+    "id": 1095188,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2019-02-28T20:23:39.537767+00:00"
+  },
+  "url": "/dash/1095188/jenkins-job-duration",
+  "resource": "/api/v1/dash/1095188"
+}

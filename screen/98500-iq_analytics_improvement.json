@@ -1,0 +1,87 @@
+{
+  "board_title": "IQ Analytics - Improvement",
+  "read_only": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2016-06-30T15:53:15.318466+00:00",
+  "new_id": "zuk-rrb-gkk",
+  "original_title": "IQ Analytics - Improvement",
+  "modified": "2016-06-30T18:43:15.895467+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "mpiggott@sonatype.com",
+    "name": "Matthew Piggott",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "mpiggott@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+  },
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "widgets": [
+    {
+      "board_id": 98500,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain Versions",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.scan.ide.simple{*} by {brain_version}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    },
+    {
+      "board_id": 98500,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Brain OS",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.scan.ide.simple{*} by {brain_os}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 2,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    }
+  ],
+  "shared": false,
+  "id": 98500,
+  "title_edited": false
+}

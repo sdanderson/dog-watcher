@@ -1,0 +1,87 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:zion.nxrm_ha.metrics.error.count{*} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Error Count by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:zion.nxrm_ha.metrics.error.m1_rate{*} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Error Rates (m1) by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:zion.nxrm_ha.metrics.error.m5_rate{*} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Error Rates (m5) by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:zion.nxrm_ha.metrics.error.m15_rate{*} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Error Rates (m15) by Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:zion.nxrm_ha.org.eclipse.jetty.webapp.WebAppContext.5xx_responses.count{*} by {host}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "5xx Responses by Host"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by rbriganti@sonatype.com",
+    "title": "NXRM HA (Zion)",
+    "created": "2017-07-13T19:42:50.665305+00:00",
+    "new_id": "pyz-gpi-xjr",
+    "id": 320998,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2017-07-13T20:00:18.846279+00:00"
+  },
+  "url": "/dash/320998/nxrm-ha-zion",
+  "resource": "/api/v1/dash/320998"
+}

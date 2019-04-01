@@ -1,0 +1,42 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis{env:production} by {brain_version}.as_count(), 100, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Sum of iq.hds.analysis over env:production by brain_version"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by sbaker@sonatype.com",
+    "title": "just brain versions",
+    "created": "2018-05-02T14:00:11.869541+00:00",
+    "new_id": "pmj-h96-d3n",
+    "id": 801233,
+    "created_by": {
+      "disabled": false,
+      "handle": "sbaker@sonatype.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sbaker@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/a6abd0a9d06a1ac9a2c96e1a30814bc4?s=48&d=retro"
+    },
+    "modified": "2018-05-02T14:00:41.060562+00:00"
+  },
+  "url": "/dash/801233/just-brain-versions",
+  "resource": "/api/v1/dash/801233"
+}

@@ -1,0 +1,61 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.publish.lag{*}/60",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Publish to Central latency in minutes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.newsearch.lag{*}/60",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Publish to search.maven.org latency in minutes"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by tyanko@sonatype.com",
+    "title": "Central publish latency",
+    "created": "2018-09-13T16:53:12.444649+00:00",
+    "new_id": "qdm-89m-86s",
+    "id": 915112,
+    "created_by": {
+      "disabled": false,
+      "handle": "tyanko@sonatype.com",
+      "name": "Terry Yanko",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "tyanko@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+    },
+    "modified": "2018-11-02T20:52:25.280315+00:00"
+  },
+  "url": "/dash/915112/central-publish-latency",
+  "resource": "/api/v1/dash/915112"
+}

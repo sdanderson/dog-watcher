@@ -1,0 +1,53 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtailsyslog.mtail.ossindex_access.status.400.type.registration{*}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtailsyslog.mtail.ossindex_access.status.400.type.registration"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtailsyslog.mtail.log_entries.service.dhclient{*}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtailsyslog.mtail.log_entries.service.dhclient"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Jason's Timeboard 7 Aug 2018 18:01",
+    "created": "2018-08-07T22:02:03.134868+00:00",
+    "new_id": "gpx-u2j-cwg",
+    "id": 882195,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-08-08T21:26:18.863323+00:00"
+  },
+  "url": "/dash/882195/jasons-timeboard-7-aug-2018-1801",
+  "resource": "/api/v1/dash/882195"
+}

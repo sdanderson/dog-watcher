@@ -1,0 +1,61 @@
+{
+  "board_title": "Support -Ticket 96306 - small",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-06-09T10:00:16.069382+00:00",
+  "new_id": "r62-f8z-bjg",
+  "original_title": "Support -Ticket 96306 - 1",
+  "modified": "2017-06-09T10:22:23.349792+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "support-sonatype",
+    "name": "Datadog Support",
+    "is_admin": true,
+    "role": "Help is on the way",
+    "access_role": "adm",
+    "verified": true,
+    "email": "support-user-prod@datadoghq.com",
+    "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 192462,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Formats (requests processed)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis_completed{kind:firewall} by {format}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 25,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 192462,
+  "title_edited": true,
+  "isShared": false
+}

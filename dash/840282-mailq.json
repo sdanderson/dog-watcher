@@ -1,0 +1,26 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Mailq",
+    "created": "2018-06-20T14:57:50.538113+00:00",
+    "new_id": "dk9-unk-cbe",
+    "id": 840282,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-06-20T14:57:50.538125+00:00"
+  },
+  "url": "/dash/840282/mailq",
+  "resource": "/api/v1/dash/840282"
+}

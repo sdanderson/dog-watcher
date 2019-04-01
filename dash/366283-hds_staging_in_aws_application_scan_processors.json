@@ -1,0 +1,148 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.ebs.volume_read_bytes{name:hds-staging-clmscan02a}",
+              "type": "line"
+            },
+            {
+              "q": "max:aws.ebs.volume_write_bytes{name:hds-staging-clmscan02a}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan02a EBS Volume Reads/Wrties"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.ebs.volume_read_bytes{name:hds-staging-clmscan02b}",
+              "type": "line"
+            },
+            {
+              "q": "max:aws.ebs.volume_write_bytes{name:hds-staging-clmscan02b}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmascan02b EBS Volume Reads/Writes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.efs.data_read_iobytes{name:hds-staging-clmscan02a}.as_rate()",
+              "type": "line"
+            },
+            {
+              "q": "max:aws.efs.data_write_iobytes{name:hds-staging-clmscan02a}.as_rate()",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan02a EFS Volume Reads/Wrties"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.efs.data_read_iobytes{name:hds-staging-clmscan02b}.as_rate()",
+              "type": "line"
+            },
+            {
+              "q": "max:aws.efs.data_write_iobytes{name:hds-staging-clmscan02b}.as_count()",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan02b EFS Volume Reads/Wrties"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.max.value{identifier:scanprocessor-clmscan02a-staging} by {process}",
+              "type": "area"
+            },
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{identifier:scanprocessor-clmscan02a-staging} by {process}",
+              "type": "area"
+            },
+            {
+              "q": "max:scanprocessor.jvm.memory.total.used.value{identifier:scanprocessor-clmscan02a-staging} by {process}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "clmscan02a JVM Memory Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.max.value{identifier:scanprocessor-clmscan02b-staging} by {process}",
+              "type": "area"
+            },
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{identifier:scanprocessor-clmscan02b-staging} by {process}",
+              "type": "area"
+            },
+            {
+              "q": "max:scanprocessor.jvm.memory.total.used.value{identifier:scanprocessor-clmscan02b-staging} by {process}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "clmscan02b JVM Memory Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{env:prod}, avg:system.load.1{environment:production}, avg:system.load.1{environment:prod}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Avg of system.load.1 over env:prod"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by ksprochi@sonatype.com",
+    "title": "HDS Staging in AWS - Application Scan Processors",
+    "created": "2017-09-27T15:27:49.178269+00:00",
+    "new_id": "xvv-hqp-6nr",
+    "id": 366283,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2018-03-05T17:24:48.972924+00:00"
+  },
+  "url": "/dash/366283/hds-staging-in-aws---application-scan-processors",
+  "resource": "/api/v1/dash/366283"
+}

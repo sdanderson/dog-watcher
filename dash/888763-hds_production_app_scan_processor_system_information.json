@@ -1,0 +1,180 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.cpu.user{name:hds-production-ec2-clmscan01a}, sum:system.cpu.system{name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "clmscan01a - cpu"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01a}, max:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - max heap used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.await{use-case:scan-processor,name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - max io.await"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.svctm{name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - max io service time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - max cpu iowait"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.wkb_s{name:hds-production-ec2-clmscan01a}, max:system.io.rkb_s{name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "clmscan01a - io reads and writes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:scanprocessor.operating_system.system_load_average{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "clmscan01a - load average"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.queries{dbinstanceidentifier:tf-20171114151140326200000001}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "DB Writer Queries"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.queries{dbinstanceidentifier:tf-20180817162038941100000001}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "DB Reader Queries"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by ksprochi@sonatype.com",
+    "title": "HDS Production App Scan Processor System Information",
+    "created": "2018-08-15T14:28:29.163577+00:00",
+    "new_id": "2yi-yk7-dsm",
+    "id": 888763,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2018-08-17T18:59:56.448544+00:00"
+  },
+  "url": "/dash/888763/hds-production-app-scan-processor-system-information",
+  "resource": "/api/v1/dash/888763"
+}

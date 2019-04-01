@@ -1,0 +1,482 @@
+{
+  "board_title": "CX - Community",
+  "read_only": false,
+  "author_info": {
+    "author_name": "Nick Cook"
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "created": "2019-02-13T12:06:24.646948+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ncook@sonatype.com",
+    "name": "Nick Cook",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ncook@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/8b919b61e46b949d833b7fe1000c37b3?s=48&d=retro"
+  },
+  "new_id": "5yn-ku2-hg7",
+  "modified": "2019-03-10T01:03:30.319378+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "isIntegration": false,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.ec2.network_in",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{name:discourse-production}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "error": null,
+      "y": 18,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.ec2.network_out",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{name:discourse-production}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "error": null,
+      "y": 34,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.ec2.cpuutilization",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{name:discourse-production}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "error": null,
+      "y": 50,
+      "x": 1,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "height": 8,
+      "text_size": "auto",
+      "check": "aws.ec2.host_status",
+      "board_id": 580633,
+      "group": "host:i-0db1c8e1ad08d5b33",
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "width": 15,
+      "group_by": [],
+      "type": "check_status",
+      "isShared": false,
+      "tags": [
+        "*"
+      ],
+      "time": {},
+      "title_text": "Host Status",
+      "title_size": 16,
+      "add_timeframe": true,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "error": null,
+      "y": 9,
+      "x": 16,
+      "grouping": "check"
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Discourse Host",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 47,
+      "x": 1,
+      "y": 2,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Discourse Database",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 46,
+      "x": 52,
+      "y": 2,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.rds.database_connections",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.database_connections{dbinstanceidentifier:discourse}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 18,
+      "x": 52,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.rds.read_iops, aws.rds.write_iops",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_iops{dbinstanceidentifier:discourse}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.rds.write_iops{dbinstanceidentifier:discourse}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 34,
+      "x": 52,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.rds.read_latency, aws.rds.write_latency",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_latency{dbinstanceidentifier:discourse}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.rds.write_latency{dbinstanceidentifier:discourse}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 50,
+      "x": 52,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.elb.request_count",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count{name:cx-sso-bridge-production-ecs-alb}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 18,
+      "x": 103,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "generated_title": "",
+      "font_size": "24",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "SSO Bridge",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 47,
+      "x": 103,
+      "y": 2,
+      "title_size": 16,
+      "add_timeframe": true,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 580633,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1552175040000,
+        "end": 1552178640000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "aws.ecs.cpuutilization",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ecs.cpuutilization{clustername:discourse-sso-bridge-production}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 34,
+      "x": 103,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 580633,
+  "isShared": false
+}

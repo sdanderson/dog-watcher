@@ -1,0 +1,166 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "m",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "max:iq.hds.analysis_completed.duration.max{kind:app,success:true}/1000/60",
+              "aggregator": "max",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_red",
+                  "value": 15,
+                  "comparator": ">"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Application max duration for successful analysis"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "week_before",
+              "q": "max:iq.hds.analysis_completed.duration.max{*} by {kind}",
+              "increase_good": false,
+              "order_by": "name"
+            }
+          ]
+        },
+        "title": "Max duration compared to previous week"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed{*} by {kind}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Analysis by type"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "m",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true}/1000/60",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application average p99 duration for successful analysis"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.analysis_completed.components.total{*} by {kind}.as_count(), 10, 'mean', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Components analyzed by type"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "week_before",
+              "q": "sum:iq.hds.analysis_completed{*} by {kind}.as_count()",
+              "increase_good": true,
+              "order_by": "name"
+            }
+          ]
+        },
+        "title": "Change from previous week"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true}/1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application average p50 duration for successful analysis"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis{env:prod,kind:app}.as_count() - sum:iq.hds.analysis_completed{env:prod,kind:app}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal"
+              },
+              "type": "line"
+            }
+          ],
+          "markers": [
+            {
+              "type": "error dashed",
+              "value": "y > 0"
+            }
+          ]
+        },
+        "title": "Application analysis requested - completed"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jwhitehouse@sonatype.com",
+    "title": "PO IQ",
+    "created": "2017-11-22T14:54:11.749421+00:00",
+    "new_id": "927-s8u-eff",
+    "id": 405543,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2018-06-11T14:56:11.030573+00:00"
+  },
+  "url": "/dash/405543/po-iq",
+  "resource": "/api/v1/dash/405543"
+}

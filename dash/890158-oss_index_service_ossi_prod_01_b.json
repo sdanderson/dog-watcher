@@ -1,0 +1,711 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.uptime{$scope,$host}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System: Uptime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "avg:system.load.1{$scope,$host}": {
+                  "alias": "Load"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{$scope,$host}, avg:system.cpu.system{$scope,$host}, avg:system.cpu.iowait{$scope,$host}, avg:system.cpu.user{$scope,$host}, avg:system.cpu.stolen{$scope,$host}, avg:system.cpu.guest{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:system.cpu.idle{$scope,$host}": {
+                  "alias": "Idle"
+                },
+                "avg:system.cpu.user{$scope,$host}": {
+                  "alias": "user"
+                },
+                "avg:system.cpu.stolen{$scope,$host}": {
+                  "alias": "stolen"
+                },
+                "avg:system.cpu.guest{$scope,$host}": {
+                  "alias": "guest"
+                },
+                "avg:system.cpu.iowait{$scope,$host}": {
+                  "alias": "iowait"
+                },
+                "avg:system.cpu.system{$scope,$host}": {
+                  "alias": "system"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: CPU"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.usable{$scope,$host}, avg:system.mem.total{$scope,$host}-avg:system.mem.usable{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:system.mem.total{$scope,$host}-avg:system.mem.usable{$scope,$host}": {
+                  "alias": "Used"
+                },
+                "avg:system.mem.usable{$scope,$host}": {
+                  "alias": "Usable"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Memory"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.bytes_rcvd{$scope,$host}, avg:system.net.bytes_sent{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:system.net.bytes_rcvd{$scope,$host}": {
+                  "alias": "RX"
+                },
+                "avg:system.net.bytes_sent{$scope,$host}": {
+                  "alias": "TX"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Network"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{$scope,$host}, avg:system.mem.total{$scope,$host}-avg:system.mem.used{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:system.mem.total{$scope,$host}-avg:system.mem.used{$scope,$host}": {
+                  "alias": "Total"
+                },
+                "avg:system.mem.used{$scope,$host}": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Disk"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.in_use{$scope,$host}, avg:system.fs.inodes.in_use{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:system.fs.inodes.in_use{$scope,$host}": {
+                  "alias": "inodes"
+                },
+                "avg:system.disk.in_use{$scope,$host}": {
+                  "alias": "bytes"
+                }
+              }
+            }
+          ]
+        },
+        "title": "System: Disk %"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.attribute.uptime{$scope,$host}",
+              "style": {
+                "palette": "grey",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "JVM: Uptime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.memory.heap.usage{$scope,$host}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:ossindex.jvm.memory.heap.usage{$scope,$host}*100": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "JVM: Heap Usage %"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.memory.heap.used{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:ossindex.jvm.memory.heap.used{$scope,$host}": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: Heap Used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.filedescriptor{$scope,$host}*100",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:ossindex.jvm.filedescriptor{$scope,$host}*100": {
+                  "alias": "Used"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "JVM: File Descriptors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jvm.threads.daemon.count{$scope,$host}, avg:ossindex.jvm.threads.new.count{$scope,$host}, avg:ossindex.jvm.threads.runnable.count{$scope,$host}, avg:ossindex.jvm.threads.terminated.count{$scope,$host}, avg:ossindex.jvm.threads.timed_waiting.count{$scope,$host}, avg:ossindex.jvm.threads.waiting.count{$scope,$host}",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:ossindex.jvm.threads.daemon.count{$scope,$host}": {
+                  "alias": "daemon"
+                },
+                "avg:ossindex.jvm.threads.timed_waiting.count{$scope,$host}": {
+                  "alias": "timed_waiting"
+                },
+                "avg:ossindex.jvm.threads.waiting.count{$scope,$host}": {
+                  "alias": "waiting"
+                },
+                "avg:ossindex.jvm.threads.new.count{$scope,$host}": {
+                  "alias": "new"
+                },
+                "avg:ossindex.jvm.threads.runnable.count{$scope,$host}": {
+                  "alias": "runnable"
+                },
+                "avg:ossindex.jvm.threads.terminated.count{$scope,$host}": {
+                  "alias": "terminated"
+                }
+              }
+            },
+            {
+              "q": "avg:ossindex.jvm.threads.blocked.count{$scope,$host}, avg:ossindex.jvm.threads.deadlock.count{$scope,$host}",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area",
+              "metadata": {
+                "avg:ossindex.jvm.threads.blocked.count{$scope,$host}": {
+                  "alias": "blocked"
+                },
+                "avg:ossindex.jvm.threads.deadlock.count{$scope,$host}": {
+                  "alias": "deadlock"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: Threads"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.time{$scope,$host})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.time{$scope,$host})": {
+                  "alias": "Scavenge"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.time{$scope,$host})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.time{$scope,$host})": {
+                  "alias": "MarkSweep"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: GC Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.count{$scope,$host})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_Scavenge.count{$scope,$host})": {
+                  "alias": "Scavenge"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.count{$scope,$host})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.jvm.gc.PS_MarkSweep.count{$scope,$host})": {
+                  "alias": "MarkSweep"
+                }
+              }
+            }
+          ]
+        },
+        "title": "JVM: GC Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ossindex.jetty.qtp.dw.utilization{$scope,$host}, avg:ossindex.jetty.qtp.dw_admin.utilization{$scope,$host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:ossindex.jetty.qtp.dw_admin.utilization{$scope,$host}": {
+                  "alias": "admin"
+                },
+                "avg:ossindex.jetty.qtp.dw.utilization{$scope,$host}": {
+                  "alias": "main"
+                }
+              }
+            }
+          ],
+          "yaxis": {
+            "max": "1",
+            "min": "0"
+          }
+        },
+        "title": "Jetty: QTP"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.dropwizard.servlet.1xx_responses.count{$scope,$host}), per_minute(avg:ossindex.dropwizard.servlet.2xx_responses.count{$scope,$host}), per_minute(avg:ossindex.dropwizard.servlet.3xx_responses.count{$scope,$host})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.dropwizard.servlet.2xx_responses.count{$scope,$host})": {
+                  "alias": "2xx"
+                },
+                "per_minute(avg:ossindex.dropwizard.servlet.1xx_responses.count{$scope,$host})": {
+                  "alias": "1xx"
+                },
+                "per_minute(avg:ossindex.dropwizard.servlet.3xx_responses.count{$scope,$host})": {
+                  "alias": "3xx"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.dropwizard.servlet.4xx_responses.count{$scope,$host}), per_minute(avg:ossindex.dropwizard.servlet.5xx_responses.count{$scope,$host})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.dropwizard.servlet.4xx_responses.count{$scope,$host})": {
+                  "alias": "4xx"
+                },
+                "per_minute(avg:ossindex.dropwizard.servlet.5xx_responses.count{$scope,$host})": {
+                  "alias": "5xx"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jetty: HTTP Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.jetty.connection_factory.8070.connections.count{$scope,$host}), per_minute(avg:ossindex.jetty.connection_factory.8071.connections.count{$scope,$host})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.jetty.connection_factory.8071.connections.count{$scope,$host})": {
+                  "alias": "admin"
+                },
+                "per_minute(avg:ossindex.jetty.connection_factory.8070.connections.count{$scope,$host})": {
+                  "alias": "main"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Jetty: Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.logback.appender.debug.count{$scope,$host}), per_minute(avg:ossindex.logback.appender.trace.count{$scope,$host}), per_minute(avg:ossindex.logback.appender.info.count{$scope,$host})",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars",
+              "metadata": {
+                "per_minute(avg:ossindex.logback.appender.info.count{$scope,$host})": {
+                  "alias": "INFO"
+                },
+                "per_minute(avg:ossindex.logback.appender.debug.count{$scope,$host})": {
+                  "alias": "DEBUG"
+                },
+                "per_minute(avg:ossindex.logback.appender.trace.count{$scope,$host})": {
+                  "alias": "TRACE"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.logback.appender.warn.count{$scope,$host}), per_minute(avg:ossindex.logback.appender.error.count{$scope,$host})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.logback.appender.error.count{$scope,$host})": {
+                  "alias": "ERROR"
+                },
+                "per_minute(avg:ossindex.logback.appender.warn.count{$scope,$host})": {
+                  "alias": "WARN"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Logback: Levels"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.service.site.ValidationErrorView.rendering.count{$scope,$host})",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.service.site.ValidationErrorView.rendering.count{$scope,$host})": {
+                  "alias": "Validation"
+                }
+              }
+            },
+            {
+              "q": "per_minute(avg:ossindex.service.site.ErrorView.rendering.count{$scope,$host})",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.service.site.ErrorView.rendering.count{$scope,$host})": {
+                  "alias": "Error"
+                }
+              }
+            }
+          ]
+        },
+        "title": "View: Error Pages"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.service.component.findComponents.count{$scope,$host}), per_minute(avg:ossindex.service.component.findComponent.count{$scope,$host})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.service.component.findComponents.count{$scope,$host})": {
+                  "alias": "BATCH"
+                },
+                "per_minute(avg:ossindex.service.component.findComponent.count{$scope,$host})": {
+                  "alias": "SINGLE"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Service: Find Component"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.service.rest.component_report.get.count{$scope,$host}), per_minute(avg:ossindex.service.rest.component_report.post.count{$scope,$host})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.service.rest.component_report.get.count{$scope,$host})": {
+                  "alias": "GET"
+                },
+                "per_minute(avg:ossindex.service.rest.component_report.post.count{$scope,$host})": {
+                  "alias": "POST"
+                }
+              }
+            }
+          ]
+        },
+        "title": "REST: Component Report"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.httpclient.LqaService.get_requests.count{$scope,$host}), per_minute(avg:ossindex.httpclient.LqaService.post_requests.count{$scope,$host})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.httpclient.LqaService.post_requests.count{$scope,$host})": {
+                  "alias": "POST"
+                },
+                "per_minute(avg:ossindex.httpclient.LqaService.get_requests.count{$scope,$host})": {
+                  "alias": "GET"
+                }
+              }
+            }
+          ]
+        },
+        "title": "HttpClient: LQA Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:ossindex.httpclient.LegacyPackageService.get_requests.count{$scope,$host}), per_minute(avg:ossindex.httpclient.LegacyPackageService.post_requests.count{$scope,$host})",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "per_minute(avg:ossindex.httpclient.LegacyPackageService.get_requests.count{$scope,$host})": {
+                  "alias": "GET"
+                },
+                "per_minute(avg:ossindex.httpclient.LegacyPackageService.post_requests.count{$scope,$host})": {
+                  "alias": "POST"
+                }
+              }
+            }
+          ]
+        },
+        "title": "HttpClient: Legacy Requests"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "ossindex",
+        "prefix": "use-case",
+        "name": "scope"
+      },
+      {
+        "default": "ossi-prod01b",
+        "prefix": "name",
+        "name": "host"
+      }
+    ],
+    "description": "OSS Index service metrics for a single node",
+    "title": "OSS Index: Service (ossi-prod01b)",
+    "created": "2018-08-16T18:06:11.565472+00:00",
+    "new_id": "afu-7m5-2pm",
+    "id": 890158,
+    "created_by": {
+      "disabled": false,
+      "handle": "jdillon@sonatype.com",
+      "name": "Jason Dillon",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jdillon@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/d9ec305f5c5bb319e39327988bc1553b?s=48&d=retro"
+    },
+    "modified": "2018-08-16T18:06:11.565490+00:00"
+  },
+  "url": "/dash/890158/oss-index-service-ossi-prod01b",
+  "resource": "/api/v1/dash/890158"
+}

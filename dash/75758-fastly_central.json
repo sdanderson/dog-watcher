@@ -1,0 +1,171 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "100 * max:fastly.hit_ratio{service:central}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Hit Ratio (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "100 * ( 1 - sum:fastly.pass{service:central} / sum:fastly.requests{service:central} )",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Cache Coverage (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:fastly.pass{service:central}, sum:fastly.synth{service:central}, sum:fastly.miss{service:central}, sum:fastly.hits{service:central}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Caching Overview"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_10(per_second(sum:fastly.requests{service:central}))",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests per Second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:fastly.bandwidth{service:central})) * 8",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Bandwidth (bits/sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_second(sum:fastly.body_size{service:central}) * 8, per_second(sum:fastly.header_size{service:central}) * 8",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Header and Body Bandwidth (bits/sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "1000 * avg:fastly.miss_time{service:central} / avg:fastly.miss{service:central}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Origin Latency (Fastly observed)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:central_origin_s3}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Origin Latency (S3), Pingdom"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "100 * ( sum:fastly.status_4xx{service:central} / sum:fastly.requests{service:central} )",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "4xx Ratio (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:fastly.status_5xx{service:central}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Fastly 5XX Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:fastly.status_3xx{service:central}, sum:fastly.status_2xx{service:central}, sum:fastly.status_1xx{service:central}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "HTTP Info, Success, & Redirects (1XX, 2XX, 3XX)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(sum:fastly.status_4xx{service:central})",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "HTTP Client and Server Errors (4XX)"
+      }
+    ],
+    "template_variables": null,
+    "description": "An overview of your Fastly metrics for Central",
+    "title": "Fastly (Central)",
+    "created": "2015-10-22T16:25:04.890982+00:00",
+    "new_id": "b8e-6sr-tin",
+    "id": 75758,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2016-04-21T17:14:44.019677+00:00"
+  },
+  "url": "/dash/75758/fastly-central",
+  "resource": "/api/v1/dash/75758"
+}

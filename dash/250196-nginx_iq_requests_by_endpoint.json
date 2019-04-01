@@ -1,0 +1,135 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:ahc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:ahc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:application}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:application"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:bc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:bc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:ci}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:ci"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:component}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:component"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:ide}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:ide"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:rhc}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:rhc"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:rm}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:rm"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.clm.count{rest_endpoint:vulnerability}"
+            }
+          ],
+          "events": []
+        },
+        "title": "nginx.request.com.sonatype.clm.count with rest_endpoint:vulnerability"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jwhitehouse@sonatype.com",
+    "title": "Nginx - IQ requests by endpoint",
+    "created": "2017-02-18T15:20:44.853180+00:00",
+    "new_id": "tqt-hh6-m75",
+    "id": 250196,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2017-02-18T15:20:44.844310+00:00"
+  },
+  "url": "/dash/250196/nginx---iq-requests-by-endpoint",
+  "resource": "/api/v1/dash/250196"
+}

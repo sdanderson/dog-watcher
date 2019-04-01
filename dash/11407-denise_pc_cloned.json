@@ -1,0 +1,126 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.proc.queue_length{host:DENISE_PC}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "Process Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.io.avg_q_sz{host:DENISE_PC}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "Disk Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.cpu.idle{host:DENISE_PC}, system.cpu.system{host:DENISE_PC}, system.cpu.iowait{host:DENISE_PC}, system.cpu.user{host:DENISE_PC}, system.cpu.stolen{host:DENISE_PC}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.free{host:DENISE_PC}, avg:system.mem.used{host:DENISE_PC}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:DENISE_PC}"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:DENISE_PC}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.disk.used{host:DENISE_PC}by{device}"
+            }
+          ],
+          "events": [
+            {
+              "q": "host:DENISE_PC"
+            }
+          ]
+        },
+        "title": "Disk used (by device)"
+      }
+    ],
+    "template_variables": null,
+    "description": "Top host-level metrics for DENISE_PC. Clone this dashboard to add your (cloned)",
+    "title": "DENISE_PC (cloned)",
+    "created": "2013-08-12T18:50:55.066676+00:00",
+    "new_id": "edn-nfk-zn4",
+    "id": 11407,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2013-08-12T18:50:55.040666+00:00"
+  },
+  "url": "/dash/11407/denisepc-cloned",
+  "resource": "/api/v1/dash/11407"
+}

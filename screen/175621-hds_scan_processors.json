@@ -1,0 +1,1057 @@
+{
+  "board_title": "HDS Scan Processors",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2017-04-17T16:24:43.762821+00:00",
+  "new_id": "rey-uwx-3jr",
+  "original_title": "HDS Scan Processors",
+  "modified": "2017-05-25T00:59:03.440181+00:00",
+  "disableEditing": false,
+  "height": 107,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "clmscan02b",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 24,
+      "y": 2,
+      "x": 1,
+      "font_size": "36",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System CPU (user)",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{host:clmweb02b.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 31,
+      "x": 142,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "System Memory - Total",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:system.mem.total{host:clmscan02b.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Swap - Used",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:system.swap.used{host:clmscan02b.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 22,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System I/O - await",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.io.await{host:clmscan02b.contegix.s}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 63,
+      "x": 49,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System I/O - max svctm (per device)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:system.io.svctm{host:clmscan02b.contegix.s} by {device}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 63,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Heap Memory Usage",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:scanprocessor.jvm.memory.heap.used.value{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 64,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Collection Count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector_g1_old_generation.collection_count{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 65,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max File Descriptors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.max_file_descriptor_count{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 85,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Loaded ClassCount",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.loaded_class_count{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Loaded Class Count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.total_loaded_class_count{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 22,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Unloaded Class Count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.class_loading.unloaded_class_count{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 43,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "JVM Max Heap Memory",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.heap.max.value{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 43,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Non-Heap Memory Usage",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.jvm.memory.non_heap.used.value{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 106,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "java.lang.GarbageCollector.G1 Old Generation",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 39,
+      "y": 5,
+      "x": 65,
+      "font_size": "16",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "java.lang.ClassLoading",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 62,
+      "y": 5,
+      "x": 1,
+      "font_size": "16",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CollectionTime",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector_g1_old_generation.collection_time{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 85,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "java.lang.GarbageCollector.G1 Young Generation",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 40,
+      "y": 5,
+      "x": 106,
+      "font_size": "16",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CollectionCount",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector_g1_young_generation.collection_count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 106,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Collection Time",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.garbage_collector_g1_young_generation.collection_time{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 126,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "java.lang.Memory",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 83,
+      "y": 15,
+      "x": 1,
+      "font_size": "16",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Operating System",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 92,
+      "y": 27,
+      "x": 1,
+      "font_size": "16",
+      "type": "free_text"
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Available Processors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.available_processors{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Committed Virtual Memory",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.committed_virtual_memory_size{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 22,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free Physical Memory",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.free_physical_memory_size{identifier:scanprocessor-clmscan02b-staging}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 31,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free Swap Space",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.free_swap_space_size{identifier:scanprocessor-clmscan02b-staging}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 31,
+      "x": 64,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Open File Descriptor Count",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.open_file_descriptor_count{*}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 31,
+      "x": 103,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Process CPU Load",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.operating_system.process_cpu_load{identifier:scanprocessor-clmscan02b-staging}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 31,
+      "x": 121,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Thread CPU Time",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.current_thread_cpu_time{host:clmscan02b.contegix.s}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 52,
+      "x": 99,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 175621,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Thread CPU Time",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scanprocessor.threading.current_thread_cpu_time{host:clmscan02b.contegix.s}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "5m"
+      },
+      "y": 42,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 175621,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:vpn_clients.num.sum{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "VPN Client Count"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Jason's TimeBoard 10 Apr 2018 10:05",
+    "created": "2018-04-10T14:05:16.518511+00:00",
+    "new_id": "463-rt8-42x",
+    "id": 777263,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-04-10T15:04:15.381929+00:00"
+  },
+  "url": "/dash/777263/jasons-timeboard-10-apr-2018-1005",
+  "resource": "/api/v1/dash/777263"
+}

@@ -1,0 +1,176 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.network_throughput{$app,$env}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Network Tput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.cpuutilization{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.database_connections{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS DB Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.read_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.write_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.commit_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.update_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.rds.insert_latency{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RDS DB Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.aurora_replica_lag_maximum{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS Replica Lag"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.freeable_memory{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS Freeable Memory"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "lqa",
+        "prefix": "use-case",
+        "name": "app"
+      },
+      {
+        "default": "prod",
+        "prefix": "environment",
+        "name": "env"
+      }
+    ],
+    "description": "",
+    "title": "LQA Prod: DB",
+    "created": "2018-06-21T18:07:51.921953+00:00",
+    "new_id": "nae-4cc-7sd",
+    "id": 841538,
+    "created_by": {
+      "disabled": false,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "ethompson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/beaf8ec99411f3622f018bde843b4ada?s=48&d=retro"
+    },
+    "modified": "2018-07-02T15:33:54.557330+00:00"
+  },
+  "url": "/dash/841538/lqa-prod-db",
+  "resource": "/api/v1/dash/841538"
+}

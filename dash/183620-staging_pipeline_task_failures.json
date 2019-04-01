@@ -1,0 +1,181 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "palette": "green_to_orange",
+            "paletteFlip": false
+          },
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "status:failure",
+            "taskname:tasks.anamelicenseexporttos3task"
+          ],
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.anamelicenseexporttos3task} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "AnameLicenseExportToS3Task"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.cvefetchtask}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.cvefetchtask"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.licenseexporttos3task}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.licenseexporttos3task"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.npmpackagedownloadtask}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.npmpackagedownloadtask"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.npmregistryscraperworkertask}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.npmregistryscraperworke..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.probes.contenthashprobe}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ContentHashProbe Failures"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.probes.licensematchsourceprobe}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.probes.licensematchsour..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.probes.svhasher}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.probes.svhasher"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.redshifthashloader}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.redshifthashloader"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.svimport}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.svimport"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.svimportjira}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.svimportjira"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pipelinetasks_staging.task_status{status:failure,taskname:tasks.vulnerabilityexporttos3task}"
+            }
+          ],
+          "events": []
+        },
+        "title": "pipelinetasks_staging.task_status with taskname:tasks.vulnerabilityexporttos3..."
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jorlina@sonatype.com",
+    "title": "Staging Pipeline Task Failures",
+    "created": "2016-09-14T18:04:22.746980+00:00",
+    "new_id": "k5r-cqs-5ec",
+    "id": 183620,
+    "created_by": {
+      "disabled": false,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "jorlina@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/cc7aa67153bf16c97dede5281013ada4?s=48&d=retro"
+    },
+    "modified": "2016-09-22T17:50:16.049505+00:00"
+  },
+  "url": "/dash/183620/staging-pipeline-task-failures",
+  "resource": "/api/v1/dash/183620"
+}

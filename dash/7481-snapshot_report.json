@@ -1,0 +1,51 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:S3SnapshotReportCache.reportsStored{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "S3SnapshotReportCache.reportsStored"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{*} by {check}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Avg of pingdom.response_time over * by check"
+      }
+    ],
+    "template_variables": null,
+    "description": null,
+    "title": "Snapshot Report",
+    "created": "2013-04-04T06:29:23.600682+00:00",
+    "new_id": "28a-tbj-26x",
+    "id": 7481,
+    "created_by": {
+      "disabled": true,
+      "handle": "jduggan@sonatype.com",
+      "name": "Jordan Duggan",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jduggan@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/e08e19f16ffbe568397d145aaeda1c4e?s=48&d=retro"
+    },
+    "modified": "2017-03-16T14:12:16.061999+00:00"
+  },
+  "url": "/dash/7481/snapshot-report",
+  "resource": "/api/v1/dash/7481"
+}

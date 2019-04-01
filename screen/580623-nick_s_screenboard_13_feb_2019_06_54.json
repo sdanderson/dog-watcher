@@ -1,0 +1,20 @@
+{
+  "read_only": false,
+  "board_title": "Nick's Screenboard 13 Feb 2019 06:54",
+  "description": null,
+  "created": "2019-02-13T11:54:04.458690+00:00",
+  "new_id": "74u-bxm-zaf",
+  "modified": "2019-02-13T11:54:04.458697+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ncook@sonatype.com",
+    "name": "Nick Cook",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ncook@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/8b919b61e46b949d833b7fe1000c37b3?s=48&d=retro"
+  },
+  "id": 580623
+}

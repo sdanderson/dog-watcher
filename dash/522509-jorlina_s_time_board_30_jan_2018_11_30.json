@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:nexus.repos.staging{url:http://ossrh.1.aws.s:8081} by {state}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Max of nexus.repos.staging over url:http://ossrh.1.aws.s:8081 by state"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jorlina@sonatype.com",
+    "title": "jorlina's TimeBoard 30 Jan 2018 11:30",
+    "created": "2018-01-30T17:30:25.259974+00:00",
+    "new_id": "w8g-ach-5sc",
+    "id": 522509,
+    "created_by": {
+      "disabled": false,
+      "handle": "jorlina@sonatype.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "jorlina@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/cc7aa67153bf16c97dede5281013ada4?s=48&d=retro"
+    },
+    "modified": "2018-01-30T17:36:57.583581+00:00"
+  },
+  "url": "/dash/522509/jorlinas-timeboard-30-jan-2018-1130",
+  "resource": "/api/v1/dash/522509"
+}

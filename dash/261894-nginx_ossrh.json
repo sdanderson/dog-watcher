@@ -1,0 +1,136 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.org.sonatype.oss.count{$status,$request_method,$remote_addr} by {status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by response"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.org.sonatype.oss.request_time{$status,$remote_addr,$request_method}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Request Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.org.sonatype.oss.body_bytes_sent{$remote_addr,$request_method,$status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Body Bytes Sent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.org.sonatype.oss.count{$status,$request_method,$remote_addr} by {request_method}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Requests by Method"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.org.sonatype.oss.count{$remote_addr,$status,$request_method} by {status}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top response status"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.org.sonatype.oss.count{$remote_addr,$status,$request_method} by {remote_addr}, 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 clients"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.org.sonatype.oss.count{$remote_addr,$status,$request_method}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top endpoint requests"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "status",
+        "name": "status"
+      },
+      {
+        "default": "*",
+        "prefix": "remote_addr",
+        "name": "remote_addr"
+      },
+      {
+        "default": "*",
+        "prefix": "request_method",
+        "name": "request_method"
+      }
+    ],
+    "description": "created by rbriganti@sonatype.com (cloned)",
+    "title": "Nginx - ossrh",
+    "created": "2017-03-16T14:45:35.462391+00:00",
+    "new_id": "ef3-uux-jxa",
+    "id": 261894,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2017-03-16T15:07:02.671499+00:00"
+  },
+  "url": "/dash/261894/nginx---ossrh",
+  "resource": "/api/v1/dash/261894"
+}

@@ -1,0 +1,296 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:pingdom.response_time{check:sonatype.org_wp}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Response Time (Pingdom)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.latency{host:blog-1324739912.us-east-1.elb.amazonaws.com}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB Backend Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_backend_4xx{host:blog-1324739912.us-east-1.elb.amazonaws.com}.as_count()",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.elb.httpcode_backend_5xx{host:blog-1324739912.us-east-1.elb.amazonaws.com}.as_count()",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ELB Backend Responses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "apache.performance.idle_workers{host:i-8b1503a5}, apache.performance.busy_workers{host:i-8b1503a5}"
+            }
+          ]
+        },
+        "title": "Apache - Workers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "rate(apache.net.bytes{host:i-8b1503a5})"
+            }
+          ]
+        },
+        "title": "Apache - Bytes rate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "per_minute(avg:apache.net.hits{host:i-8b1503a5})",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Apache - Hits / Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.cpu.idle{host:i-8b1503a5}, system.cpu.system{host:i-8b1503a5}, system.cpu.iowait{host:i-8b1503a5}, system.cpu.user{host:i-8b1503a5}, system.cpu.stolen{host:i-8b1503a5}, system.cpu.guest{host:i-8b1503a5}"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.load.1{host:i-8b1503a5}"
+            },
+            {
+              "q": "system.load.5{host:i-8b1503a5}"
+            },
+            {
+              "q": "system.load.15{host:i-8b1503a5}"
+            }
+          ]
+        },
+        "title": "Load Averages 1-5-15"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.free{host:i-8b1503a5}, avg:system.mem.used{host:i-8b1503a5}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "size_by": "pct_mem",
+          "color_by": "user",
+          "q": "processes{host:i-8b1503a5}",
+          "group_by": "family",
+          "viz": "treemap"
+        },
+        "title": "Processes memory usage"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.swap.free{host:i-8b1503a5}, avg:system.swap.used{host:i-8b1503a5}"
+            }
+          ]
+        },
+        "title": "Available Swap"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.disk.in_use{host:i-8b1503a5}by{device} * 100"
+            }
+          ]
+        },
+        "title": "Disk usage by device (%)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.io.await{host:i-8b1503a5}by{device}"
+            }
+          ]
+        },
+        "title": "Disk latency (ms, by device)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:i-8b1503a5}"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:i-8b1503a5}"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ec2.network_out{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Outbound traffic"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ec2.disk_read_ops{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Read Disk Ops"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ec2.disk_write_ops{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Write Disk Ops"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ebs.volume_idle_time{host:i-8b1503a5},aws.ebs.volume_total_write_time{host:i-8b1503a5},aws.ebs.volume_total_read_time{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average I/O time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ebs.volume_write_bytes{host:i-8b1503a5}",
+              "type": "line"
+            },
+            {
+              "q": "aws.ebs.volume_read_bytes{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average I/O across all volumes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "aws.ebs.volume_read_ops{host:i-8b1503a5}",
+              "type": "line"
+            },
+            {
+              "q": "aws.ebs.volume_write_ops{host:i-8b1503a5}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average Ops across all volumes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.elb.healthy_host_count{host:blog-1324739912.us-east-1.elb.amazonaws.com}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Healthy Host Count (ELB)"
+      }
+    ],
+    "template_variables": null,
+    "description": "host & service metrics for www.sonatype.org",
+    "title": "www.sonatype.org",
+    "created": "2015-10-21T17:52:30.662360+00:00",
+    "new_id": "k3d-7jv-dcu",
+    "id": 75497,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2015-10-26T13:55:16.968595+00:00"
+  },
+  "url": "/dash/75497/wwwsonatypeorg",
+  "resource": "/api/v1/dash/75497"
+}

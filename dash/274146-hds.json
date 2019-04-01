@@ -1,0 +1,40 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.rhc{*}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "iq.hds.rhc"
+      }
+    ],
+    "template_variables": null,
+    "description": null,
+    "title": "HDS",
+    "created": "2017-04-12T16:26:21.009727+00:00",
+    "new_id": "bty-qh6-ne4",
+    "id": 274146,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2017-04-12T16:26:20.991483+00:00"
+  },
+  "url": "/dash/274146/hds",
+  "resource": "/api/v1/dash/274146"
+}

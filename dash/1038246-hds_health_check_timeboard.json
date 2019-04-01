@@ -1,0 +1,450 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.application_report_store{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "value": 2000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 4000,
+                  "comparator": ">"
+                },
+                {
+                  "custom_bg_color": "#1e0d0d",
+                  "palette": "custom_bg",
+                  "value": 8000,
+                  "comparator": ">"
+                }
+              ],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Application Report Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.application_scan_store{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "value": 2000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 4000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "custom_bg",
+                  "value": 8000,
+                  "comparator": ">"
+                }
+              ],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Application Scan Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.repository_health_check_report_store{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "value": 2000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 4000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "custom_bg",
+                  "value": 8000,
+                  "comparator": ">"
+                }
+              ],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Repository Report Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.repository_health_check_scan_store{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "value": 2000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "white_on_red",
+                  "value": 4000,
+                  "comparator": ">"
+                },
+                {
+                  "palette": "custom_bg",
+                  "value": 8000,
+                  "comparator": ">"
+                }
+              ],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Repository Scan Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.dependency_check_db{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Dependency Check DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.ods_db{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "ODS DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.datamart_db{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Datamart DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.temporary_directory{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Temporary Directory health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.hazelcast_cluster{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Hazelcast Cluster health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.logging{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Logging health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(max:hds.healthcheck.duration.leveldb{$var} by {host}, 10, 'max', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "LevelDB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.application_report_store{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Application Report Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.application_scan_store{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Application Scan Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.repository_health_check_report_store{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Repository Report Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.repository_health_check_scan_store{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Repository Scan Store health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.dependency_check_db{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Dependency Check DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.ods_db{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ODS DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.datamart_db{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Datamart DB health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.temporary_directory{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Temporary Directory health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.hazelcast_cluster{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Hazelcast Cluster health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.logging{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Logging health check duration (ms)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:hds.healthcheck.duration.leveldb{$var} by {host}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "LevelDB health check duration (ms)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "production",
+        "prefix": "environment",
+        "name": "var"
+      }
+    ],
+    "description": null,
+    "title": "HDS Health Check Timeboard",
+    "created": "2019-01-08T14:35:47.246570+00:00",
+    "new_id": "aqq-6n6-5e7",
+    "id": 1038246,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2019-02-07T19:24:34.817185+00:00"
+  },
+  "url": "/dash/1038246/hds-health-check-timeboard",
+  "resource": "/api/v1/dash/1038246"
+}

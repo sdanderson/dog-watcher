@@ -1,0 +1,147 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_INGESTED{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_INGESTED"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_INGEST_ERROR{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_INGEST_ERROR"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_PROCESSED{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_PROCESSED"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_PROCESSING{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_PROCESSING"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_PROCESSING_ERROR{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_PROCESSING_ERROR"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_NEW{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_NEW"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:LogProcessorService.log_file_state_INGESTING{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "LogProcessorService.log_file_state_INGESTING"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:WorkQueuer.work_queuer_ms_since_last_fired{bi:log-processor} by {bi}"
+            }
+          ],
+          "events": []
+        },
+        "title": "work_queuer_ms_since_last_fired"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:WorkScout.work_scout_ms_since_last_fired{bi:log-processor} by {bi}"
+            }
+          ],
+          "events": []
+        },
+        "title": "work_scout_ms_since_last_fired"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:LogIngester.redshift_ingest_ms_since_last_fired{bi:log-processor} by {bi}"
+            }
+          ],
+          "events": []
+        },
+        "title": "redshift_ingest_ms_since_last_fired"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by lhn+sonatype@mult.ifario.us",
+    "title": "LogProccessorService",
+    "created": "2013-04-01T17:31:45.947228+00:00",
+    "new_id": "wh7-fjs-d4r",
+    "id": 7393,
+    "created_by": {
+      "disabled": true,
+      "handle": "lhn+sonatype@mult.ifario.us",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "lhn+sonatype@mult.ifario.us",
+      "icon": "https://secure.gravatar.com/avatar/2b1d133b2b47623dafe935fbc869f9e7?s=48&d=retro"
+    },
+    "modified": "2013-04-12T22:39:13.178607+00:00"
+  },
+  "url": "/dash/7393/logproccessorservice",
+  "resource": "/api/v1/dash/7393"
+}

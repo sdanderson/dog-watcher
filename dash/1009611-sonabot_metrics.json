@@ -1,0 +1,89 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.cpu.percent{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "ecs.fargate.cpu.percent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.mem.usage{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "ecs.fargate.mem.usage"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.cpu.system{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:ecs.fargate.cpu.user{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ecs.fargate.cpu.system"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.cpu.user{docker_image:488733969274.dkr.ecr.us-east-1.amazonaws.com/sonatype/sonabot:latest}"
+            }
+          ],
+          "events": []
+        },
+        "title": "ecs.fargate.cpu.user"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by sanderson@sonatype.com",
+    "title": "Sonabot metrics",
+    "created": "2018-12-04T16:19:12.455789+00:00",
+    "new_id": "8zm-puf-rmq",
+    "id": 1009611,
+    "created_by": {
+      "disabled": false,
+      "handle": "sanderson@sonatype.com",
+      "name": "Scott Anderson",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "sanderson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/4b964a078ed12cc10769a978f4456c34?s=48&d=retro"
+    },
+    "modified": "2018-12-04T16:25:25.961748+00:00"
+  },
+  "url": "/dash/1009611/sonabot-metrics",
+  "resource": "/api/v1/dash/1009611"
+}

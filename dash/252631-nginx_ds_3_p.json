@@ -1,0 +1,171 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.ds_3p.count{$rest_endpoint,$status,$request_method,$remote_addr} by {rest_endpoint,status}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Requests (by endpoint and status)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.ds_3p.count{$rest_endpoint,$status,$request_method,$remote_addr} by {rest_endpoint}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by endpoint"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:nginx.request.com.sonatype.ds_3p.count{$rest_endpoint,$status,$request_method,$remote_addr} by {status}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Requests by response"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.ds_3p.request_time{$rest_endpoint,$status,$remote_addr,$request_method} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Request Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.ds_3p.body_bytes_sent{$rest_endpoint,$remote_addr,$request_method,$status} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Body Bytes Sent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:nginx.request.com.sonatype.ds_3p.request_length{$rest_endpoint,$status,$remote_addr,$request_method} by {rest_endpoint}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Request Length"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.ds_3p.count{$remote_addr,$status,$rest_endpoint,$request_method} by {remote_addr}, 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top 10 clients"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.ds_3p.count{$remote_addr,$status,$rest_endpoint,$request_method} by {status}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top response status"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:nginx.request.com.sonatype.ds_3p.count{$remote_addr,$status,$rest_endpoint,$request_method} by {rest_endpoint}, 20, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Top endpoint requests"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "rest_endpoint",
+        "name": "rest_endpoint"
+      },
+      {
+        "default": "*",
+        "prefix": "status",
+        "name": "status"
+      },
+      {
+        "default": "*",
+        "prefix": "remote_addr",
+        "name": "remote_addr"
+      },
+      {
+        "default": "*",
+        "prefix": "request_method",
+        "name": "request_method"
+      }
+    ],
+    "description": "created by rbriganti@sonatype.com (cloned)",
+    "title": "Nginx - ds-3p",
+    "created": "2017-02-23T20:24:54.039479+00:00",
+    "new_id": "yqk-i7b-hfu",
+    "id": 252631,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbriganti@sonatype.com",
+      "name": "Rick B",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "rbriganti@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/dfbcc5db8a11e4e06680f109da4d986b?s=48&d=retro"
+    },
+    "modified": "2017-02-24T16:36:30.555076+00:00"
+  },
+  "url": "/dash/252631/nginx---ds-3p",
+  "resource": "/api/v1/dash/252631"
+}

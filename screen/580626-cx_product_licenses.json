@@ -1,0 +1,85 @@
+{
+  "board_title": "CX - Product Licenses",
+  "read_only": false,
+  "author_info": {
+    "author_name": "Nick Cook"
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "created": "2019-02-13T12:00:36.619596+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ncook@sonatype.com",
+    "name": "Nick Cook",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ncook@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/8b919b61e46b949d833b7fe1000c37b3?s=48&d=retro"
+  },
+  "new_id": "uiw-zei-ca5",
+  "modified": "2019-03-03T03:01:07.053456+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "isIntegration": false,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 580626,
+      "globalTimeframe": {
+        "isLive": true,
+        "start": 1551578220000,
+        "end": 1551581820000
+      },
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Timeseries",
+      "title_text": "LM Prod - Network In/Out of Ec2 Host",
+      "height": 35,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{license-manager-production}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.network_out{license-manager-production}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 71,
+      "time": {},
+      "error": null,
+      "y": 3,
+      "x": 0,
+      "legend_size": "0",
+      "add_timeframe": true,
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 580626,
+  "isShared": false
+}

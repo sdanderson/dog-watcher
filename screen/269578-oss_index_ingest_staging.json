@@ -1,0 +1,327 @@
+{
+  "board_title": "OSS-INDEX Ingest Staging",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-11T23:39:42.178983+00:00",
+  "new_id": "uhp-xue-xea",
+  "original_title": "OSS-INDEX Ingest Staging",
+  "modified": "2018-01-26T14:43:47.181827+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "padetiloye@sonatype.com",
+    "name": "Philip Adetiloye",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "padetiloye@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/623f27e44687f7fa502ef0be1dc6d62f?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 269578,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "JSON Parse Error Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scheduled_services_staging.comsonatypedataossindexcommon_ossindex_clientparse_error_count.sum{sourcename:oss-index-ingest}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 20,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 269578,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Vulnerability Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scheduled_services_staging.comsonatypedatasources_ossindex_source_item_count.sum{sourcename:oss-index-ingest}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 4,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 269578,
+      "x": 50,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Publish Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_count.sum{sourcename:oss-index-ingest}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 4,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 269578,
+      "x": 50,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Ingest Error Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scheduled_services_staging.comsonatypedatasources_ossindex_source_ingest_error_count.sum{sourcename:oss-index-ingest}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 20,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 269578,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Publish Error Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_error_count.sum{sourcename:oss-index-ingest}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 36,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 269578,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSS Vulnerability Count weekly distribution",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:scheduled_services_staging.comsonatypedatasources_ossindex_source_publish_count{sourcename:oss-index-ingest}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 36,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 269578,
+  "title_edited": false,
+  "isShared": false
+}

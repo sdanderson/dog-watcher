@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:metrics.central.cloudfront.invalidation.lag{*}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Cloudfront Invalidation Lag (seconds)"
+      }
+    ],
+    "template_variables": [],
+    "description": null,
+    "title": "Jason's Timeboard 9 Jan 2019 10:49",
+    "created": "2019-01-09T15:49:44.283643+00:00",
+    "new_id": "9d7-xyz-fvg",
+    "id": 1039710,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2019-01-09T15:52:21.592148+00:00"
+  },
+  "url": "/dash/1039710/jasons-timeboard-9-jan-2019-1049",
+  "resource": "/api/v1/dash/1039710"
+}

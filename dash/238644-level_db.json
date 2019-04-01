@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:leveldb.ramdisk.size{*}"
+            }
+          ],
+          "events": []
+        },
+        "title": "leveldb.ramdisk.size"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "LevelDB",
+    "created": "2017-01-24T16:13:44.516704+00:00",
+    "new_id": "aiu-pwi-3w9",
+    "id": 238644,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2017-01-24T16:13:44.507866+00:00"
+  },
+  "url": "/dash/238644/leveldb",
+  "resource": "/api/v1/dash/238644"
+}

@@ -1,0 +1,59 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.instance_count{*} by {instance-type}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "aws.instance_count (zion)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.instance_count{environment:pipeline} by {instance-type}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "aws.instance_count (pipeline)"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "AWS Instance Counts",
+    "created": "2016-12-14T23:43:12.936776+00:00",
+    "new_id": "565-hb7-w8w",
+    "id": 224575,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-02-06T19:45:22.381972+00:00"
+  },
+  "url": "/dash/224575/aws-instance-counts",
+  "resource": "/api/v1/dash/224575"
+}

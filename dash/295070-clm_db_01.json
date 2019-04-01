@@ -1,0 +1,371 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.long_running_tx.count{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Long Running Transactions - Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.await{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System I/O - await"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System CPU (user)"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:system.swap.total{host:clm-db01.contegix.s}",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "System Swap - Total"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.swap.used{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System Swap - In Use"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:system.mem.total{host:clm-db01.contegix.s}",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "System Memory - Total"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System Memory - In Use"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.svctm{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System I/O - svctime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.wkb_s{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "System I/O - Reads and Writes (KB/sec)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.row_lock_waits{instance:clm-db01}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Row Lock Waits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.net.bytes_rcvd{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Network - In"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.net.bytes_sent{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Network - Out"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.net.max_connections_available{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Max Connections Available"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.open_files{host:clm-db01.contegix.s}",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "MySql Open Files"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:mysql.net.max_connections{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Max Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.row_lock_time{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Row Lock Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.threads_connected{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Threads Connected"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:mysql.net.aborted_connects{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Aborted Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.threads_running{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Threads Running"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.buffer_pool_read_requests{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Buffer Pool Read Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.buffer_pool_reads{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Buffer Pool Reads"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.data_writes{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Data - Writes and Reads (per second)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.slow_queries{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Slow Query Rate (per second)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.com_select{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql SELECT Statements"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:mysql.performance.com_insert{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql INSERT/UPDATE Statements"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.performance.cpu_time{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql CPU"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mysql.long_running_tx.time_ms{host:clm-db01.contegix.s}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "MySql Long Running Transaction Time (ms)"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:mysql.innodb.os_log_fsyncs{host:clm-db01.contegix.s}",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "MySql os_log_fsyncs"
+      }
+    ],
+    "template_variables": null,
+    "description": "clm-db01 Timeboard for MySql performance",
+    "title": "clm-db01",
+    "created": "2017-05-26T19:58:07.329409+00:00",
+    "new_id": "sp3-qd4-49x",
+    "id": 295070,
+    "created_by": {
+      "disabled": false,
+      "handle": "ksprochi@sonatype.com",
+      "name": "Keith Sprochi",
+      "is_admin": true,
+      "role": "devops",
+      "access_role": "adm",
+      "verified": true,
+      "email": "ksprochi@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+    },
+    "modified": "2017-05-26T19:58:07.364054+00:00"
+  },
+  "url": "/dash/295070/clm-db01",
+  "resource": "/api/v1/dash/295070"
+}

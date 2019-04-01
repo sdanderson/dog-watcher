@@ -1,0 +1,287 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:amazon-ssm-agent}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:amazon-ssm-agent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:apache-ahc-http-access}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:apache-ahc-http-access"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:avd-drd-dashboard-service-dev}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:avd-drd-dashboard-service-dev"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:avd-drd-dashboard-service-prod}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:avd-drd-dashboard-service-prod"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:avd-drd-dashboard-service-staging}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:avd-drd-dashboard-service-staging"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:avd-external-issue-consumer-prod}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:avd-external-issue-consumer-prod"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:avd-external-issue-consumer-staging}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:avd-external-issue-consumer-staging"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-clm-scan-processor}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-clm-scan-processor"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-ds-web-worker}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-ds-web-worker"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-idescan}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-idescan"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-rhc-scan-processor}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-rhc-scan-processor"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-stage-clm-scan-processor}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-stage-clm-scan-processor"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-stage-ds-web-worker}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-stage-ds-web-worker"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-stage-idescan}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-stage-idescan"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:aws-stage-rhc-scan-processor}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:aws-stage-rhc-scan-processor"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:crond}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:crond"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:dd.collector}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:dd.collector"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:dd.dogstatsd}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:dd.dogstatsd"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:dd.forwarder}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:dd.forwarder"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:mtail.log_entries{service:dd.jmxfetch}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "mtail.log_entries with service:dd.jmxfetch"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "mtail - syslog entries",
+    "created": "2018-08-08T22:57:03.511677+00:00",
+    "new_id": "j2u-jr3-x8c",
+    "id": 883365,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-08-08T22:57:03.511691+00:00"
+  },
+  "url": "/dash/883365/mtail---syslog-entries",
+  "resource": "/api/v1/dash/883365"
+}

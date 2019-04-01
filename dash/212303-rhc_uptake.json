@@ -1,0 +1,268 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{ignored:false,env:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Number of Scans"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{ignored:true,env:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Number of Ignored Scans"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc.enabled{enabled:true,env:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": [
+                {
+                  "palette": "green_on_white",
+                  "value": 0,
+                  "comparator": ">"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Newly Enabled Repositories"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc.enabled{enabled:false,env:production}.as_count()",
+              "aggregator": "sum",
+              "conditional_formats": [
+                {
+                  "palette": "red_on_white",
+                  "value": 0,
+                  "comparator": ">"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Repositories Disabled"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "day_before",
+              "q": "sum:iq.hds.rhc{ignored:false,env:production}.as_count()",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Change in # Scans Compared to Yesterday"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc.enabled{enabled:false,env:production}.as_count()",
+              "style": {
+                "palette": "warm",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:iq.hds.rhc.enabled{enabled:true,env:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Enabled v Disabled"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{env:production} by {ignored}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RHC Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc.enabled{enabled:false,env:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Repositories Disabled"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{ignored:true,env:production}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Ignored Scans"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{env:production} by {client_short_version}.as_count(), 50, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "RHC Scans by Version"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "day_before",
+              "q": "sum:iq.hds.rhc{ignored:false} by {client_short_version}.as_count()",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Change in # Scans by Version Compared to Yesterday"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{env:production} by {client_os}.as_count(), 50, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Nexus RM OS Usage"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{ignored:false,env:production} by {client_product_edition}.as_count(), 10, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "Number of Scans by Product Edition"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(sum:iq.hds.rhc{env:production,client_product_edition:pro-eval} by {client_os}.as_count(), 50, 'sum', 'desc')",
+              "conditional_formats": [],
+              "style": {
+                "palette": "dog_classic"
+              }
+            }
+          ]
+        },
+        "title": "OS for Pro-Eval Licenses"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by mpiggott@sonatype.com",
+    "title": "RHC Uptake",
+    "created": "2016-11-15T15:34:35.686664+00:00",
+    "new_id": "zqu-b4k-3zc",
+    "id": 212303,
+    "created_by": {
+      "disabled": false,
+      "handle": "mpiggott@sonatype.com",
+      "name": "Matthew Piggott",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "mpiggott@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/a9b57fe8b3c1fb7bb68e90e3baf2d9e0?s=48&d=retro"
+    },
+    "modified": "2018-09-24T14:03:05.250063+00:00"
+  },
+  "url": "/dash/212303/rhc-uptake",
+  "resource": "/api/v1/dash/212303"
+}

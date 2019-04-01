@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.elb.estimated_albactive_connection_count{use-case:ops-2033}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Current search.m.o App"
+      }
+    ],
+    "template_variables": null,
+    "description": "created by jswank@sonatype.com",
+    "title": "Jason's TimeBoard 27 Apr 2018 09:00",
+    "created": "2018-04-27T13:00:22.572111+00:00",
+    "new_id": "smp-nuu-jb6",
+    "id": 797805,
+    "created_by": {
+      "disabled": false,
+      "handle": "jswank@sonatype.com",
+      "name": "Jason Swank",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "jswank@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+    },
+    "modified": "2018-04-27T16:55:51.955845+00:00"
+  },
+  "url": "/dash/797805/jasons-timeboard-27-apr-2018-0900",
+  "resource": "/api/v1/dash/797805"
+}

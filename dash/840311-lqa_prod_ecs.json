@@ -1,0 +1,239 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.request_count{$app,$env}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "ALB Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.target_response_time.average{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ALB Target (task) Response (avg)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.target_response_time.p95{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "ALB Target (task) Response (95th)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.healthy_host_count{$app,$env}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:aws.applicationelb.un_healthy_host_count{$app,$env}",
+              "style": {
+                "palette": "grey",
+                "width": "thick",
+                "type": "dashed"
+              },
+              "type": "line"
+            }
+          ],
+          "markers": [
+            {
+              "type": "error dashed",
+              "value": "0 < y < 1.8"
+            },
+            {
+              "type": "ok dashed",
+              "value": "y > 1.8"
+            }
+          ]
+        },
+        "title": "Target health"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ecs.service.running{$cluster} by {cluster}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.ecs.service.desired{$cluster} by {cluster}",
+              "style": {
+                "palette": "grey",
+                "width": "thick",
+                "type": "dashed"
+              },
+              "type": "line"
+            }
+          ],
+          "markers": [
+            {
+              "type": "error dashed",
+              "value": "0 < y < 1.8"
+            },
+            {
+              "type": "ok dashed",
+              "value": "y > 1.8"
+            }
+          ]
+        },
+        "title": "Running Containers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(sum:aws.applicationelb.httpcode_target_5xx{$app,$env}.as_count(), 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Application Requests resulting in 5xx errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.httpcode_target_4xx{$env,$app} by {hostname}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Application requests resulting in 4xx responses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.cpu.user{$task_family} by {docker_name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "User CPU by Container"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ecs.fargate.mem.usage{$task_family} by {docker_name}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Memory Usage by Container"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "lqa",
+        "prefix": "use-case",
+        "name": "app"
+      },
+      {
+        "default": "prod",
+        "prefix": "environment",
+        "name": "env"
+      },
+      {
+        "default": "lqa-prod",
+        "prefix": "cluster",
+        "name": "cluster"
+      },
+      {
+        "default": "lqa-prod",
+        "prefix": "ecs_task_family",
+        "name": "task_family"
+      }
+    ],
+    "description": "created by ethompson@sonatype.com",
+    "title": "LQA Prod: ECS",
+    "created": "2018-06-20T15:25:12.419550+00:00",
+    "new_id": "t2r-kpb-8n4",
+    "id": 840311,
+    "created_by": {
+      "disabled": false,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "ethompson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/beaf8ec99411f3622f018bde843b4ada?s=48&d=retro"
+    },
+    "modified": "2018-10-30T15:05:41.407841+00:00"
+  },
+  "url": "/dash/840311/lqa-prod-ecs",
+  "resource": "/api/v1/dash/840311"
+}

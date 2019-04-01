@@ -1,0 +1,157 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app,success:true}/1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application p99 duration for successful analysis"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:app,success:true}/1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application p75 duration for successful analysis"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "s",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.50percentile{kind:app,success:true}/1000",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application p50 duration for successful analysis"
+      },
+      {
+        "definition": {
+          "autoscale": false,
+          "custom_unit": "m",
+          "precision": 2,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "(max:iq.hds.analysis_completed.duration.max{kind:app,success:true}/1000)/60",
+              "aggregator": "avg",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Application MAX duration for successful analysis"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "week_before",
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app}",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "p99 vs previous week"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "month_before",
+              "q": "avg:iq.hds.analysis_completed.duration.99percentile{kind:app}",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "p99 vs previous month"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "week_before",
+              "q": "sum:iq.hds.analysis{kind:app}.as_count()",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Application analysis count vs previous week"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "month_before",
+              "q": "sum:iq.hds.analysis{kind:app}.as_count()",
+              "increase_good": true,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Application analysis count vs previous month"
+      }
+    ],
+    "template_variables": null,
+    "description": "",
+    "title": "Jamie - AWS cut over performance",
+    "created": "2018-01-19T14:39:23.472207+00:00",
+    "new_id": "asn-gzb-7k5",
+    "id": 500422,
+    "created_by": {
+      "disabled": false,
+      "handle": "jwhitehouse@sonatype.com",
+      "name": "Jamie Whitehouse",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jwhitehouse@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/f4e61af1a2cc583d21bbbfd7472f9244?s=48&d=retro"
+    },
+    "modified": "2018-03-05T21:06:28.899435+00:00"
+  },
+  "url": "/dash/500422/jamie---aws-cut-over-performance",
+  "resource": "/api/v1/dash/500422"
+}

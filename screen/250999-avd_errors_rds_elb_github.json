@@ -1,0 +1,782 @@
+{
+  "showGlobalTimeOnboarding": true,
+  "new_id": "v4m-a3k-ckd",
+  "height": 80,
+  "created_by": {
+    "disabled": false,
+    "handle": "bbleiberg@sonatype.com",
+    "name": "Ben Bleiberg",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "bbleiberg@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/6416180b2775e4431d1d8cebf9fc684d?s=48&d=retro"
+  },
+  "originalWidth": "100%",
+  "id": 250999,
+  "read_only": false,
+  "isIntegration": false,
+  "disableEditing": false,
+  "width": "100%",
+  "widgets": [
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS avd-prod",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.cpuutilization{dbname:avd,environment:prod}",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.cpuutilization{dbname:avd,environment:prod}": {
+                "alias": "CPU %"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.database_connections{dbname:avd,environment:prod}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.database_connections{dbname:avd,environment:prod}": {
+                "alias": "Num Connections"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 16,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS avd-prod IOPS",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "min:aws.rds.read_iops{dbname:avd,environment:prod}.as_count()",
+            "type": "line",
+            "metadata": {
+              "min:aws.rds.read_iops{dbname:avd,environment:prod}.as_count()": {
+                "alias": "Read IOPS"
+              }
+            }
+          },
+          {
+            "q": "min:aws.rds.write_iops{dbname:avd,environment:prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "min:aws.rds.write_iops{dbname:avd,environment:prod}.as_count()": {
+                "alias": "Write IOPS"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 16,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Dashboard ELB Active Connections",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.applicationelb.active_connection_count{host:drd-dashboard-prod-1211872785.us-east-1.elb.amazonaws.com}",
+            "type": "line",
+            "metadata": {
+              "avg:aws.applicationelb.active_connection_count{host:drd-dashboard-prod-1211872785.us-east-1.elb.amazonaws.com}": {
+                "alias": "Prod"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.applicationelb.active_connection_count{host:drd-dashboard-staging-723848889.us-east-1.elb.amazonaws.com}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.applicationelb.active_connection_count{host:drd-dashboard-staging-723848889.us-east-1.elb.amazonaws.com}": {
+                "alias": "Staging"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 0,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Github Event Archives Processed",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.sqs.number_of_messages_sent{queuename:avd-new-github-event-archives-prod}.as_count()",
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_sent{queuename:avd-new-github-event-archives-prod}.as_count()": {
+                "alias": "Prod Num Archives"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_sent{queuename:avd-new-github-event-archives-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "dashed"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_sent{queuename:avd-new-github-event-archives-staging}.as_count()": {
+                "alias": "Staging Num Archives"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-new-github-event-archives-errors-prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-new-github-event-archives-errors-prod}.as_count()": {
+                "alias": "Prod Error Queue"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{queuename:avd-new-github-event-archives-errors-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sqs.number_of_messages_received{queuename:avd-new-github-event-archives-errors-staging}.as_count()": {
+                "alias": "Staging Error Queue"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 50,
+      "time": {},
+      "error": null,
+      "y": 0,
+      "x": 97,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "User-Facing and Github Archive Backend Error Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:drd.dashboard.service.ch.qos.logback.core.Appender.error.count{env:prod}",
+            "type": "line",
+            "metadata": {
+              "sum:drd.dashboard.service.ch.qos.logback.core.Appender.error.count{env:prod}": {
+                "alias": "Prod"
+              }
+            }
+          },
+          {
+            "q": "sum:drd.dashboard.service.ch.qos.logback.core.Appender.error.count{env:staging}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:drd.dashboard.service.ch.qos.logback.core.Appender.error.count{env:staging}": {
+                "alias": "Staging"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 40,
+      "overrideGlobalTime": true,
+      "width": 50,
+      "global_timeframe_controls": true,
+      "query": "*AVD-* OR *drd OR *oss-index* OR *name-based-match* OR *external-issue* OR *nbm* ",
+      "title_text": "drd events",
+      "time": {},
+      "y": 38,
+      "x": 97,
+      "isShared": false,
+      "type": "event_stream",
+      "event_size": "s",
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS lqa-prod IOPS",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.read_iops{dbname:lqa,environment:prod}.as_count()",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.read_iops{dbname:lqa,environment:prod}.as_count()": {
+                "alias": "Read IOPS"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.write_iops{dbname:lqa,environment:prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.write_iops{dbname:lqa,environment:prod}.as_count()": {
+                "alias": "Write IOPS"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 49,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Github Event Archive SNS Processing",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.sns.number_of_messages_published{topicname:avd-github-event-archives-prod}.as_count()",
+            "type": "bars",
+            "metadata": {
+              "avg:aws.sns.number_of_messages_published{topicname:avd-github-event-archives-prod}.as_count()": {
+                "alias": "Prod Published"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.sns.number_of_notifications_failed{topicname:avd-github-event-archives-prod}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.sns.number_of_notifications_failed{topicname:avd-github-event-archives-prod}.as_count()": {
+                "alias": "Prod Failed"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.sns.number_of_messages_published{topicname:avd-github-event-archives-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "avg:aws.sns.number_of_messages_published{topicname:avd-github-event-archives-staging}.as_count()": {
+                "alias": "Staging Published"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.sns.number_of_notifications_failed{topicname:avd-github-event-archives-staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "grey",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.sns.number_of_notifications_failed{topicname:avd-github-event-archives-staging}.as_count()": {
+                "alias": "Staging Failed"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 50,
+      "time": {},
+      "error": null,
+      "y": 17,
+      "x": 97,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS lqa-prod",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "min:aws.rds.cpuutilization{dbname:lqa,environment:prod}",
+            "type": "line",
+            "metadata": {
+              "min:aws.rds.cpuutilization{dbname:lqa,environment:prod}": {
+                "alias": "CPU %"
+              }
+            }
+          },
+          {
+            "q": "min:aws.rds.database_connections{dbname:lqa,environment:prod}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "min:aws.rds.database_connections{dbname:lqa,environment:prod}": {
+                "alias": "Num Connections"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 49,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS avd-staging",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.cpuutilization{dbname:avd,environment:staging}",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.cpuutilization{dbname:avd,environment:staging}": {
+                "alias": "CPU %"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.database_connections{dbname:avd,environment:staging}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.database_connections{dbname:avd,environment:staging}": {
+                "alias": "Num Connections"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 33,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS avd-staging IOPS",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.read_iops{dbname:avd,environment:staging}.as_count()",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.read_iops{dbname:avd,environment:staging}.as_count()": {
+                "alias": "Read IOPS"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.write_iops{dbname:avd,environment:staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.write_iops{dbname:avd,environment:staging}.as_count()": {
+                "alias": "Write IOPS"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 33,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS lqa-staging",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.cpuutilization{dbname:lqa,environment:staging}",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.cpuutilization{dbname:lqa,environment:staging}": {
+                "alias": "CPU %"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.database_connections{dbname:lqa,environment:staging}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.database_connections{dbname:lqa,environment:staging}": {
+                "alias": "Num Connections"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 65,
+      "x": 0,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS lqa-staging IOPS",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:aws.rds.read_iops{dbname:lqa,environment:staging}.as_count()",
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.read_iops{dbname:lqa,environment:staging}.as_count()": {
+                "alias": "Read IOPS"
+              }
+            }
+          },
+          {
+            "q": "avg:aws.rds.write_iops{dbname:lqa,environment:staging}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "dashed"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:aws.rds.write_iops{dbname:lqa,environment:staging}.as_count()": {
+                "alias": "Write IOPS"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "error": null,
+      "y": 65,
+      "x": 48,
+      "legend_size": "0",
+      "isShared": false,
+      "type": "timeseries",
+      "legend": true,
+      "add_timeframe": true
+    },
+    {
+      "board_id": 250999,
+      "title_align": "left",
+      "title_size": 16,
+      "title": true,
+      "generated_title": "Events that match \"avd-exception-event and -env-dev \"",
+      "tags_execution": "and",
+      "height": 9,
+      "width": 47,
+      "global_timeframe_controls": true,
+      "query": "avd-exception-event and -env-dev ",
+      "title_text": "",
+      "time": {},
+      "y": 38,
+      "x": 148,
+      "isShared": false,
+      "type": "event_timeline",
+      "add_timeframe": true
+    }
+  ],
+  "isShared": false,
+  "author_info": {
+    "author_name": "Ben Bleiberg"
+  },
+  "description": "",
+  "board_bgtype": "board_graph",
+  "template_variables": [],
+  "templated": true,
+  "disableCog": false,
+  "title_edited": false,
+  "board_title": "AVD Errors/RDS/ELB/Github",
+  "created": "2017-11-28T14:10:52.287065+00:00",
+  "original_title": "AVD Errors/RDS/ELB/Github",
+  "modified": "2019-03-25T14:19:14.553479+00:00",
+  "originalHeight": 80
+}

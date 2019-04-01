@@ -1,0 +1,26 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "template_variables": null,
+    "description": "created by ethompson@sonatype.com",
+    "title": "ethompson's Timeboard 21 Jun 2018 14:05",
+    "created": "2018-06-21T18:05:27.736269+00:00",
+    "new_id": "3uk-f49-539",
+    "id": 841533,
+    "created_by": {
+      "disabled": false,
+      "handle": "ethompson@sonatype.com",
+      "name": "Eric Thompson",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "ethompson@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/beaf8ec99411f3622f018bde843b4ada?s=48&d=retro"
+    },
+    "modified": "2018-06-21T18:05:27.736286+00:00"
+  },
+  "url": "/dash/841533/ethompsons-timeboard-21-jun-2018-1405",
+  "resource": "/api/v1/dash/841533"
+}

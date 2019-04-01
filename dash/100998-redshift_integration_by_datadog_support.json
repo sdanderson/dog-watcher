@@ -1,0 +1,181 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.read_iops{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Read ops"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.write_iops{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Write ops"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.read_latency{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Read Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.write_latency{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Write Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.read_throughput{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Read Throughput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.write_throughput{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Write Throughput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.cpuutilization{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.health_status{$scope} by {clusteridentifier}",
+              "type": "area"
+            },
+            {
+              "q": "avg:aws.redshift.maintenance_mode{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Cluster Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.redshift.database_connections{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Number of Connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.percentage_disk_space_used{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Disk space used (pct)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.network_receive_throughput{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Network receive throughput"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.redshift.network_transmit_throughput{$scope} by {clusteridentifier}",
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Network transmit throughput"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "scope"
+      }
+    ],
+    "description": "created by support-sonatype",
+    "title": "Redshift Integration (by Datadog Support)",
+    "created": "2016-02-22T16:40:48.950940+00:00",
+    "new_id": "m2d-ws9-6av",
+    "id": 100998,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-sonatype",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2016-02-22T19:54:03.063505+00:00"
+  },
+  "url": "/dash/100998/redshift-integration-by-datadog-support",
+  "resource": "/api/v1/dash/100998"
+}

@@ -1,0 +1,404 @@
+{
+  "board_title": "Global Veneur Collectors",
+  "read_only": false,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-02-06T00:46:20.515024+00:00",
+  "new_id": "gc5-es2-mir",
+  "original_title": "Global Veneur Collectors",
+  "modified": "2018-03-21T14:36:17.847051+00:00",
+  "disableEditing": false,
+  "height": 110,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ksprochi@sonatype.com",
+    "name": "Keith Sprochi",
+    "is_admin": true,
+    "role": "devops",
+    "access_role": "adm",
+    "verified": true,
+    "email": "ksprochi@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/257b2b73031fa3c0f866d9494bb1a609?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Production Hosts - Metrics Forwarded - Total",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:veneur.forward.post_metrics_total{env:production} by {aws_name_tag}, 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 1,
+      "x": 149,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Staging Hosts - Metrics Forwarded - Total",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:veneur.forward.post_metrics_total{env:stage} by {aws_name_tag}, 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 17,
+      "x": 149,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Metrics Processed",
+      "height": 30,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:veneur.worker.metrics_processed_total{location:aws} by {aws_name_tag}.as_count(), 20, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 66,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 33,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Production Metrics Flushed",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.worker.metrics_flushed_total{env:production,aws_name_tag:hds-production-global-veneur-collector}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 108,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Staging Metrics Flushed",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.worker.metrics_flushed_total{env:stage,aws_name_tag:hds-staging-global-veneur-collector}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 17,
+      "x": 108,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Production Metrics Processed",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.worker.metrics_processed_total{aws_name_tag:hds-production-global-veneur-collector} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 1,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Staging Metrics Processed",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.worker.metrics_processed_total{aws_name_tag:hds-staging-global-veneur-collector} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 17,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "widgetID": 7,
+      "height": 31,
+      "displayFormat": "countsAndList",
+      "titleText": "Collector Status",
+      "board_id": 281988,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "text",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AWS HDS * Global Veneur Collector diminished capacity",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": "13",
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 1,
+      "x": 1,
+      "width": 64
+    },
+    {
+      "board_id": 281988,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Production Collector Events",
+      "height": 36,
+      "overrideGlobalTime": true,
+      "width": 97,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 66,
+      "query": "AWS HDS Production Global Veneur Collector ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "x": 99,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Staging Collector Events",
+      "height": 36,
+      "overrideGlobalTime": true,
+      "width": 97,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 66,
+      "query": "AWS HDS Staging Global Veneur Collector ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Production Hosts - Flushed Metrics Contents in Bytes",
+      "height": 30,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.flush.content_length_bytes.sum{env:production} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 33,
+      "x": 69,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 281988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Staging Hosts - Flushed Metrics Contents in Bytes",
+      "height": 30,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:veneur.flush.content_length_bytes.sum{env:stage} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 33,
+      "x": 133,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 281988,
+  "title_edited": false,
+  "isShared": false
+}

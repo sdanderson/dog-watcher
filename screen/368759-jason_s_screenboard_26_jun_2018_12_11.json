@@ -1,0 +1,20 @@
+{
+  "read_only": false,
+  "board_title": "Jason's Screenboard 26 Jun 2018 12:11",
+  "description": null,
+  "created": "2018-06-26T16:11:41.422965+00:00",
+  "new_id": "rwv-snq-c9p",
+  "modified": "2018-06-26T16:11:41.422975+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "jswank@sonatype.com",
+    "name": "Jason Swank",
+    "is_admin": true,
+    "role": "",
+    "access_role": "adm",
+    "verified": true,
+    "email": "jswank@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/9c9aa59f7632c69049cf4825783073c6?s=48&d=retro"
+  },
+  "id": 368759
+}

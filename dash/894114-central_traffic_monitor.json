@@ -1,0 +1,108 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:metrics.central.hourly.requestsDenied{host:fastlylogs}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Requests denied (403) to blacklisted IPs each half hour"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 1,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:metrics.central.hourly.requestsDenied{host:fastlylogs}.rollup(sum)",
+              "aggregator": "sum",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Total Requests Denied 2"
+      },
+      {
+        "definition": {
+          "autoscale": true,
+          "precision": 0,
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:metrics.central.blacklistSize{host:fastlylogs}",
+              "aggregator": "last",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Blacklist Size (# of IPs)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:metrics.central.blacklistSize{environment:prod,host:fastlylogs} by {host}",
+              "style": {
+                "palette": "cool",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "Fastly Blacklist Size each half hour"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:system.disk.free{name:fastly-logs}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "purple",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "Fastly Logs Host Disk Free"
+      }
+    ],
+    "template_variables": [],
+    "description": "created by tyanko@sonatype.com",
+    "title": "Central Traffic Monitor",
+    "created": "2018-08-21T15:15:17.740615+00:00",
+    "new_id": "s77-2au-4nf",
+    "id": 894114,
+    "created_by": {
+      "disabled": false,
+      "handle": "tyanko@sonatype.com",
+      "name": "Terry Yanko",
+      "is_admin": true,
+      "role": "",
+      "access_role": "adm",
+      "verified": true,
+      "email": "tyanko@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/6ff9fce901079bd7aadaf4a99bf4925b?s=48&d=retro"
+    },
+    "modified": "2019-01-14T20:02:56.280801+00:00"
+  },
+  "url": "/dash/894114/central-traffic-monitor",
+  "resource": "/api/v1/dash/894114"
+}

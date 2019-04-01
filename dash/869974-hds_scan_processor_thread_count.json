@@ -1,0 +1,383 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.scans.CI_CHECK.submitted{env:prod}-sum:hds.scans.CI_CHECK.isprocessing{env:prod}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "App Scan Queue Depth (submitted minus isprocessing)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.analysis{kind:app,env:production} by {aws_name_tag}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Distribution of completed application analyses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{kind:app,env:production,success:true}/1000, avg:iq.hds.analysis_completed.duration.99percentile{kind:app,env:production,success:true}/1000, avg:iq.hds.analysis_completed.duration.50percentile{kind:app,env:production,success:true}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:iq.hds.analysis_completed.duration.75percentile{kind:app,env:production,success:true}/1000": {
+                  "alias": "P75 Duration"
+                },
+                "avg:iq.hds.analysis_completed.duration.50percentile{kind:app,env:production,success:true}/1000": {
+                  "alias": "P50 Duration"
+                },
+                "avg:iq.hds.analysis_completed.duration.99percentile{kind:app,env:production,success:true}/1000": {
+                  "alias": "P99 Duration"
+                }
+              }
+            }
+          ]
+        },
+        "title": "App analysis completed durations (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.scans.slow{environment:production}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Slow Scans"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{name:hds-production-ec2-clmscan01a}, avg:system.cpu.system{name:hds-production-ec2-clmscan01a}, avg:system.cpu.iowait{name:hds-production-ec2-clmscan01a}, avg:system.cpu.user{name:hds-production-ec2-clmscan01a}, avg:system.cpu.stolen{name:hds-production-ec2-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "App1 - CPU Util % (clmscan01a)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-clmscan01a}, avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "App1 - JVM Memory Total / Used (clmscan01a)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{name:hds-production-ec2-clmscan01b}, avg:system.cpu.system{name:hds-production-ec2-clmscan01b}, avg:system.cpu.iowait{name:hds-production-ec2-clmscan01b}, avg:system.cpu.user{name:hds-production-ec2-clmscan01b}, avg:system.cpu.stolen{name:hds-production-ec2-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "App2 - CPU Util % (clmscan01b)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-clmscan01b}, avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-clmscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "App2 - JVM Memory Total/Used (clmscan01b)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:hds.scans.REPOSITORY.submitted{env:prod}-sum:hds.scans.REPOSITORY.isprocessing{env:prod}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "RHC Scan Queue Depth (submitted minus isprocessing)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:iq.hds.rhc{env:production} by {aws_name_tag}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ]
+        },
+        "title": "Distribution of completed RHC analyses"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:iq.hds.analysis_completed.duration.75percentile{env:production,success:true,kind:rhc}/1000, avg:iq.hds.analysis_completed.duration.99percentile{env:production,success:true,kind:rhc}/1000, avg:iq.hds.analysis_completed.duration.50percentile{env:production,success:true,kind:rhc}/1000",
+              "style": {
+                "palette": "dog_classic",
+                "width": "thin",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "avg:iq.hds.analysis_completed.duration.75percentile{env:production,success:true,kind:rhc}/1000": {
+                  "alias": "P75 Duration"
+                },
+                "avg:iq.hds.analysis_completed.duration.50percentile{env:production,success:true,kind:rhc}/1000": {
+                  "alias": "P50 Duration"
+                },
+                "avg:iq.hds.analysis_completed.duration.99percentile{env:production,success:true,kind:rhc}/1000": {
+                  "alias": "P99 Duration"
+                }
+              }
+            }
+          ]
+        },
+        "title": "RHC analysis completed durations (seconds)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{name:hds-production-ec2-rhcscan01a}, avg:system.cpu.system{name:hds-production-ec2-rhcscan01a}, avg:system.cpu.iowait{name:hds-production-ec2-rhcscan01a}, avg:system.cpu.user{name:hds-production-ec2-rhcscan01a}, avg:system.cpu.stolen{name:hds-production-ec2-rhcscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RHC1 - CPU Util % (rhcscan01a)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-rhcscan01a}, avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-rhcscan01a}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RHC1 - JVM Memory Total/Used (rhcscan01a)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{name:hds-production-ec2-rhcscan01b}, avg:system.cpu.system{name:hds-production-ec2-rhcscan01b}, avg:system.cpu.iowait{name:hds-production-ec2-rhcscan01b}, avg:system.cpu.user{name:hds-production-ec2-rhcscan01b}, avg:system.cpu.stolen{name:hds-production-ec2-rhcscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ]
+        },
+        "title": "RHC2 - CPU Util % (rhcscan01b)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:scanprocessor.jvm.memory.total.max.value{aws_name_tag:hds-production-rhcscan01b}, avg:scanprocessor.jvm.memory.heap.used.value{aws_name_tag:hds-production-rhcscan01b}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RHC2 - JVM Memory Total/Used (rhcscan01b)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:aws.rds.queries{environment:production,owner:hds-ops-group_sonatype.com}.as_count()",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Query Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.write_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.read_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.delete_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.insert_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.update_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.select_latency{environment:production,owner:hds-ops-group_sonatype.com}",
+              "style": {
+                "palette": "dog_classic",
+                "width": "normal",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ]
+        },
+        "title": "RDS: Reads and Writes latencies"
+      }
+    ],
+    "template_variables": null,
+    "description": "",
+    "title": "HDS Scan Processor Thread Count",
+    "created": "2018-07-24T15:52:58.699441+00:00",
+    "new_id": "twr-9c8-zex",
+    "id": 869974,
+    "created_by": {
+      "disabled": false,
+      "handle": "sangles@sonatype.com",
+      "name": "Steven Angles",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sangles@sonatype.com",
+      "icon": "https://secure.gravatar.com/avatar/bd49d2bb7dd0d347bdb302592104b2de?s=48&d=retro"
+    },
+    "modified": "2018-08-08T17:39:00.707690+00:00"
+  },
+  "url": "/dash/869974/hds-scan-processor-thread-count",
+  "resource": "/api/v1/dash/869974"
+}

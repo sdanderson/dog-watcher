@@ -1,0 +1,68 @@
+{
+  "board_title": "Old Jenkins Plugin Versions (Vlad)",
+  "read_only": true,
+  "isIntegration": false,
+  "description": null,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-11T19:33:46.416928+00:00",
+  "new_id": "txf-k44-eeg",
+  "original_title": "Old Jenkins Plugin Versions (Vlad)",
+  "modified": "2018-05-16T13:59:19.007960+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "client",
+      "name": "analysis"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "vladt@sonatype.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "vladt@sonatype.com",
+    "icon": "https://secure.gravatar.com/avatar/ed65fbe3663520973d17f55722d4de4c?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 137162,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Client Versions",
+      "height": 62,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:iq.hds.analysis{env:production,client:sonatype_clm_ci_jenkins} by {client_version}.as_count(), 50, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 337838,
+  "title_edited": false,
+  "isShared": false
+}
